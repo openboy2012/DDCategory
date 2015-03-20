@@ -17,3 +17,21 @@
 + (NSString *)dateInfoFromDate:(NSDate *)date;
 
 @end
+
+@interface NSString (NSPredicate)
+
++ (BOOL)isEmail:(NSString *)input;
+
++ (BOOL)isPhoneNum:(NSString *)input;
+
++ (BOOL)isChineseName:(NSString *)input;
+
++ (BOOL)isValidateCode:(NSString *)input;
+
++ (BOOL)checkPassword:(NSString *)input;
+
++ (BOOL)isMobileNum:(NSString *)input;
+
++ (BOOL)checkWithDrawMoney:(NSString *)input;
+
+@end

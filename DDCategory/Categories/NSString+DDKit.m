@@ -34,3 +34,40 @@
 
 
 @end
+
+@implementation NSString (NSPredicate)
+
++ (BOOL)isEmail:(NSString *)input{
+    return [[self class] input:input andRegex:@"\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*"];
+}
+
++ (BOOL)isChineseName:(NSString *)input{
+    return [[self class] input:input andRegex:@"^[\u4E00-\uFA29]{2,8}$"];
+}
+
++ (BOOL)isPhoneNum:(NSString *)input{
+    return [[self class] input:input andRegex:@"^(([0\\+]\\d{2,3}-?)?(0\\d{2,3})-?)?(\\d{7,8})"];
+}
+
++ (BOOL)isMobileNum:(NSString *)input{
+    return [[self class] input:input andRegex:@"^1\\d{10}$"];
+}
+
++ (BOOL)isValidateCode:(NSString *)input{
+    return [[self class] input:input andRegex:@"(\\d{6})"];
+}
+
++ (BOOL)checkPassword:(NSString *)input{
+    return [[self class] input:input andRegex:@"^\\w{6,20}"];
+}
+
++ (BOOL)checkWithDrawMoney:(NSString *)input{
+    return [[self class] input:input andRegex:@"^[0-9]{3,}|[2-9][0-9]$"];
+}
+
++ (BOOL)input:(NSString *)input andRegex:(NSString *)regex{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
+    return [predicate evaluateWithObject:input];
+}
+
+@end
