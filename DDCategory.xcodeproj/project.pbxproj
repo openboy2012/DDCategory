@@ -29,6 +29,7 @@
 		8E3D02551ABBCA1D00805826 /* UIColor+DDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3D02531ABBCA1D00805826 /* UIColor+DDKit.m */; };
 		8E3D02581ABBCD8600805826 /* UILabel+DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E3D02561ABBCD8600805826 /* UILabel+DDKit.h */; };
 		8E3D02591ABBCD8600805826 /* UILabel+DDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3D02571ABBCD8600805826 /* UILabel+DDKit.m */; };
+		8E3D025B1ABBE49200805826 /* DDCategory.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 8E3D025A1ABBE49200805826 /* DDCategory.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		8E3D02531ABBCA1D00805826 /* UIColor+DDKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+DDKit.m"; sourceTree = "<group>"; };
 		8E3D02561ABBCD8600805826 /* UILabel+DDKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+DDKit.h"; sourceTree = "<group>"; };
 		8E3D02571ABBCD8600805826 /* UILabel+DDKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+DDKit.m"; sourceTree = "<group>"; };
+		8E3D025A1ABBE49200805826 /* DDCategory.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DDCategory.podspec; sourceTree = "<group>"; };
 		9AD1D4D82379D3938B61DBB3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BC2515C8597AF3DBFAEF990E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F95AEF7A119DF799BFF1C8F6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +104,7 @@
 		8E3D01EB1ABBC70C00805826 = {
 			isa = PBXGroup;
 			children = (
+				8E3D025A1ABBE49200805826 /* DDCategory.podspec */,
 				8E3D01F71ABBC70C00805826 /* DDCategory */,
 				8E3D02041ABBC70C00805826 /* DDCategoryTests */,
 				8E3D01F61ABBC70C00805826 /* Products */,
@@ -289,6 +292,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E3D025B1ABBE49200805826 /* DDCategory.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
