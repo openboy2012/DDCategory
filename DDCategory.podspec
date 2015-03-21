@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name     = 'DDCategory'
-s.version  = '0.1'
+s.version  = '0.1.1'
 s.license  = 'MIT'
 s.summary  = 'DDKit Private Repository'
 s.homepage = 'https://github.com/openboy2012/DDCategory'
