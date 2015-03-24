@@ -11,26 +11,27 @@
 		8E3D01FB1ABBC70C00805826 /* DDCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E3D01FA1ABBC70C00805826 /* DDCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8E3D02011ABBC70C00805826 /* DDCategory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E3D01F51ABBC70C00805826 /* DDCategory.framework */; };
 		8E3D02081ABBC70C00805826 /* DDCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3D02071ABBC70C00805826 /* DDCategoryTests.m */; };
-		8E3D022E1ABBC75D00805826 /* UIImage+DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E3D02181ABBC75D00805826 /* UIImage+DDKit.h */; };
+		8E3D022E1ABBC75D00805826 /* UIImage+DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E3D02181ABBC75D00805826 /* UIImage+DDKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8E3D022F1ABBC75D00805826 /* UIImage+DDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3D02191ABBC75D00805826 /* UIImage+DDKit.m */; };
-		8E3D023C1ABBC75D00805826 /* UIViewController+DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E3D02261ABBC75D00805826 /* UIViewController+DDKit.h */; };
+		8E3D023C1ABBC75D00805826 /* UIViewController+DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E3D02261ABBC75D00805826 /* UIViewController+DDKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8E3D023D1ABBC75D00805826 /* UIViewController+DDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3D02271ABBC75D00805826 /* UIViewController+DDKit.m */; };
-		8E3D02401ABBC7A400805826 /* NSString+DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E3D023E1ABBC7A400805826 /* NSString+DDKit.h */; };
+		8E3D02401ABBC7A400805826 /* NSString+DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E3D023E1ABBC7A400805826 /* NSString+DDKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8E3D02411ABBC7A400805826 /* NSString+DDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3D023F1ABBC7A400805826 /* NSString+DDKit.m */; };
-		8E3D02441ABBC7E900805826 /* UIView+DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E3D02421ABBC7E900805826 /* UIView+DDKit.h */; };
+		8E3D02441ABBC7E900805826 /* UIView+DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E3D02421ABBC7E900805826 /* UIView+DDKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8E3D02451ABBC7E900805826 /* UIView+DDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3D02431ABBC7E900805826 /* UIView+DDKit.m */; };
-		8E3D02481ABBC90D00805826 /* UIButton+DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E3D02461ABBC90D00805826 /* UIButton+DDKit.h */; };
+		8E3D02481ABBC90D00805826 /* UIButton+DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E3D02461ABBC90D00805826 /* UIButton+DDKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8E3D02491ABBC90D00805826 /* UIButton+DDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3D02471ABBC90D00805826 /* UIButton+DDKit.m */; };
-		8E3D024C1ABBC9EE00805826 /* UIImageView+DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E3D024A1ABBC9EE00805826 /* UIImageView+DDKit.h */; };
+		8E3D024C1ABBC9EE00805826 /* UIImageView+DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E3D024A1ABBC9EE00805826 /* UIImageView+DDKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8E3D024D1ABBC9EE00805826 /* UIImageView+DDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3D024B1ABBC9EE00805826 /* UIImageView+DDKit.m */; };
-		8E3D02501ABBCA0300805826 /* UISegmentedControl+DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E3D024E1ABBCA0300805826 /* UISegmentedControl+DDKit.h */; };
+		8E3D02501ABBCA0300805826 /* UISegmentedControl+DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E3D024E1ABBCA0300805826 /* UISegmentedControl+DDKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8E3D02511ABBCA0300805826 /* UISegmentedControl+DDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3D024F1ABBCA0300805826 /* UISegmentedControl+DDKit.m */; };
-		8E3D02541ABBCA1D00805826 /* UIColor+DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E3D02521ABBCA1D00805826 /* UIColor+DDKit.h */; };
+		8E3D02541ABBCA1D00805826 /* UIColor+DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E3D02521ABBCA1D00805826 /* UIColor+DDKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8E3D02551ABBCA1D00805826 /* UIColor+DDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3D02531ABBCA1D00805826 /* UIColor+DDKit.m */; };
-		8E3D02581ABBCD8600805826 /* UILabel+DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E3D02561ABBCD8600805826 /* UILabel+DDKit.h */; };
+		8E3D02581ABBCD8600805826 /* UILabel+DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E3D02561ABBCD8600805826 /* UILabel+DDKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8E3D02591ABBCD8600805826 /* UILabel+DDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3D02571ABBCD8600805826 /* UILabel+DDKit.m */; };
 		8E3D025B1ABBE49200805826 /* DDCategory.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 8E3D025A1ABBE49200805826 /* DDCategory.podspec */; };
 		8E3D025D1ABBEA9B00805826 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 8E3D025C1ABBEA9B00805826 /* LICENSE */; };
+		8E67EAC51ABF9213005E65C8 /* DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E67EAC41ABF0E91005E65C8 /* DDKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		8E3D02571ABBCD8600805826 /* UILabel+DDKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+DDKit.m"; sourceTree = "<group>"; };
 		8E3D025A1ABBE49200805826 /* DDCategory.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DDCategory.podspec; sourceTree = "<group>"; };
 		8E3D025C1ABBEA9B00805826 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		8E67EAC41ABF0E91005E65C8 /* DDKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDKit.h; sourceTree = "<group>"; };
 		9AD1D4D82379D3938B61DBB3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BC2515C8597AF3DBFAEF990E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F95AEF7A119DF799BFF1C8F6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,8 +130,8 @@
 		8E3D01F71ABBC70C00805826 /* DDCategory */ = {
 			isa = PBXGroup;
 			children = (
-				8E3D02111ABBC75D00805826 /* Categories */,
 				8E3D01FA1ABBC70C00805826 /* DDCategory.h */,
+				8E3D02111ABBC75D00805826 /* Categories */,
 				8E3D01F81ABBC70C00805826 /* Supporting Files */,
 			);
 			path = DDCategory;
@@ -163,6 +165,7 @@
 		8E3D02111ABBC75D00805826 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				8E67EAC41ABF0E91005E65C8 /* DDKit.h */,
 				8E3D02261ABBC75D00805826 /* UIViewController+DDKit.h */,
 				8E3D02271ABBC75D00805826 /* UIViewController+DDKit.m */,
 				8E3D02181ABBC75D00805826 /* UIImage+DDKit.h */,
@@ -211,6 +214,7 @@
 				8E3D022E1ABBC75D00805826 /* UIImage+DDKit.h in Headers */,
 				8E3D023C1ABBC75D00805826 /* UIViewController+DDKit.h in Headers */,
 				8E3D02541ABBCA1D00805826 /* UIColor+DDKit.h in Headers */,
+				8E67EAC51ABF9213005E65C8 /* DDKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

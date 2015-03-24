@@ -151,9 +151,16 @@ static char *hudKey;
     [messageHud hide:YES afterDelay:1.0f];
 }
 
++ (void)showDetailMessage:(NSString *)message{
+    [self showDetailMessage:message andCarryView:nil];
+}
+
 + (void)showDetailMessage:(NSString *)message andCarryView:(UIView *)carryView{
-    UIWindow *topWindows = [[[UIApplication sharedApplication] windows] lastObject];
-    MBProgressHUD *messageHud = [MBProgressHUD showHUDAddedTo:topWindows animated:YES];
+    if(!carryView){
+        UIWindow *topWindows = [[[UIApplication sharedApplication] windows] lastObject];
+        carryView = topWindows;
+    }
+    MBProgressHUD *messageHud = [MBProgressHUD showHUDAddedTo:carryView animated:YES];
     messageHud.mode = MBProgressHUDModeText;
     messageHud.labelText = @"提示";
     messageHud.detailsLabelText = [message isKindOfClass:[NSString class]]?message:@"";

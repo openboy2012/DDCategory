@@ -58,6 +58,8 @@ typedef NS_OPTIONS(NSUInteger, ViewSeparatorType) {
 
 + (void)showMessage:(NSString *)message andCarryView:(UIView *)carryView;
 
++ (void)showDetailMessage:(NSString *)message;
+
 + (void)showDetailMessage:(NSString *)message andCarryView:(UIView *)carryView;
 
 @end
