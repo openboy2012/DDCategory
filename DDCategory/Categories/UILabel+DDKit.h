@@ -14,15 +14,17 @@
 
 @interface UILabel (AutoSize)
 
-/*
- * @brief 垂直方向固定获取动态宽度的UILabel的方法
+/**
+ * 垂直方向固定获取动态宽度的UILabel的方法
+ *
  * @return 原始UILabel修改过的Rect的UILabel(起始位置相同)
  */
 - (UILabel *)resizeLabelHorizontal;
 
-/*
- * @brief 水平方向固定获取动态宽度的UILabel的方法
- * @return 原始UILabel修改过的Rect的UILabel(起始位置相同)
+/**
+ *  水平方向固定获取动态宽度的UILabel的方法
+ *
+ *  @return 原始UILabel修改过的Rect的UILabel(起始位置相同)
  */
 - (UILabel *)resizeLabelVertical;
 

@@ -12,6 +12,9 @@
 
 @end
 
+/**
+ *  get color from a hex string;
+ */
 @interface UIColor(HexString)
 
 + (UIColor *)hexStringToColor:(NSString *)stringToConvert;

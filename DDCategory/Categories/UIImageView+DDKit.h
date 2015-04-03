@@ -12,8 +12,16 @@
 
 @end
 
+
 @interface UIImageView (Placeholder)
 
+/**
+ *
+ *  set a web-cache imageView can use an scale placeholder image;
+ *
+ *  @param url         web image url
+ *  @param placeholder place holder image can scale
+ */
 - (void)sd_setImageWithURL:(NSURL *)url
      placeholderImageScale:(UIImage *)placeholder;
 
