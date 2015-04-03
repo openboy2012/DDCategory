@@ -11,3 +11,10 @@
 @interface UIImageView (DDKit)
 
 @end
+
+@interface UIImageView (Placeholder)
+
+- (void)sd_setImageWithURL:(NSURL *)url
+     placeholderImageScale:(UIImage *)placeholder;
+
+@end

@@ -10,6 +10,11 @@
 
 @interface UIViewController (DDKit)
 
+/**
+ *  instance a viewController as use the 'nitWithNibName:bundle:' method with the same name xib file
+ *
+ *  @return initlialized viewController object
+ */
 + (instancetype)loadWithNib;
 
 @end

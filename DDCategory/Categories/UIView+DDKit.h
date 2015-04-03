@@ -28,15 +28,50 @@ typedef NS_OPTIONS(NSUInteger, ViewSeparatorType) {
 
 @interface UIView (Separator)
 
+/**
+ *  add the separator line on the view
+ *
+ *  @param type view-separtor-type
+ */
 - (void)addSeparatorWithType:(ViewSeparatorType)type;
 
+/**
+ *  instance a horizontal line with the width
+ *
+ *  @param width line-width
+ *
+ *  @return a horizontal line imageView
+ */
 + (UIImageView *)instanceHorizontalLine:(CGFloat)width;
 
+/**
+ *  instance a horizontal line with the width & color
+ *
+ *  @param width line-width
+ *  @param color line-color
+ *
+ *  @return a horizontal line imageView
+ */
 + (UIImageView *)instanceHorizontalLine:(CGFloat)width andColor:(UIColor *)color;
 
+/**
+ *  instance a vertical line with the height
+ *
+ *  @param height line-height
+ *
+ *  @return a vertical line imageView
+ */
 + (UIImageView *)instanceVerticalLine:(CGFloat)height;
 
-+ (UIImageView *)instanceVerticalLine:(CGFloat)width andColor:(UIColor *)color;
+/**
+ *   instance a vertical line with the height & color
+ *
+ *  @param height line-height
+ *  @param color linet-color
+ *
+ *  @return a vertical line imageView
+ */
++ (UIImageView *)instanceVerticalLine:(CGFloat)height andColor:(UIColor *)color;
 
 
 @end
@@ -44,6 +79,11 @@ typedef NS_OPTIONS(NSUInteger, ViewSeparatorType) {
 
 @interface UIView (nib)
 
+/**
+ *  load a view from nib file
+ *
+ *  @return initlialized view object
+ */
 + (id)loadFromNIB;
 
 @end
@@ -61,5 +101,13 @@ typedef NS_OPTIONS(NSUInteger, ViewSeparatorType) {
 + (void)showDetailMessage:(NSString *)message;
 
 + (void)showDetailMessage:(NSString *)message andCarryView:(UIView *)carryView;
+
+@end
+
+@interface UIView (Screenshot)
+
+- (UIImage *)screenshotWithOffsetY:(CGFloat)deltaY;
+
+- (UIImage *)screenshot;
 
 @end

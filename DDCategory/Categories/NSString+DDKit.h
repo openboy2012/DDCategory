@@ -16,6 +16,8 @@
 
 + (NSString *)dateInfoFromDate:(NSDate *)date;
 
++ (NSString *)snsDateInfoFromDate:(NSDate *)date;
+
 @end
 
 @interface NSString (NSPredicate)
@@ -39,5 +41,11 @@
 @interface NSString (md5)
 
 - (NSString *)md5;
+
+@end
+
+@interface NSString (subString)
+
+- (NSString *)getSubStringBeginKey:(NSString *)bKey EndKey:(NSString *)eKey;
 
 @end

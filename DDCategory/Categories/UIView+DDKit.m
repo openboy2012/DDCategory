@@ -25,20 +25,24 @@
         case ViewSeparatorTypeVerticalSide:{
             UIImageView *topLine = [[self class] instanceHorizontalLine:self.frame.size.width andColor:color];
             [self addSubview:topLine];
+            topLine.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleWidth;
             UIImageView *bottomLine = [[self class] instanceHorizontalLine:self.frame.size.width andColor:color];
             bottomLine.frame = CGRectMake(0.0, self.frame.size.height - SeparatorWidth, 320.0, SeparatorWidth);
             [self addSubview:bottomLine];
+            bottomLine.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleWidth;
         }
             break;
         case ViewSeparatorTypeBottom:{
             UIImageView *bottomLine = [[self class] instanceHorizontalLine:self.frame.size.width andColor:color];
             bottomLine.frame = CGRectMake(0.0, self.frame.size.height - SeparatorWidth, 320.0, SeparatorWidth);
             [self addSubview:bottomLine];
+            bottomLine.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleWidth;
         }
             break;
         case ViewSeparatorTypeTop:{
             UIImageView *topLine = [[self class] instanceHorizontalLine:self.frame.size.width andColor:color];
             [self addSubview:topLine];
+            topLine.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleWidth;
         }
             break;
         default:
@@ -172,3 +176,31 @@ static char *hudKey;
 @end
 
 
+@implementation UIView (Screenshot)
+
+- (UIImage *)screenshot
+{
+    UIGraphicsBeginImageContextWithOptions(self.frame.size, NO, 0.0);
+    
+    [self.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *screenshot = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return screenshot;
+}
+
+- (UIImage *)screenshotWithOffsetY:(CGFloat)deltaY
+{
+    UIGraphicsBeginImageContextWithOptions(self.frame.size, NO, 0.0);
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    //  KEY: need to translate the context down to the current visible portion of the tablview
+    CGContextTranslateCTM(ctx, 0, deltaY);
+    [self.layer renderInContext:ctx];
+    UIImage *screenshot = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return screenshot;
+}
+
+
+@end
