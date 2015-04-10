@@ -105,9 +105,9 @@
 @interface NSString (md5)
 
 /**
- *  md5 encrpty method
+ *  md5 - encrypt method
  *
- *  @return md5 encrpty string
+ *  @return md5 encrypt string
  */
 - (NSString *)md5;
 
