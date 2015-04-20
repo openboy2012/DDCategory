@@ -27,14 +27,14 @@
             [self addSubview:topLine];
             topLine.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleWidth;
             UIImageView *bottomLine = [[self class] instanceHorizontalLine:self.frame.size.width andColor:color];
-            bottomLine.frame = CGRectMake(0.0, self.frame.size.height - SeparatorWidth, 320.0, SeparatorWidth);
+            bottomLine.frame = CGRectMake(0.0, self.frame.size.height - SeparatorWidth, bottomLine.frame.size.width, SeparatorWidth);
             [self addSubview:bottomLine];
             bottomLine.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleWidth;
         }
             break;
         case ViewSeparatorTypeBottom:{
             UIImageView *bottomLine = [[self class] instanceHorizontalLine:self.frame.size.width andColor:color];
-            bottomLine.frame = CGRectMake(0.0, self.frame.size.height - SeparatorWidth, 320.0, SeparatorWidth);
+            bottomLine.frame = CGRectMake(0.0, self.frame.size.height - SeparatorWidth, bottomLine.frame.size.width, SeparatorWidth);
             [self addSubview:bottomLine];
             bottomLine.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleWidth;
         }
