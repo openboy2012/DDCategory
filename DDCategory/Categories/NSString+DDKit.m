@@ -17,7 +17,7 @@
 
 + (NSString *)dateInfoFromDate:(NSDate *)date{
     NSString *returnString = @"";
-    NSTimeInterval time = abs([[NSDate date] timeIntervalSinceDate:date]);
+    NSTimeInterval time = fabs([[NSDate date] timeIntervalSinceDate:date]);
     if(time < 60)
         returnString = @"刚刚";
     else if(time >=60 && time < 3600)
@@ -35,7 +35,7 @@
 
 + (NSString *)snsDateInfoFromDate:(NSDate *)date{
     NSString *returnString = @"";
-    NSTimeInterval time = abs([[NSDate date] timeIntervalSinceDate:date]);
+    NSTimeInterval time = fabs([[NSDate date] timeIntervalSinceDate:date]);
     if(time < 60)
         returnString = @"刚刚";
     else if(time >=60 && time < 3600)
