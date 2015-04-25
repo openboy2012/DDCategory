@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FA0AFE71AEB9242002D2642 /* NSArray+DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FA0AFE51AEB9242002D2642 /* NSArray+DDKit.h */; };
+		2FA0AFE81AEB9242002D2642 /* NSArray+DDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA0AFE61AEB9242002D2642 /* NSArray+DDKit.m */; };
 		7A858D3E4BC54BEDD704E362 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F95AEF7A119DF799BFF1C8F6 /* libPods.a */; };
 		8E3D01FB1ABBC70C00805826 /* DDCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E3D01FA1ABBC70C00805826 /* DDCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8E3D02011ABBC70C00805826 /* DDCategory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E3D01F51ABBC70C00805826 /* DDCategory.framework */; };
@@ -45,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2FA0AFE51AEB9242002D2642 /* NSArray+DDKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+DDKit.h"; sourceTree = "<group>"; };
+		2FA0AFE61AEB9242002D2642 /* NSArray+DDKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+DDKit.m"; sourceTree = "<group>"; };
 		8E3D01F51ABBC70C00805826 /* DDCategory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DDCategory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E3D01F91ABBC70C00805826 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E3D01FA1ABBC70C00805826 /* DDCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCategory.h; sourceTree = "<group>"; };
@@ -184,6 +188,8 @@
 				8E3D02531ABBCA1D00805826 /* UIColor+DDKit.m */,
 				8E3D02561ABBCD8600805826 /* UILabel+DDKit.h */,
 				8E3D02571ABBCD8600805826 /* UILabel+DDKit.m */,
+				2FA0AFE51AEB9242002D2642 /* NSArray+DDKit.h */,
+				2FA0AFE61AEB9242002D2642 /* NSArray+DDKit.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -204,6 +210,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FA0AFE71AEB9242002D2642 /* NSArray+DDKit.h in Headers */,
 				8E3D02401ABBC7A400805826 /* NSString+DDKit.h in Headers */,
 				8E3D01FB1ABBC70C00805826 /* DDCategory.h in Headers */,
 				8E3D02501ABBCA0300805826 /* UISegmentedControl+DDKit.h in Headers */,
@@ -352,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E3D02491ABBC90D00805826 /* UIButton+DDKit.m in Sources */,
+				2FA0AFE81AEB9242002D2642 /* NSArray+DDKit.m in Sources */,
 				8E3D023D1ABBC75D00805826 /* UIViewController+DDKit.m in Sources */,
 				8E3D02451ABBC7E900805826 /* UIView+DDKit.m in Sources */,
 				8E3D02411ABBC7A400805826 /* NSString+DDKit.m in Sources */,
