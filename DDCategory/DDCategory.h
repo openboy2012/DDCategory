@@ -24,5 +24,6 @@ FOUNDATION_EXPORT const unsigned char DDCategoryVersionString[];
 #import <UILabel+DDKit.h>
 #import <UIColor+DDKit.h>
 #import <UIImageView+DDKit.h>
+#import <NSArray+DDKit.h>
 
 #import <NSString+DDKit.h>
