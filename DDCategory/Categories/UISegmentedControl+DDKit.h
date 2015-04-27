@@ -14,6 +14,8 @@
 
 @interface UISegmentedControl (Flatten)
 
+#if (defined(__IPHONE_OS_VERSION_MIN_REQUIRED) && __IPHONE_OS_VERSION_MIN_REQUIRED <= 60000)
+
 /**
  *  iOS6中使用UISegmentedControl 扁平化
  */
@@ -25,5 +27,7 @@
  *  @param selectedColor 选中颜色
  */
 - (void)flattenIniOS6:(UIColor *)selectedColor;
+
+#endif
 
 @end

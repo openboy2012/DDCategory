@@ -15,6 +15,7 @@
 
 @implementation UISegmentedControl (Flatten)
 
+#if (defined(__IPHONE_OS_VERSION_MIN_REQUIRED) && __IPHONE_OS_VERSION_MIN_REQUIRED <= 60000)
 //处理UISegmentedControl 在iOS6及以下的扁平化效果
 - (void)flattenIniOS6{
     [self flattenIniOS6:nil];
@@ -49,5 +50,5 @@
         
     }
 }
-
+#endif
 @end
