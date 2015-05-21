@@ -79,3 +79,34 @@
 }
 
 @end
+
+@implementation UIButton (Center)
+
+- (void)centerImageAndTitle:(float)spacing
+{
+    // get the size of the elements here for readability
+    CGSize imageSize = self.imageView.frame.size;
+    CGSize titleSize = [self.titleLabel.text sizeWithAttributes:@{NSFontAttributeName:self.titleLabel.font}];
+    
+    // check if the size.width is more than the frame.size.width
+    titleSize = titleSize.width > self.frame.size.width ? CGSizeMake(self.frame.size.width, titleSize.height):titleSize;
+    
+    // get the height they will take up as a unit
+    CGFloat totalHeight = (imageSize.height + titleSize.height + spacing);
+    
+    // raise the image and push it right to center it
+    self.imageEdgeInsets = UIEdgeInsetsMake(
+                                            - (totalHeight - imageSize.height), 0.0, 0.0, - titleSize.width - (titleSize.width/imageSize.width >=2 ));
+    
+    // lower the text and push it left to center it
+    self.titleEdgeInsets = UIEdgeInsetsMake(
+                                            0.0, - imageSize.width, - (totalHeight - titleSize.height), 0.0);
+}
+
+- (void)centerImageAndTitle
+{
+    const int DEFAULT_SPACING = 6.0f;
+    [self centerImageAndTitle:DEFAULT_SPACING];
+}
+
+@end

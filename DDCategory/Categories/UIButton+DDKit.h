@@ -39,3 +39,20 @@
 - (UIView *)showBadgeValue:(NSString *)strBadgeValue andPadding:(CGPoint)point;
 
 @end
+
+
+@interface UIButton (UIButtonExt)
+
+/**
+ *  set the title & image center in the button bounds
+ *
+ *  @param space title & image space
+ */
+- (void)centerImageAndTitle:(float)space;
+
+/**
+ *  default method
+ */
+- (void)centerImageAndTitle;
+
+@end
