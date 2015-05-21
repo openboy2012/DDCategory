@@ -202,5 +202,22 @@ static char *hudKey;
     return screenshot;
 }
 
+@end
+
+@implementation UIView (CornerRadius)
+
+- (void)addCornerRadius:(CGFloat)radius{
+    self.layer.cornerRadius = radius;
+    self.clipsToBounds = YES;
+}
+
+- (void)addCornerRadius:(CGFloat)radius andColor:(UIColor *)lineColor{
+    self.layer.cornerRadius = radius;
+    self.clipsToBounds = YES;
+    if(lineColor){
+        self.layer.borderColor = lineColor.CGColor;
+        self.layer.borderWidth = SeparatorWidth;
+    }
+}
 
 @end

@@ -111,3 +111,11 @@ typedef NS_OPTIONS(NSUInteger, ViewSeparatorType) {
 - (UIImage *)screenshot;
 
 @end
+
+@interface UIView(CornerRadius)
+
+- (void)addCornerRadius:(CGFloat)radius;
+
+- (void)addCornerRadius:(CGFloat)radius andColor:(UIColor *)lineColor;
+
+@end
