@@ -12,7 +12,6 @@
 		7A858D3E4BC54BEDD704E362 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F95AEF7A119DF799BFF1C8F6 /* libPods.a */; };
 		8E3D01FB1ABBC70C00805826 /* DDCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E3D01FA1ABBC70C00805826 /* DDCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8E3D02011ABBC70C00805826 /* DDCategory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E3D01F51ABBC70C00805826 /* DDCategory.framework */; };
-		8E3D02081ABBC70C00805826 /* DDCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3D02071ABBC70C00805826 /* DDCategoryTests.m */; };
 		8E3D022E1ABBC75D00805826 /* UIImage+DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E3D02181ABBC75D00805826 /* UIImage+DDKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8E3D022F1ABBC75D00805826 /* UIImage+DDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3D02191ABBC75D00805826 /* UIImage+DDKit.m */; };
 		8E3D023C1ABBC75D00805826 /* UIViewController+DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E3D02261ABBC75D00805826 /* UIViewController+DDKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -55,8 +54,6 @@
 		8E3D01F91ABBC70C00805826 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E3D01FA1ABBC70C00805826 /* DDCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCategory.h; sourceTree = "<group>"; };
 		8E3D02001ABBC70C00805826 /* DDCategoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DDCategoryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E3D02061ABBC70C00805826 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8E3D02071ABBC70C00805826 /* DDCategoryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDCategoryTests.m; sourceTree = "<group>"; };
 		8E3D02181ABBC75D00805826 /* UIImage+DDKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+DDKit.h"; sourceTree = "<group>"; };
 		8E3D02191ABBC75D00805826 /* UIImage+DDKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+DDKit.m"; sourceTree = "<group>"; };
 		8E3D02261ABBC75D00805826 /* UIViewController+DDKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DDKit.h"; sourceTree = "<group>"; };
@@ -119,7 +116,6 @@
 				8E3D025A1ABBE49200805826 /* DDCategory.podspec */,
 				8E3D025C1ABBEA9B00805826 /* LICENSE */,
 				8E3D01F71ABBC70C00805826 /* DDCategory */,
-				8E3D02041ABBC70C00805826 /* DDCategoryTests */,
 				8E3D01F61ABBC70C00805826 /* Products */,
 				C85386C874745940B61F72DE /* Pods */,
 				1056E353120A4B7A5E94FE30 /* Frameworks */,
@@ -149,23 +145,6 @@
 			isa = PBXGroup;
 			children = (
 				8E3D01F91ABBC70C00805826 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		8E3D02041ABBC70C00805826 /* DDCategoryTests */ = {
-			isa = PBXGroup;
-			children = (
-				8E3D02071ABBC70C00805826 /* DDCategoryTests.m */,
-				8E3D02051ABBC70C00805826 /* Supporting Files */,
-			);
-			path = DDCategoryTests;
-			sourceTree = "<group>";
-		};
-		8E3D02051ABBC70C00805826 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				8E3D02061ABBC70C00805826 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -383,7 +362,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E3D02081ABBC70C00805826 /* DDCategoryTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

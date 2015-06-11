@@ -126,3 +126,10 @@
 - (NSString *)getSubStringBeginKey:(NSString *)bKey EndKey:(NSString *)eKey;
 
 @end
+
+@interface NSString (DDPrice)
+
++ (NSString *)formatPrice:(NSNumber *)price;
+
+@end
+
