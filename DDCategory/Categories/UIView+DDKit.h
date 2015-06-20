@@ -36,6 +36,14 @@ typedef NS_OPTIONS(NSUInteger, ViewSeparatorType) {
 - (void)addSeparatorWithType:(ViewSeparatorType)type;
 
 /**
+ *  add the separator line on the view
+ *
+ *  @param type  view-separtor-type
+ *  @param color line-color
+ */
+- (void)addSeparatorWithType:(ViewSeparatorType)type withColor:(UIColor *)color;
+
+/**
  *  instance a horizontal line with the width
  *
  *  @param width line-width

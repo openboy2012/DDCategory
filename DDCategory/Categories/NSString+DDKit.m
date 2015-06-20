@@ -141,7 +141,7 @@
     price = @(price.floatValue);
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     formatter.numberStyle = NSNumberFormatterDecimalStyle;
-    formatter.positiveFormat = @"###,##0.00;";
+//    formatter.positiveFormat = @"###,##0.00;";
     return [NSString stringWithFormat:@"￥%@",[formatter stringFromNumber:price]];
 }
 
