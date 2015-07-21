@@ -16,31 +16,31 @@
 
 @implementation UIView (Separator)
 
-- (void)addSeparatorWithType:(ViewSeparatorType)type{
-    [self addSeparatorWithType:type withColor:nil];
+- (void)dd_addSeparatorWithType:(ViewSeparatorType)type{
+    [self dd_addSeparatorWithType:type withColor:nil];
 }
 
-- (void)addSeparatorWithType:(ViewSeparatorType)type withColor:(UIColor *)color{
+- (void)dd_addSeparatorWithType:(ViewSeparatorType)type withColor:(UIColor *)color{
     switch (type) {
         case ViewSeparatorTypeVerticalSide:{
-            UIImageView *topLine = [[self class] instanceHorizontalLine:self.frame.size.width andColor:color];
+            UIImageView *topLine = [[self class] dd_instanceHorizontalLine:self.frame.size.width andColor:color];
             [self addSubview:topLine];
             topLine.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleWidth;
-            UIImageView *bottomLine = [[self class] instanceHorizontalLine:self.frame.size.width andColor:color];
+            UIImageView *bottomLine = [[self class] dd_instanceHorizontalLine:self.frame.size.width andColor:color];
             bottomLine.frame = CGRectMake(0.0, self.frame.size.height - SeparatorWidth, bottomLine.frame.size.width, SeparatorWidth);
             [self addSubview:bottomLine];
             bottomLine.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleWidth;
         }
             break;
         case ViewSeparatorTypeBottom:{
-            UIImageView *bottomLine = [[self class] instanceHorizontalLine:self.frame.size.width andColor:color];
+            UIImageView *bottomLine = [[self class] dd_instanceHorizontalLine:self.frame.size.width andColor:color];
             bottomLine.frame = CGRectMake(0.0, self.frame.size.height - SeparatorWidth, bottomLine.frame.size.width, SeparatorWidth);
             [self addSubview:bottomLine];
             bottomLine.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleWidth;
         }
             break;
         case ViewSeparatorTypeTop:{
-            UIImageView *topLine = [[self class] instanceHorizontalLine:self.frame.size.width andColor:color];
+            UIImageView *topLine = [[self class] dd_instanceHorizontalLine:self.frame.size.width andColor:color];
             [self addSubview:topLine];
             topLine.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleWidth;
         }
@@ -51,22 +51,22 @@
 }
 
 
-+ (UIImageView *)instanceHorizontalLine:(CGFloat)width{
-    return [self instanceHorizontalLine:width andColor:[UIColor lightGrayColor]];
++ (UIImageView *)dd_instanceHorizontalLine:(CGFloat)width{
+    return [self dd_instanceHorizontalLine:width andColor:[UIColor lightGrayColor]];
 }
 
 
-+ (UIImageView *)instanceVerticalLine:(CGFloat)height{
-    return [self instanceVerticalLine:height andColor:[UIColor lightGrayColor]];
++ (UIImageView *)dd_instanceVerticalLine:(CGFloat)height{
+    return [self dd_instanceVerticalLine:height andColor:[UIColor lightGrayColor]];
 }
 
-+ (UIImageView *)instanceHorizontalLine:(CGFloat)width andColor:(UIColor *)color{
++ (UIImageView *)dd_instanceHorizontalLine:(CGFloat)width andColor:(UIColor *)color{
     UIImageView *line = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, width, SeparatorWidth)];
     line.backgroundColor = color?:[UIColor lightGrayColor];
     return line;
 }
 
-+ (UIImageView *)instanceVerticalLine:(CGFloat)height andColor:(UIColor *)color{
++ (UIImageView *)dd_instanceVerticalLine:(CGFloat)height andColor:(UIColor *)color{
     UIImageView *line = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, SeparatorWidth, height)];
     line.backgroundColor = color?:[UIColor lightGrayColor];
     return line;
@@ -80,7 +80,7 @@
     return [self description];
 }
 
-+ (id)loadFromNIB {
++ (id)dd_loadFromNIB {
     Class kClass = [self class];
     NSString *nibName = [self nibName];
     
@@ -121,7 +121,7 @@ static char *hudKey;
 
 #pragma mark - methods
 
-- (void)showMessageHUD:(NSString *)message{
+- (void)dd_showMessageHUD:(NSString *)message{
     if(!self.hud)
         self.hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
     self.hud.mode = MBProgressHUDModeText;
@@ -131,23 +131,23 @@ static char *hudKey;
     [self.hud show:YES];
 }
 
-- (void)removeHUD{
+- (void)dd_removeHUD{
     [self.hud hide:YES];
     self.hud = nil;
 }
 
 #pragma mark - static methods
 
-+ (void)showMessage:(NSString *)message{
-    [self showMessage:message andCarryView:nil];
++ (void)dd_showMessage:(NSString *)message{
+    [self dd_showMessage:message onParentView:nil];
 }
 
-+ (void)showMessage:(NSString *)message andCarryView:(UIView *)carryView{
-    if(!carryView){
++ (void)dd_showMessage:(NSString *)message onParentView:(UIView *)parentView{
+    if(!parentView){
         UIWindow *topWindows = [[[UIApplication sharedApplication] windows] lastObject];
-        carryView = topWindows;
+        parentView = topWindows;
     }
-    MBProgressHUD *messageHud = [MBProgressHUD showHUDAddedTo:carryView animated:YES];
+    MBProgressHUD *messageHud = [MBProgressHUD showHUDAddedTo:parentView animated:YES];
     messageHud.mode = MBProgressHUDModeText;
     messageHud.labelText = [message isKindOfClass:[NSString class]]?message:@"";
     messageHud.yOffset = -50.0f;
@@ -155,16 +155,16 @@ static char *hudKey;
     [messageHud hide:YES afterDelay:1.0f];
 }
 
-+ (void)showDetailMessage:(NSString *)message{
-    [self showDetailMessage:message andCarryView:nil];
++ (void)dd_showDetailMessage:(NSString *)message{
+    [self dd_showDetailMessage:message onParentView:nil];
 }
 
-+ (void)showDetailMessage:(NSString *)message andCarryView:(UIView *)carryView{
-    if(!carryView){
++ (void)dd_showDetailMessage:(NSString *)message onParentView:(UIView *)parentView{
+    if(!parentView){
         UIWindow *topWindows = [[[UIApplication sharedApplication] windows] lastObject];
-        carryView = topWindows;
+        parentView = topWindows;
     }
-    MBProgressHUD *messageHud = [MBProgressHUD showHUDAddedTo:carryView animated:YES];
+    MBProgressHUD *messageHud = [MBProgressHUD showHUDAddedTo:parentView animated:YES];
     messageHud.mode = MBProgressHUDModeText;
     messageHud.labelText = @"提示";
     messageHud.detailsLabelText = [message isKindOfClass:[NSString class]]?message:@"";
@@ -178,7 +178,7 @@ static char *hudKey;
 
 @implementation UIView (Screenshot)
 
-- (UIImage *)screenshot
+- (UIImage *)dd_screenshot
 {
     UIGraphicsBeginImageContextWithOptions(self.frame.size, NO, 0.0);
     
@@ -189,7 +189,7 @@ static char *hudKey;
     return screenshot;
 }
 
-- (UIImage *)screenshotWithOffsetY:(CGFloat)deltaY
+- (UIImage *)dd_screenshotWithOffsetY:(CGFloat)deltaY
 {
     UIGraphicsBeginImageContextWithOptions(self.frame.size, NO, 0.0);
     CGContextRef ctx = UIGraphicsGetCurrentContext();
@@ -206,12 +206,12 @@ static char *hudKey;
 
 @implementation UIView (CornerRadius)
 
-- (void)addCornerRadius:(CGFloat)radius{
+- (void)dd_addCornerRadius:(CGFloat)radius{
     self.layer.cornerRadius = radius;
     self.clipsToBounds = YES;
 }
 
-- (void)addCornerRadius:(CGFloat)radius andColor:(UIColor *)lineColor{
+- (void)dd_addCornerRadius:(CGFloat)radius andLineColor:(UIColor *)lineColor{
     self.layer.cornerRadius = radius;
     self.clipsToBounds = YES;
     if(lineColor){

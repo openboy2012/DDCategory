@@ -11,7 +11,6 @@
 		2FA0AFE81AEB9242002D2642 /* NSArray+DDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA0AFE61AEB9242002D2642 /* NSArray+DDKit.m */; };
 		7A858D3E4BC54BEDD704E362 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F95AEF7A119DF799BFF1C8F6 /* libPods.a */; };
 		8E3D01FB1ABBC70C00805826 /* DDCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E3D01FA1ABBC70C00805826 /* DDCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8E3D02011ABBC70C00805826 /* DDCategory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E3D01F51ABBC70C00805826 /* DDCategory.framework */; };
 		8E3D022E1ABBC75D00805826 /* UIImage+DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E3D02181ABBC75D00805826 /* UIImage+DDKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8E3D022F1ABBC75D00805826 /* UIImage+DDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3D02191ABBC75D00805826 /* UIImage+DDKit.m */; };
 		8E3D023C1ABBC75D00805826 /* UIViewController+DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E3D02261ABBC75D00805826 /* UIViewController+DDKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -37,23 +36,12 @@
 		CA85E4DC1B05B50B00B43ADA /* NSDate+DDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CA85E4DA1B05B50B00B43ADA /* NSDate+DDKit.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		8E3D02021ABBC70C00805826 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8E3D01EC1ABBC70C00805826 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8E3D01F41ABBC70C00805826;
-			remoteInfo = DDCategory;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		2FA0AFE51AEB9242002D2642 /* NSArray+DDKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+DDKit.h"; sourceTree = "<group>"; };
 		2FA0AFE61AEB9242002D2642 /* NSArray+DDKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+DDKit.m"; sourceTree = "<group>"; };
 		8E3D01F51ABBC70C00805826 /* DDCategory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DDCategory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E3D01F91ABBC70C00805826 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E3D01FA1ABBC70C00805826 /* DDCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCategory.h; sourceTree = "<group>"; };
-		8E3D02001ABBC70C00805826 /* DDCategoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DDCategoryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E3D02181ABBC75D00805826 /* UIImage+DDKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+DDKit.h"; sourceTree = "<group>"; };
 		8E3D02191ABBC75D00805826 /* UIImage+DDKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+DDKit.m"; sourceTree = "<group>"; };
 		8E3D02261ABBC75D00805826 /* UIViewController+DDKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DDKit.h"; sourceTree = "<group>"; };
@@ -91,14 +79,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8E3D01FD1ABBC70C00805826 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8E3D02011ABBC70C00805826 /* DDCategory.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -126,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				8E3D01F51ABBC70C00805826 /* DDCategory.framework */,
-				8E3D02001ABBC70C00805826 /* DDCategoryTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -234,24 +213,6 @@
 			productReference = 8E3D01F51ABBC70C00805826 /* DDCategory.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		8E3D01FF1ABBC70C00805826 /* DDCategoryTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8E3D020E1ABBC70C00805826 /* Build configuration list for PBXNativeTarget "DDCategoryTests" */;
-			buildPhases = (
-				8E3D01FC1ABBC70C00805826 /* Sources */,
-				8E3D01FD1ABBC70C00805826 /* Frameworks */,
-				8E3D01FE1ABBC70C00805826 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8E3D02031ABBC70C00805826 /* PBXTargetDependency */,
-			);
-			name = DDCategoryTests;
-			productName = DDCategoryTests;
-			productReference = 8E3D02001ABBC70C00805826 /* DDCategoryTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -262,9 +223,6 @@
 				ORGANIZATIONNAME = DDKit;
 				TargetAttributes = {
 					8E3D01F41ABBC70C00805826 = {
-						CreatedOnToolsVersion = 6.2;
-					};
-					8E3D01FF1ABBC70C00805826 = {
 						CreatedOnToolsVersion = 6.2;
 					};
 				};
@@ -282,7 +240,6 @@
 			projectRoot = "";
 			targets = (
 				8E3D01F41ABBC70C00805826 /* DDCategory */,
-				8E3D01FF1ABBC70C00805826 /* DDCategoryTests */,
 			);
 		};
 /* End PBXProject section */
@@ -294,13 +251,6 @@
 			files = (
 				8E3D025D1ABBEA9B00805826 /* LICENSE in Resources */,
 				8E3D025B1ABBE49200805826 /* DDCategory.podspec in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8E3D01FE1ABBC70C00805826 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,22 +308,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8E3D01FC1ABBC70C00805826 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		8E3D02031ABBC70C00805826 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8E3D01F41ABBC70C00805826 /* DDCategory */;
-			targetProxy = 8E3D02021ABBC70C00805826 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		8E3D02091ABBC70C00805826 /* Debug */ = {
@@ -494,36 +429,6 @@
 			};
 			name = Release;
 		};
-		8E3D020F1ABBC70C00805826 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = DDCategoryTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		8E3D02101ABBC70C00805826 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = DDCategoryTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -541,15 +446,6 @@
 			buildConfigurations = (
 				8E3D020C1ABBC70C00805826 /* Debug */,
 				8E3D020D1ABBC70C00805826 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8E3D020E1ABBC70C00805826 /* Build configuration list for PBXNativeTarget "DDCategoryTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8E3D020F1ABBC70C00805826 /* Debug */,
-				8E3D02101ABBC70C00805826 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

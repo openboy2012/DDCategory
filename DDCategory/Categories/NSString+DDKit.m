@@ -15,7 +15,7 @@
 
 @implementation NSString (NSDate)
 
-+ (NSString *)dateInfoFromDate:(NSDate *)date{
++ (NSString *)dd_formatInfoFromDate:(NSDate *)date{
     NSString *returnString = @"";
     NSTimeInterval time = fabs([[NSDate date] timeIntervalSinceDate:date]);
     if(time < 60)
@@ -33,7 +33,7 @@
     return returnString;
 }
 
-+ (NSString *)snsDateInfoFromDate:(NSDate *)date{
++ (NSString *)dd_formatDateFromDate:(NSDate *)date{
     NSString *returnString = @"";
     NSTimeInterval time = fabs([[NSDate date] timeIntervalSinceDate:date]);
     if(time < 60)
@@ -57,31 +57,31 @@
 
 @implementation NSString (NSPredicate)
 
-+ (BOOL)isEmail:(NSString *)input{
++ (BOOL)dd_checkEmail:(NSString *)input{
     return [[self class] input:input andRegex:@"\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*"];
 }
 
-+ (BOOL)isChineseName:(NSString *)input{
++ (BOOL)dd_checkChineseName:(NSString *)input{
     return [[self class] input:input andRegex:@"^[\u4E00-\uFA29]{2,8}$"];
 }
 
-+ (BOOL)isPhoneNum:(NSString *)input{
++ (BOOL)dd_checkPhoneNumber:(NSString *)input{
     return [[self class] input:input andRegex:@"^(([0\\+]\\d{2,3}-?)?(0\\d{2,3})-?)?(\\d{7,8})"];
 }
 
-+ (BOOL)isMobileNum:(NSString *)input{
++ (BOOL)dd_checkMobileNumber:(NSString *)input{
     return [[self class] input:input andRegex:@"^1\\d{10}$"];
 }
 
-+ (BOOL)isValidateCode:(NSString *)input{
++ (BOOL)dd_checkValidateCode:(NSString *)input{
     return [[self class] input:input andRegex:@"(\\d{6})"];
 }
 
-+ (BOOL)checkPassword:(NSString *)input{
++ (BOOL)dd_checkPassword:(NSString *)input{
     return [[self class] input:input andRegex:@"^\\w{6,20}"];
 }
 
-+ (BOOL)checkWithDrawMoney:(NSString *)input{
++ (BOOL)dd_checkWithDrawMoney:(NSString *)input{
     return [[self class] input:input andRegex:@"^[0-9]{3,}|[2-9][0-9]$"];
 }
 
@@ -94,7 +94,7 @@
 
 @implementation NSString(md5)
 
-- (NSString *)md5
+- (NSString *)dd_md5
 {
     const char *cStr = [self UTF8String];
     unsigned char result[CC_MD5_DIGEST_LENGTH];
@@ -112,7 +112,7 @@
 
 @implementation NSString (subString)
 
-- (NSString *)getSubStringBeginKey:(NSString *)bKey EndKey:(NSString *)eKey{
+- (NSString *)dd_getSubStringBeginKey:(NSString *)bKey EndKey:(NSString *)eKey{
     if(bKey && eKey){
         NSRange rangeBegin = [self rangeOfString:bKey];
         NSRange rangeEnd = [self rangeOfString:eKey];
@@ -137,7 +137,7 @@
 
 @implementation NSString (DDPrice)
 
-+ (NSString *)formatPrice:(NSNumber *)price{
++ (NSString *)dd_formatPrice:(NSNumber *)price{
     price = @(price.floatValue);
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     formatter.numberStyle = NSNumberFormatterDecimalStyle;

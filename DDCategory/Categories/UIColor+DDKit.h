@@ -17,6 +17,13 @@
  */
 @interface UIColor(HexString)
 
-+ (UIColor *)hexStringToColor:(NSString *)stringToConvert;
+/**
+ *  Convert hex color string into UIColor
+ *
+ *  @param stringToConvert hex color string
+ *
+ *  @return UIColor
+ */
++ (UIColor *)dd_hexStringToColor:(NSString *)stringToConvert;
 
 @end

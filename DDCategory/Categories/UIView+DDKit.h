@@ -33,7 +33,7 @@ typedef NS_OPTIONS(NSUInteger, ViewSeparatorType) {
  *
  *  @param type view-separtor-type
  */
-- (void)addSeparatorWithType:(ViewSeparatorType)type;
+- (void)dd_addSeparatorWithType:(ViewSeparatorType)type;
 
 /**
  *  add the separator line on the view
@@ -41,7 +41,7 @@ typedef NS_OPTIONS(NSUInteger, ViewSeparatorType) {
  *  @param type  view-separtor-type
  *  @param color line-color
  */
-- (void)addSeparatorWithType:(ViewSeparatorType)type withColor:(UIColor *)color;
+- (void)dd_addSeparatorWithType:(ViewSeparatorType)type withColor:(UIColor *)color;
 
 /**
  *  instance a horizontal line with the width
@@ -50,7 +50,7 @@ typedef NS_OPTIONS(NSUInteger, ViewSeparatorType) {
  *
  *  @return a horizontal line imageView
  */
-+ (UIImageView *)instanceHorizontalLine:(CGFloat)width;
++ (UIImageView *)dd_instanceHorizontalLine:(CGFloat)width;
 
 /**
  *  instance a horizontal line with the width & color
@@ -60,7 +60,7 @@ typedef NS_OPTIONS(NSUInteger, ViewSeparatorType) {
  *
  *  @return a horizontal line imageView
  */
-+ (UIImageView *)instanceHorizontalLine:(CGFloat)width andColor:(UIColor *)color;
++ (UIImageView *)dd_instanceHorizontalLine:(CGFloat)width andColor:(UIColor *)color;
 
 /**
  *  instance a vertical line with the height
@@ -69,7 +69,7 @@ typedef NS_OPTIONS(NSUInteger, ViewSeparatorType) {
  *
  *  @return a vertical line imageView
  */
-+ (UIImageView *)instanceVerticalLine:(CGFloat)height;
++ (UIImageView *)dd_instanceVerticalLine:(CGFloat)height;
 
 /**
  *   instance a vertical line with the height & color
@@ -79,7 +79,7 @@ typedef NS_OPTIONS(NSUInteger, ViewSeparatorType) {
  *
  *  @return a vertical line imageView
  */
-+ (UIImageView *)instanceVerticalLine:(CGFloat)height andColor:(UIColor *)color;
++ (UIImageView *)dd_instanceVerticalLine:(CGFloat)height andColor:(UIColor *)color;
 
 
 @end
@@ -92,38 +92,91 @@ typedef NS_OPTIONS(NSUInteger, ViewSeparatorType) {
  *
  *  @return initlialized view object
  */
-+ (id)loadFromNIB;
++ (id)dd_loadFromNIB;
 
 @end
 
 @interface UIView (MBProgressHUD)
 
-- (void)showMessageHUD:(NSString *)message;
+/**
+ *  show only text HUD View
+ *
+ *  @param message message text
+ */
+- (void)dd_showMessageHUD:(NSString *)message;
 
-- (void)removeHUD;
+/**
+ *  remove the HUD
+ */
+- (void)dd_removeHUD;
 
-+ (void)showMessage:(NSString *)message;
+/**
+ *  show only text HUD View with class method
+ *
+ *  @param message message text
+ */
++ (void)dd_showMessage:(NSString *)message;
 
-+ (void)showMessage:(NSString *)message andCarryView:(UIView *)carryView;
+/**
+ *  show only the HUD View on any parentView
+ *
+ *  @param message   message text
+ *  @param parentView parentView
+ */
++ (void)dd_showMessage:(NSString *)message onParentView:(UIView *)parentView;
 
-+ (void)showDetailMessage:(NSString *)message;
+/**
+ *  show detail text HUD View
+ *
+ *  @param message message text
+ */
++ (void)dd_showDetailMessage:(NSString *)message;
 
-+ (void)showDetailMessage:(NSString *)message andCarryView:(UIView *)carryView;
+/**
+ *  show detail text HUD View on any parentView
+ *
+ *  @param message   message text
+ *  @param parentView parentView
+ */
++ (void)dd_showDetailMessage:(NSString *)message onParentView:(UIView *)parentView;
 
 @end
 
 @interface UIView (Screenshot)
 
-- (UIImage *)screenshotWithOffsetY:(CGFloat)deltaY;
+/**
+ *  screenshot with Y offset
+ *
+ *  @param deltaY offset Y
+ *
+ *  @return image
+ */
+- (UIImage *)dd_screenshotWithOffsetY:(CGFloat)deltaY;
 
-- (UIImage *)screenshot;
+/**
+ *  screentshot all the view
+ *
+ *  @return image
+ */
+- (UIImage *)dd_screenshot;
 
 @end
 
 @interface UIView(CornerRadius)
 
-- (void)addCornerRadius:(CGFloat)radius;
+/**
+ *  add corner radius layer on the view
+ *
+ *  @param radius radius width
+ */
+- (void)dd_addCornerRadius:(CGFloat)radius;
 
-- (void)addCornerRadius:(CGFloat)radius andColor:(UIColor *)lineColor;
+/**
+ *  add corner radius layer on the view with line color
+ *
+ *  @param radius    radius width
+ *  @param lineColor line color
+ */
+- (void)dd_addCornerRadius:(CGFloat)radius andLineColor:(UIColor *)lineColor;
 
 @end

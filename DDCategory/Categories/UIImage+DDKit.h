@@ -18,6 +18,6 @@
  *
  *  @return created image 
  */
-+ (UIImage *)createImageWithCGSize:(CGSize)size andColor:(UIColor *)color;
++ (UIImage *)dd_createImageWithCGSize:(CGSize)size andColor:(UIColor *)color;
 
 @end

@@ -10,7 +10,7 @@
 
 @implementation UIViewController (DDKit)
 
-+ (instancetype)loadWithNib{
++ (instancetype)dd_loadWithNib{
     return [[[self class] alloc] initWithNibName:[self description] bundle:nil];
 }
 

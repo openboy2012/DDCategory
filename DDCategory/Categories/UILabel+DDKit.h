@@ -19,9 +19,9 @@
  *
  *  @return calculated height
  */
-+ (CGFloat)heightOfText:(NSString *)text
-               fontSize:(CGFloat)fontSize
-        constraintWidth:(CGFloat)width;
++ (CGFloat)dd_heightOfText:(NSString *)text
+                  fontSize:(CGFloat)fontSize
+           constraintWidth:(CGFloat)width;
 
 /**
  *  calculate the text height with the systemFontSize & constrain width then return a minimum height
@@ -33,10 +33,10 @@
  *
  *  @return calculated height with the minimum height
  */
-+ (CGFloat)heightOfText:(NSString *)text
-               fontSize:(CGFloat)fontSize
-        constraintWidth:(CGFloat)width
-          minimumHeight:(CGFloat)height;
++ (CGFloat)dd_heightOfText:(NSString *)text
+                  fontSize:(CGFloat)fontSize
+           constraintWidth:(CGFloat)width
+             minimumHeight:(CGFloat)height;
 
 /**
  *  calculate the text height with the font & constrain width then return a minimum height
@@ -48,10 +48,10 @@
  *
  *  @return calculated height with the minimum height
  */
-+ (CGFloat)heightOfText:(NSString *)text
-                   font:(UIFont *)font
-        constraintWidth:(CGFloat)width
-          minimumHeight:(CGFloat)height;
++ (CGFloat)dd_heightOfText:(NSString *)text
+                      font:(UIFont *)font
+           constraintWidth:(CGFloat)width
+             minimumHeight:(CGFloat)height;
 
 @end
 
@@ -62,14 +62,14 @@
  *
  * @return 原始UILabel修改过的Rect的UILabel(起始位置相同)
  */
-- (UILabel *)resizeLabelHorizontal;
+- (UILabel *)dd_resizeLabelHorizontal;
 
 /**
  *  水平方向固定获取动态宽度的UILabel的方法
  *
  *  @return 原始UILabel修改过的Rect的UILabel(起始位置相同)
  */
-- (UILabel *)resizeLabelVertical;
+- (UILabel *)dd_resizeLabelVertical;
 
 /**
  *  垂直方向固定获取动态宽度的UILabel的方法
@@ -78,7 +78,7 @@
  *
  *  @return 原始UILabel修改过的Rect的UILabel(起始位置相同)
  */
-- (UILabel *)resizeLabelHorizontal:(CGFloat)minimumWidth;
+- (UILabel *)dd_resizeLabelHorizontal:(CGFloat)minimumWidth;
 
 /**
  *  水平方向固定获取动态宽度的UILabel的方法
@@ -87,6 +87,6 @@
  *
  *  @return 原始UILabel修改过的Rect的UILabel(起始位置相同)
  */
-- (UILabel *)resizeLabelVertical:(CGFloat)minimumHeigh;
+- (UILabel *)dd_resizeLabelVertical:(CGFloat)minimumHeigh;
 
 @end

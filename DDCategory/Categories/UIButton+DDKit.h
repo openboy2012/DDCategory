@@ -17,7 +17,7 @@
 /**
  *  remove the badge value
  */
-- (void)removeBadgeValue;
+- (void)dd_removeBadgeValue;
 
 /**
  *  add a badge value view on the button
@@ -26,7 +26,7 @@
  *
  *  @return badge value view
  */
-- (UIView *)showBadgeValue:(NSString *)strBadgeValue;
+- (UIView *)dd_showBadgeValue:(NSString *)strBadgeValue;
 
 /**
  *  add a badage value view
@@ -36,7 +36,7 @@
  *
  *  @return badge value view
  */
-- (UIView *)showBadgeValue:(NSString *)strBadgeValue andPadding:(CGPoint)point;
+- (UIView *)dd_showBadgeValue:(NSString *)strBadgeValue andPadding:(CGPoint)point;
 
 @end
 
@@ -48,11 +48,11 @@
  *
  *  @param space title & image space
  */
-- (void)centerImageAndTitle:(float)space;
+- (void)dd_centerImageAndTitle:(float)space;
 
 /**
  *  default method
  */
-- (void)centerImageAndTitle;
+- (void)dd_centerImageAndTitle;
 
 @end

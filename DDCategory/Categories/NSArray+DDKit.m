@@ -10,7 +10,7 @@
 
 @implementation NSArray (DDKit)
 
-- (id)objectAtIndexCheck:(NSUInteger)index{
+- (id)dd_objectAtIndex:(NSUInteger)index{
     if (index >= [self count]) {
         return nil;
     }

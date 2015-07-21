@@ -17,6 +17,6 @@
  *
  *  @return return object in array
  */
-- (id)objectAtIndexCheck:(NSUInteger)index;
+- (id)dd_objectAtIndex:(NSUInteger)index;
 
 @end

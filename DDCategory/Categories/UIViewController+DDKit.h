@@ -15,6 +15,6 @@
  *
  *  @return initlialized viewController object
  */
-+ (instancetype)loadWithNib;
++ (instancetype)dd_loadWithNib;
 
 @end

@@ -10,7 +10,7 @@
 
 @implementation UIImage (DDKit)
 
-+ (UIImage *)createImageWithCGSize:(CGSize)size andColor:(UIColor *)color{
++ (UIImage *)dd_createImageWithCGSize:(CGSize)size andColor:(UIColor *)color{
     CGSize imageSize = size;
     UIGraphicsBeginImageContextWithOptions(imageSize, 0, [UIScreen mainScreen].scale);
     [color set];

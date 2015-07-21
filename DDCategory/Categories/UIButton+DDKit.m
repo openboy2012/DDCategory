@@ -14,7 +14,7 @@
 
 @implementation UIButton (BadgeView)
 
-- (UIView *)showBadgeValue:(NSString *)strBadgeValue
+- (UIView *)dd_showBadgeValue:(NSString *)strBadgeValue
 {
     UITabBar *tabBar = [[UITabBar alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
     UITabBarItem *item = [[UITabBarItem alloc] initWithTitle:@"" image:nil tag:0];
@@ -39,7 +39,7 @@
     return nil;
 }
 
-- (void)removeBadgeValue
+- (void)dd_removeBadgeValue
 {
     //
     for (UIView *subview in self.subviews) {
@@ -52,9 +52,9 @@
     }
 }
 
-- (UIView *)showBadgeValue:(NSString *)strBadgeValue andPadding:(CGPoint)point
+- (UIView *)dd_showBadgeValue:(NSString *)strBadgeValue andPadding:(CGPoint)point
 {
-    [self removeBadgeValue];
+    [self dd_removeBadgeValue];
     UITabBar *tabBar = [[UITabBar alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
     UITabBarItem *item = [[UITabBarItem alloc] initWithTitle:@"" image:nil tag:0];
     item.badgeValue = strBadgeValue;
@@ -82,7 +82,7 @@
 
 @implementation UIButton (Center)
 
-- (void)centerImageAndTitle:(float)spacing
+- (void)dd_centerImageAndTitle:(float)spacing
 {
     // get the size of the elements here for readability
     CGSize imageSize = self.imageView.frame.size;
@@ -103,10 +103,10 @@
                                             0.0, - imageSize.width, - (totalHeight - titleSize.height), 0.0);
 }
 
-- (void)centerImageAndTitle
+- (void)dd_centerImageAndTitle
 {
     const int DEFAULT_SPACING = 6.0f;
-    [self centerImageAndTitle:DEFAULT_SPACING];
+    [self dd_centerImageAndTitle:DEFAULT_SPACING];
 }
 
 @end

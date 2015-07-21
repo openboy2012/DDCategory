@@ -21,7 +21,7 @@
  *
  *  @return a date info string
  */
-+ (NSString *)dateInfoFromDate:(NSDate *)date;
++ (NSString *)dd_formatInfoFromDate:(NSDate *)date;
 
 /**
  *  get sns date info string form date type object
@@ -30,7 +30,7 @@
  *
  *  @return a date info string of sns
  */
-+ (NSString *)snsDateInfoFromDate:(NSDate *)date;
++ (NSString *)dd_formatDateFromDate:(NSDate *)date;
 
 @end
 
@@ -43,7 +43,7 @@
  *
  *  @return true/false value
  */
-+ (BOOL)isEmail:(NSString *)input;
++ (BOOL)dd_checkEmail:(NSString *)input;
 
 /**
  *  check the string is phone Number
@@ -52,7 +52,7 @@
  *
  *  @return true/false value
  */
-+ (BOOL)isPhoneNum:(NSString *)input;
++ (BOOL)dd_checkPhoneNumber:(NSString *)input;
 
 /**
  *  check the string is chinese name
@@ -61,7 +61,7 @@
  *
  *  @return true/false value
  */
-+ (BOOL)isChineseName:(NSString *)input;
++ (BOOL)dd_checkChineseName:(NSString *)input;
 
 /**
  *  check the string is valudate code
@@ -70,7 +70,7 @@
  *
  *  @return true/false value
  */
-+ (BOOL)isValidateCode:(NSString *)input;
++ (BOOL)dd_checkValidateCode:(NSString *)input;
 
 /**
  *  check the string is strong password string
@@ -79,7 +79,7 @@
  *
  *  @return true/false value
  */
-+ (BOOL)checkPassword:(NSString *)input;
++ (BOOL)dd_checkPassword:(NSString *)input;
 
 
 /**
@@ -89,7 +89,7 @@
  *
  *  @return true/false value
  */
-+ (BOOL)isMobileNum:(NSString *)input;
++ (BOOL)dd_checkMobileNumber:(NSString *)input;
 
 /**
  *  check the string is validate money
@@ -98,7 +98,7 @@
  *
  *  @return true/false value
  */
-+ (BOOL)checkWithDrawMoney:(NSString *)input;
++ (BOOL)dd_checkWithDrawMoney:(NSString *)input;
 
 @end
 
@@ -109,7 +109,7 @@
  *
  *  @return md5 encrypt string
  */
-- (NSString *)md5;
+- (NSString *)dd_md5;
 
 @end
 
@@ -123,13 +123,13 @@
  *
  *  @return result string
  */
-- (NSString *)getSubStringBeginKey:(NSString *)bKey EndKey:(NSString *)eKey;
+- (NSString *)dd_getSubStringBeginKey:(NSString *)bKey EndKey:(NSString *)eKey;
 
 @end
 
 @interface NSString (DDPrice)
 
-+ (NSString *)formatPrice:(NSNumber *)price;
++ (NSString *)dd_formatPrice:(NSNumber *)price;
 
 @end
 

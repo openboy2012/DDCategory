@@ -19,14 +19,14 @@
 /**
  *  iOS6中使用UISegmentedControl 扁平化
  */
-- (void)flattenIniOS6;
+- (void)dd_flattenIniOS6;
 
 /**
  *  iOS6中使用UISegmentedControl 扁平化 设置选中颜色
  *
  *  @param selectedColor 选中颜色
  */
-- (void)flattenIniOS6:(UIColor *)selectedColor;
+- (void)dd_flattenIniOS6:(UIColor *)selectedColor;
 
 #endif
 
