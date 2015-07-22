@@ -7,7 +7,7 @@
 //
 
 #import "UIImageView+DDKit.h"
-#import <UIImageView+WebCache.h>
+#import "UIImageView+WebCache.h"
 
 @implementation UIImageView (DDKit)
 
