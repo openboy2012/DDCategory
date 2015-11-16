@@ -16,12 +16,12 @@
 
 @implementation UIImageView (DDPlaceholder)
 
-- (void)sd_setImageWithURL:(NSURL *)url placeholderImageScale:(UIImage *)placeholder{
+- (void)sd_setImageWithURL:(NSURL *)url placeholderImageScale:(UIImage *)placeholder {
     placeholder = [self scaleImage:placeholder];
     [self sd_setImageWithURL:url placeholderImage:placeholder];
 }
 
-- (UIImage *)scaleImage:(UIImage *)originImage{
+- (UIImage *)scaleImage:(UIImage *)originImage {
     CGSize imageSize = self.frame.size;
     //判断图片尺寸是否小于UIImageView的尺寸
     if(imageSize.width <= originImage.size.width ||

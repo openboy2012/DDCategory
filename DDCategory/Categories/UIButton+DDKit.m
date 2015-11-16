@@ -14,8 +14,7 @@
 
 @implementation UIButton (DDBadgeView)
 
-- (UIView *)dd_showBadgeValue:(NSString *)strBadgeValue
-{
+- (UIView *)dd_showBadgeValue:(NSString *)strBadgeValue {
     UITabBar *tabBar = [[UITabBar alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 50)];
     UITabBarItem *item = [[UITabBarItem alloc] initWithTitle:@"" image:nil tag:0];
     item.badgeValue = strBadgeValue;
@@ -39,8 +38,7 @@
     return nil;
 }
 
-- (void)dd_removeBadgeValue
-{
+- (void)dd_removeBadgeValue {
     //
     for (UIView *subview in self.subviews) {
         NSString *strClassName = [NSString stringWithUTF8String:object_getClassName(subview)];
@@ -52,8 +50,7 @@
     }
 }
 
-- (UIView *)dd_showBadgeValue:(NSString *)strBadgeValue andPadding:(CGPoint)point
-{
+- (UIView *)dd_showBadgeValue:(NSString *)strBadgeValue andPadding:(CGPoint)point {
     [self dd_removeBadgeValue];
     UITabBar *tabBar = [[UITabBar alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
     UITabBarItem *item = [[UITabBarItem alloc] initWithTitle:@"" image:nil tag:0];
@@ -82,36 +79,33 @@
 
 @implementation UIButton (DDButtonCenterStyle)
 
-- (void)dd_centerImageAndTitle:(float)spacing
-{
-    // get the size of the elements here for readability
+- (void)dd_centerImageAndTitle:(float)spacing {
+    // get the size of the elements here for readability.
     CGSize imageSize = self.imageView.frame.size;
     CGSize titleSize = CGSizeZero;
+    
+    // fixed the crash when use the `sizeWithAttributes:` methods before iOS 7.0.
     if([[UIDevice currentDevice].systemVersion floatValue] >= 7.0) {
         titleSize = [self.titleLabel.text sizeWithAttributes:@{NSFontAttributeName:self.titleLabel.font}];
-    }
-    else
-    {
+    } else {
         titleSize = [self.titleLabel.text sizeWithFont:self.titleLabel.font];
     }
     
     // check if the size.width is more than the frame.size.width
-    titleSize = titleSize.width > self.frame.size.width ? CGSizeMake(self.frame.size.width, titleSize.height):titleSize;
+    titleSize = titleSize.width > self.frame.size.width ? CGSizeMake(self.frame.size.width, titleSize.height) : titleSize;
     
     // get the height they will take up as a unit
     CGFloat totalHeight = (imageSize.height + titleSize.height + spacing);
     
     // raise the image and push it right to center it
-    self.imageEdgeInsets = UIEdgeInsetsMake(
-                                            - (totalHeight - imageSize.height), 0.0, 0.0, - titleSize.width - (titleSize.width/imageSize.width >=2 ));
+    self.imageEdgeInsets = UIEdgeInsetsMake(- (totalHeight - imageSize.height), 0.0, 0.0, - titleSize.width - (titleSize.width/imageSize.width >= 2));
     
     // lower the text and push it left to center it
     self.titleEdgeInsets = UIEdgeInsetsMake(
                                             0.0, - imageSize.width, - (totalHeight - titleSize.height), 0.0);
 }
 
-- (void)dd_centerImageAndTitle
-{
+- (void)dd_centerImageAndTitle {
     const int DEFAULT_SPACING = 6.0f;
     [self dd_centerImageAndTitle:DEFAULT_SPACING];
 }
