@@ -10,13 +10,17 @@
 
 @implementation NSDate (DDKit)
 
-- (BOOL)isSameToDate:(NSDate *)date{
+- (BOOL)isSameToDate:(NSDate *)date {
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDateComponents *comps = [[NSDateComponents alloc] init];
     NSInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
-    comps = [calendar components:unitFlags fromDate:self];
-    NSLog(@"comps = %@",comps);
-    return YES;
+    NSDateComponents *compsSelf = [calendar components:unitFlags fromDate:self];
+    NSDateComponents *compsOther = [calendar components:unitFlags fromDate:date];
+    if(compsSelf.year == compsOther.year &&
+       compsSelf.month == compsOther.month &&
+       compsSelf.day == compsOther.day){
+        return YES;
+    }
+    return NO;
 }
 
 @end

@@ -2,7 +2,7 @@
 //  UISegmentedControl+DDKit.h
 //  DDCategory
 //
-//  Created by Diaoshu on 15-3-20.
+//  Created by DeJohn Dong on 15-3-20.
 //  Copyright (c) 2015年 DDKit. All rights reserved.
 //
 
@@ -12,7 +12,7 @@
 
 @end
 
-@interface UISegmentedControl (Flatten)
+@interface UISegmentedControl (DDFlatten)
 
 #if (defined(__IPHONE_OS_VERSION_MIN_REQUIRED) && __IPHONE_OS_VERSION_MIN_REQUIRED <= 60000)
 

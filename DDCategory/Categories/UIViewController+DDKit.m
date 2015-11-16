@@ -1,9 +1,9 @@
 //
 //  UIViewController+DDKit.m
-//  MBBCommon
+//  DDCategory
 //
-//  Created by Diaoshu on 15-3-18.
-//  Copyright (c) 2015年 MBaoBao inc. All rights reserved.
+//  Created by DeJohn Dong on 15-3-18.
+//  Copyright (c) 2015年 DDKit. All rights reserved.
 //
 
 #import "UIViewController+DDKit.h"

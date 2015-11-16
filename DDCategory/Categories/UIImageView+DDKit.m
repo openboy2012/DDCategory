@@ -2,7 +2,7 @@
 //  UIImageView+DDKit.m
 //  DDCategory
 //
-//  Created by Diaoshu on 15-3-20.
+//  Created by DeJohn Dong on 15-3-20.
 //  Copyright (c) 2015年 DDKit. All rights reserved.
 //
 
@@ -14,7 +14,7 @@
 @end
 
 
-@implementation UIImageView (Placeholder)
+@implementation UIImageView (DDPlaceholder)
 
 - (void)sd_setImageWithURL:(NSURL *)url placeholderImageScale:(UIImage *)placeholder{
     placeholder = [self scaleImage:placeholder];

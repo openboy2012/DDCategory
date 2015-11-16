@@ -2,8 +2,8 @@
 //  UIImage+DDKit.h
 //  DDKit
 //
-//  Created by Diaoshu on 14-12-21.
-//  Copyright (c) 2014年 MBaoBao inc. All rights reserved.
+//  Created by DeJohn Dong on 14-12-21.
+//  Copyright (c) 2014年 DDKit. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -13,11 +13,11 @@
 /**
  *  Create a pure color image only use the code
  *
- *  @param size  size of the image
- *  @param color pure color of the image
+ *  @param size  Size of the image
+ *  @param color Pure color of the image
  *
  *  @return created image 
  */
-+ (UIImage *)dd_createImageWithCGSize:(CGSize)size andColor:(UIColor *)color;
++ (UIImage *)dd_createImageWithCGSize:(CGSize)size color:(UIColor *)color;
 
 @end

@@ -2,7 +2,7 @@
 //  NSString+DDKit.h
 //  DDCategory
 //
-//  Created by Diaoshu on 15-3-20.
+//  Created by DeJohn Dong on 15-3-20.
 //  Copyright (c) 2015年 DDKit. All rights reserved.
 //
 
@@ -15,7 +15,7 @@
 @interface NSString (NSDate)
 
 /**
- *  get date info string from a date type object
+ *  Get date info string from a date type object
  *
  *  @param date date type object
  *
@@ -24,7 +24,7 @@
 + (NSString *)dd_formatInfoFromDate:(NSDate *)date;
 
 /**
- *  get sns date info string form date type object
+ *  Get sns date info string form date type object
  *
  *  @param date date type object
  *

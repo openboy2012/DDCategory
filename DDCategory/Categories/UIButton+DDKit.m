@@ -2,7 +2,7 @@
 //  UIButton+DDKit.m
 //  DDCategory
 //
-//  Created by Diaoshu on 15-3-20.
+//  Created by DeJohn Dong on 15-3-20.
 //  Copyright (c) 2015年 DDKit. All rights reserved.
 //
 
@@ -12,7 +12,7 @@
 
 @end
 
-@implementation UIButton (BadgeView)
+@implementation UIButton (DDBadgeView)
 
 - (UIView *)dd_showBadgeValue:(NSString *)strBadgeValue
 {
@@ -80,13 +80,20 @@
 
 @end
 
-@implementation UIButton (Center)
+@implementation UIButton (DDButtonCenterStyle)
 
 - (void)dd_centerImageAndTitle:(float)spacing
 {
     // get the size of the elements here for readability
     CGSize imageSize = self.imageView.frame.size;
-    CGSize titleSize = [self.titleLabel.text sizeWithAttributes:@{NSFontAttributeName:self.titleLabel.font}];
+    CGSize titleSize = CGSizeZero;
+    if([[UIDevice currentDevice].systemVersion floatValue] >= 7.0) {
+        titleSize = [self.titleLabel.text sizeWithAttributes:@{NSFontAttributeName:self.titleLabel.font}];
+    }
+    else
+    {
+        titleSize = [self.titleLabel.text sizeWithFont:self.titleLabel.font];
+    }
     
     // check if the size.width is more than the frame.size.width
     titleSize = titleSize.width > self.frame.size.width ? CGSizeMake(self.frame.size.width, titleSize.height):titleSize;

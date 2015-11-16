@@ -2,7 +2,7 @@
 //  UIView+DDKit.h
 //  DDCategory
 //
-//  Created by Diaoshu on 15-3-20.
+//  Created by DeJohn Dong on 15-3-20.
 //  Copyright (c) 2015年 DDKit. All rights reserved.
 //
 
@@ -26,17 +26,17 @@ typedef NS_OPTIONS(NSUInteger, ViewSeparatorType) {
 #define SeparatorWidth (1.0/[UIScreen mainScreen].scale)
 #endif
 
-@interface UIView (Separator)
+@interface UIView (DDSeparator)
 
 /**
- *  add the separator line on the view
+ *  Add the separator line on the view
  *
  *  @param type view-separtor-type
  */
 - (void)dd_addSeparatorWithType:(ViewSeparatorType)type;
 
 /**
- *  add the separator line on the view
+ *  Add the separator line on the view
  *
  *  @param type  view-separtor-type
  *  @param color line-color
@@ -44,7 +44,7 @@ typedef NS_OPTIONS(NSUInteger, ViewSeparatorType) {
 - (void)dd_addSeparatorWithType:(ViewSeparatorType)type withColor:(UIColor *)color;
 
 /**
- *  instance a horizontal line with the width
+ *  Instance a horizontal line with the width
  *
  *  @param width line-width
  *
@@ -53,17 +53,17 @@ typedef NS_OPTIONS(NSUInteger, ViewSeparatorType) {
 + (UIImageView *)dd_instanceHorizontalLine:(CGFloat)width;
 
 /**
- *  instance a horizontal line with the width & color
+ *  Instance a horizontal line with the width & color
  *
  *  @param width line-width
  *  @param color line-color
  *
  *  @return a horizontal line imageView
  */
-+ (UIImageView *)dd_instanceHorizontalLine:(CGFloat)width andColor:(UIColor *)color;
++ (UIImageView *)dd_instanceHorizontalLine:(CGFloat)width color:(UIColor *)color;
 
 /**
- *  instance a vertical line with the height
+ *  Instance a vertical line with the height
  *
  *  @param height line-height
  *
@@ -79,7 +79,7 @@ typedef NS_OPTIONS(NSUInteger, ViewSeparatorType) {
  *
  *  @return a vertical line imageView
  */
-+ (UIImageView *)dd_instanceVerticalLine:(CGFloat)height andColor:(UIColor *)color;
++ (UIImageView *)dd_instanceVerticalLine:(CGFloat)height color:(UIColor *)color;
 
 
 @end
@@ -88,7 +88,7 @@ typedef NS_OPTIONS(NSUInteger, ViewSeparatorType) {
 @interface UIView (nib)
 
 /**
- *  load a view from nib file
+ *  Load a view from nib file
  *
  *  @return initlialized view object
  */
@@ -99,26 +99,26 @@ typedef NS_OPTIONS(NSUInteger, ViewSeparatorType) {
 @interface UIView (MBProgressHUD)
 
 /**
- *  show only text HUD View
+ *  Show only text HUD View
  *
- *  @param message message text
+ *  @param message The message text
  */
 - (void)dd_showMessageHUD:(NSString *)message;
 
 /**
- *  remove the HUD
+ *  Remove the HUD
  */
 - (void)dd_removeHUD;
 
 /**
- *  show only text HUD View with class method
+ *  Show only text HUD View with class method
  *
  *  @param message message text
  */
 + (void)dd_showMessage:(NSString *)message;
 
 /**
- *  show only the HUD View on any parentView
+ *  Show only the HUD View on any parentView
  *
  *  @param message   message text
  *  @param parentView parentView
@@ -126,14 +126,14 @@ typedef NS_OPTIONS(NSUInteger, ViewSeparatorType) {
 + (void)dd_showMessage:(NSString *)message onParentView:(UIView *)parentView;
 
 /**
- *  show detail text HUD View
+ *  Show detail text HUD View
  *
  *  @param message message text
  */
 + (void)dd_showDetailMessage:(NSString *)message;
 
 /**
- *  show detail text HUD View on any parentView
+ *  Show detail text HUD View on any parentView
  *
  *  @param message   message text
  *  @param parentView parentView
@@ -145,38 +145,38 @@ typedef NS_OPTIONS(NSUInteger, ViewSeparatorType) {
 @interface UIView (Screenshot)
 
 /**
- *  screenshot with Y offset
+ *  Get a screenshot from a view with Y offset
  *
  *  @param deltaY offset Y
  *
- *  @return image
+ *  @return The screenshot image.
  */
 - (UIImage *)dd_screenshotWithOffsetY:(CGFloat)deltaY;
 
 /**
- *  screentshot all the view
+ *  Get a screenshot with all the partern of view.
  *
- *  @return image
+ *  @return The screenshot image
  */
 - (UIImage *)dd_screenshot;
 
 @end
 
-@interface UIView(CornerRadius)
+@interface UIView (CornerRadius)
 
 /**
- *  add corner radius layer on the view
+ *  Add corner radius layer on the view
  *
- *  @param radius radius width
+ *  @param radius The radius width
  */
 - (void)dd_addCornerRadius:(CGFloat)radius;
 
 /**
- *  add corner radius layer on the view with line color
+ *  Add corner radius layer on the view with line color
  *
- *  @param radius    radius width
- *  @param lineColor line color
+ *  @param radius    The radius width
+ *  @param lineColor The line color
  */
-- (void)dd_addCornerRadius:(CGFloat)radius andLineColor:(UIColor *)lineColor;
+- (void)dd_addCornerRadius:(CGFloat)radius lineColor:(UIColor *)lineColor;
 
 @end

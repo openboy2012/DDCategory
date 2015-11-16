@@ -11,9 +11,9 @@
 @interface NSDate (DDKit)
 
 /**
- *  Compare the same date (not include the time)
+ *  Compare the two days is same date (not include the time).
  *
- *  @param date other date
+ *  @param date The other date
  *
  *  @return true/false
  */

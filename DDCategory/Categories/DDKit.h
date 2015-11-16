@@ -2,7 +2,7 @@
 //  DDKit.h
 //  DDCategory
 //
-//  Created by Diaoshu on 15-3-22.
+//  Created by DeJohn Dong on 15-3-22.
 //  Copyright (c) 2015年 DDKit. All rights reserved.
 //
 
@@ -16,5 +16,5 @@
 #import "UIColor+DDKit.h"
 #import "UIImageView+DDKit.h"
 #import "NSArray+DDKit.h"
-
+#import "NSDate+DDKit.h"
 #import "NSString+DDKit.h"
