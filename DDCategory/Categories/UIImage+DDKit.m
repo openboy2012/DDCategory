@@ -20,4 +20,9 @@
     return image;
 }
 
++ (UIImage *)dd_createImageWithCGSize:(CGSize)size andColor:(UIColor *)color
+{
+    [self dd_createImageWithCGSize:size color:color];
+}
+
 @end

@@ -19,5 +19,6 @@
  *  @return created image 
  */
 + (UIImage *)dd_createImageWithCGSize:(CGSize)size color:(UIColor *)color;
++ (UIImage *)dd_createImageWithCGSize:(CGSize)size andColor:(UIColor *)color __deprecated_msg("Use `dd_createImageWithCGSize:color:`");
 
 @end

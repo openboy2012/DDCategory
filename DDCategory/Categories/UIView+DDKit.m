@@ -20,7 +20,7 @@
     [self dd_addSeparatorWithType:type withColor:nil];
 }
 
-- (void)dd_addSeparatorWithType:(ViewSeparatorType)type withColor:(UIColor *)color {
+- (void)dd_addSeparatorWithType:(ViewSeparatorType)type color:(UIColor *)color {
     switch (type) {
         case ViewSeparatorTypeVerticalSide:{
             UIImageView *topLine = [[self class] dd_instanceHorizontalLine:self.frame.size.width color:color];
@@ -50,6 +50,9 @@
     }
 }
 
+- (void)dd_addSeparatorWithType:(ViewSeparatorType)type withColor:(UIColor *)color {
+    [self dd_addSeparatorWithType:type color:color];
+}
 
 + (UIImageView *)dd_instanceHorizontalLine:(CGFloat)width {
     return [self dd_instanceHorizontalLine:width color:[UIColor lightGrayColor]];
@@ -66,10 +69,18 @@
     return line;
 }
 
-+ (UIImageView *)dd_instanceVerticalLine:(CGFloat)height color:(UIColor *)color{
++ (UIImageView *)dd_instanceVerticalLine:(CGFloat)height color:(UIColor *)color {
     UIImageView *line = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, SeparatorWidth, height)];
     line.backgroundColor = color?:[UIColor lightGrayColor];
     return line;
+}
+
++ (UIImageView *)dd_instanceHorizontalLine:(CGFloat)width andColor:(UIColor *)color {
+    return [self dd_instanceHorizontalLine:width color:color];
+}
+
++ (UIImageView *)dd_instanceVerticalLine:(CGFloat)height andColor:(UIColor *)color {
+    return [self dd_instanceVerticalLine:height color:color];
 }
 
 @end
@@ -214,6 +225,10 @@
         self.layer.borderColor = lineColor.CGColor;
         self.layer.borderWidth = SeparatorWidth;
     }
+}
+
+- (void)dd_addCornerRadius:(CGFloat)radius andLineColor:(UIColor *)lineColor {
+    [self dd_addCornerRadius:radius lineColor:lineColor];
 }
 
 @end

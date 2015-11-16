@@ -41,7 +41,8 @@ typedef NS_OPTIONS(NSUInteger, ViewSeparatorType) {
  *  @param type  view-separtor-type
  *  @param color line-color
  */
-- (void)dd_addSeparatorWithType:(ViewSeparatorType)type withColor:(UIColor *)color;
+- (void)dd_addSeparatorWithType:(ViewSeparatorType)type color:(UIColor *)color;
+- (void)dd_addSeparatorWithType:(ViewSeparatorType)type withColor:(UIColor *)color __deprecated_msg("Use `dd_addSeparatorWithType:color:`");
 
 /**
  *  Instance a horizontal line with the width
@@ -61,6 +62,7 @@ typedef NS_OPTIONS(NSUInteger, ViewSeparatorType) {
  *  @return a horizontal line imageView
  */
 + (UIImageView *)dd_instanceHorizontalLine:(CGFloat)width color:(UIColor *)color;
++ (UIImageView *)dd_instanceHorizontalLine:(CGFloat)width andColor:(UIColor *)color __deprecated_msg("Use `dd_instanceHorizontalLine:color:`");
 
 /**
  *  Instance a vertical line with the height
@@ -80,6 +82,7 @@ typedef NS_OPTIONS(NSUInteger, ViewSeparatorType) {
  *  @return a vertical line imageView
  */
 + (UIImageView *)dd_instanceVerticalLine:(CGFloat)height color:(UIColor *)color;
++ (UIImageView *)dd_instanceVerticalLine:(CGFloat)height andColor:(UIColor *)color __deprecated_msg("Use `dd_instanceVerticalLine:color:`");
 
 
 @end
@@ -178,5 +181,6 @@ typedef NS_OPTIONS(NSUInteger, ViewSeparatorType) {
  *  @param lineColor The line color
  */
 - (void)dd_addCornerRadius:(CGFloat)radius lineColor:(UIColor *)lineColor;
+- (void)dd_addCornerRadius:(CGFloat)radius andLineColor:(UIColor *)lineColor __deprecated_msg("Use `dd_addCornerRadius:lineColor:`");
 
 @end
