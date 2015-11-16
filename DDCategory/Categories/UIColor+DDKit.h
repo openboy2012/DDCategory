@@ -12,7 +12,7 @@
 
 @end
 
-@interface UIColor(HexString)
+@interface UIColor (DDHexString)
 
 /**
  *  Convert hex color string into UIColor

@@ -16,7 +16,7 @@
 
 - (UIView *)dd_showBadgeValue:(NSString *)strBadgeValue
 {
-    UITabBar *tabBar = [[UITabBar alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
+    UITabBar *tabBar = [[UITabBar alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 50)];
     UITabBarItem *item = [[UITabBarItem alloc] initWithTitle:@"" image:nil tag:0];
     item.badgeValue = strBadgeValue;
     NSArray *array = [[NSArray alloc] initWithObjects:item, nil];
@@ -60,15 +60,15 @@
     item.badgeValue = strBadgeValue;
     NSArray *array = [[NSArray alloc] initWithObjects:item, nil];
     tabBar.items = array;
-    //寻找
+    //search the view
     for (UIView *viewTab in tabBar.subviews) {
         for (UIView *subview in viewTab.subviews) {
             NSString *strClassName = [NSString stringWithUTF8String:object_getClassName(subview)];
             if ([strClassName isEqualToString:@"UITabBarButtonBadge"] ||
                 [strClassName isEqualToString:@"_UIBadgeView"]) {
-                //从原视图上移除
+                //remove from the origin view.
                 [subview removeFromSuperview];
-                //
+                
                 [self addSubview:subview];
                 subview.frame = CGRectMake(self.frame.size.width-subview.frame.size.width - point.x, 0 + point.y, subview.frame.size.width, subview.frame.size.height);
                 return subview;

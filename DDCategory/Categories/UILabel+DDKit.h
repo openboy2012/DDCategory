@@ -55,7 +55,7 @@
 
 @end
 
-@interface UILabel (AutoSize)
+@interface UILabel (DDAutoSize)
 
 /**
  * 垂直方向固定获取动态宽度的UILabel的方法

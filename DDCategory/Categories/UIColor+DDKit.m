@@ -12,9 +12,9 @@
 
 @end
 
-@implementation UIColor(HexString)
+@implementation UIColor (DDHexString)
 
-+ (UIColor *)dd_hexStringToColor:(NSString *)stringToConvert{
++ (UIColor *)dd_hexStringToColor:(NSString *)stringToConvert {
     NSString *cString = [[stringToConvert stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
     // String should be 6 or 8 characters
     

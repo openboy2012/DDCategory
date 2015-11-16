@@ -13,9 +13,9 @@
 
 @end
 
-@implementation NSString (NSDate)
+@implementation NSString (DDDate)
 
-+ (NSString *)dd_formatInfoFromDate:(NSDate *)date{
++ (NSString *)dd_formatInfoFromDate:(NSDate *)date {
     NSString *returnString = @"";
     NSTimeInterval time = fabs([[NSDate date] timeIntervalSinceDate:date]);
     if(time < 60)
@@ -33,7 +33,7 @@
     return returnString;
 }
 
-+ (NSString *)dd_formatDateFromDate:(NSDate *)date{
++ (NSString *)dd_formatDateFromDate:(NSDate *)date {
     NSString *returnString = @"";
     NSTimeInterval time = fabs([[NSDate date] timeIntervalSinceDate:date]);
     if(time < 60)
@@ -44,7 +44,7 @@
         returnString = [NSString stringWithFormat:@"%.0f小时前",time/(60 * 60)];
     else if(time >= 3600 * 24 && time < 3600 * 24 * 3)
         returnString = [NSString stringWithFormat:@"%.0f天前",time/(60 * 60 * 24)];
-    else{
+    else {
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         formatter.dateFormat = @"yyyy-MM-dd";
         returnString = [formatter stringFromDate:date];
@@ -55,37 +55,37 @@
 
 @end
 
-@implementation NSString (NSPredicate)
+@implementation NSString (DDPredicate)
 
-+ (BOOL)dd_checkEmail:(NSString *)input{
++ (BOOL)dd_checkEmail:(NSString *)input {
     return [[self class] input:input andRegex:@"\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*"];
 }
 
-+ (BOOL)dd_checkChineseName:(NSString *)input{
++ (BOOL)dd_checkChineseName:(NSString *)input {
     return [[self class] input:input andRegex:@"^[\u4E00-\uFA29]{2,8}$"];
 }
 
-+ (BOOL)dd_checkPhoneNumber:(NSString *)input{
++ (BOOL)dd_checkPhoneNumber:(NSString *)input {
     return [[self class] input:input andRegex:@"^(([0\\+]\\d{2,3}-?)?(0\\d{2,3})-?)?(\\d{7,8})"];
 }
 
-+ (BOOL)dd_checkMobileNumber:(NSString *)input{
++ (BOOL)dd_checkMobileNumber:(NSString *)input {
     return [[self class] input:input andRegex:@"^1\\d{10}$"];
 }
 
-+ (BOOL)dd_checkValidateCode:(NSString *)input{
++ (BOOL)dd_checkValidateCode:(NSString *)input {
     return [[self class] input:input andRegex:@"(\\d{6})"];
 }
 
-+ (BOOL)dd_checkPassword:(NSString *)input{
++ (BOOL)dd_checkPassword:(NSString *)input {
     return [[self class] input:input andRegex:@"^\\w{6,20}"];
 }
 
-+ (BOOL)dd_checkWithDrawMoney:(NSString *)input{
++ (BOOL)dd_checkWithDrawMoney:(NSString *)input {
     return [[self class] input:input andRegex:@"^[0-9]{3,}|[2-9][0-9]$"];
 }
 
-+ (BOOL)input:(NSString *)input andRegex:(NSString *)regex{
++ (BOOL)input:(NSString *)input andRegex:(NSString *)regex {
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
     return [predicate evaluateWithObject:input];
 }
@@ -94,8 +94,7 @@
 
 @implementation NSString(md5)
 
-- (NSString *)dd_md5
-{
+- (NSString *)dd_md5 {
     const char *cStr = [self UTF8String];
     unsigned char result[CC_MD5_DIGEST_LENGTH];
     CC_MD5(cStr, (CC_LONG)strlen(cStr), result);
@@ -112,7 +111,7 @@
 
 @implementation NSString (subString)
 
-- (NSString *)dd_getSubStringBeginKey:(NSString *)bKey EndKey:(NSString *)eKey{
+- (NSString *)dd_getSubStringBeginKey:(NSString *)bKey EndKey:(NSString *)eKey {
     if(bKey && eKey){
         NSRange rangeBegin = [self rangeOfString:bKey];
         NSRange rangeEnd = [self rangeOfString:eKey];
@@ -137,11 +136,10 @@
 
 @implementation NSString (DDPrice)
 
-+ (NSString *)dd_formatPrice:(NSNumber *)price{
++ (NSString *)dd_formatPrice:(NSNumber *)price {
     price = @(price.floatValue);
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     formatter.numberStyle = NSNumberFormatterDecimalStyle;
-//    formatter.positiveFormat = @"###,##0.00;";
     return [NSString stringWithFormat:@"￥%@",[formatter stringFromNumber:price]];
 }
 

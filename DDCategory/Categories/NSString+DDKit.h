@@ -12,7 +12,7 @@
 
 @end
 
-@interface NSString (NSDate)
+@interface NSString (DDDate)
 
 /**
  *  Get date info string from a date type object
@@ -34,7 +34,7 @@
 
 @end
 
-@interface NSString (NSPredicate)
+@interface NSString (DDPredicate)
 
 /**
  *  check the string is email
@@ -105,23 +105,23 @@
 @interface NSString (md5)
 
 /**
- *  md5 - encrypt method
+ *  Get a md5 string - encrypt method
  *
- *  @return md5 encrypt string
+ *  @return The md5 encrypt string
  */
 - (NSString *)dd_md5;
 
 @end
 
-@interface NSString (subString)
+@interface NSString (DDSubString)
 
 /**
- *  get substring from origin string with condition
+ *  Get substring from origin string with condition
  *
- *  @param bKey begin key
- *  @param eKey end key
+ *  @param bKey The begin key
+ *  @param eKey The end key
  *
- *  @return result string
+ *  @return The result string
  */
 - (NSString *)dd_getSubStringBeginKey:(NSString *)bKey EndKey:(NSString *)eKey;
 

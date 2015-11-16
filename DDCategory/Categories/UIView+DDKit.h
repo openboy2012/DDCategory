@@ -85,7 +85,7 @@ typedef NS_OPTIONS(NSUInteger, ViewSeparatorType) {
 @end
 
 
-@interface UIView (nib)
+@interface UIView (DDNib)
 
 /**
  *  Load a view from nib file
@@ -96,7 +96,7 @@ typedef NS_OPTIONS(NSUInteger, ViewSeparatorType) {
 
 @end
 
-@interface UIView (MBProgressHUD)
+@interface UIView (DD_MBProgressHUD)
 
 /**
  *  Show only text HUD View
@@ -142,7 +142,7 @@ typedef NS_OPTIONS(NSUInteger, ViewSeparatorType) {
 
 @end
 
-@interface UIView (Screenshot)
+@interface UIView (DDScreenshot)
 
 /**
  *  Get a screenshot from a view with Y offset
@@ -162,7 +162,7 @@ typedef NS_OPTIONS(NSUInteger, ViewSeparatorType) {
 
 @end
 
-@interface UIView (CornerRadius)
+@interface UIView (DDCornerRadius)
 
 /**
  *  Add corner radius layer on the view

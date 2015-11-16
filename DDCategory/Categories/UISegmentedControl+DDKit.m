@@ -17,11 +17,11 @@
 
 #if (defined(__IPHONE_OS_VERSION_MIN_REQUIRED) && __IPHONE_OS_VERSION_MIN_REQUIRED <= 60000)
 //处理UISegmentedControl 在iOS6及以下的扁平化效果
-- (void)dd_flattenIniOS6{
+- (void)dd_flattenIniOS6 {
     [self dd_flattenIniOS6:nil];
 }
 
-- (void)dd_flattenIniOS6:(UIColor *)selectedColor{
+- (void)dd_flattenIniOS6:(UIColor *)selectedColor {
     if([[UIDevice currentDevice].systemVersion floatValue] < 6.9){
         UIImage *image = [UIImage dd_createImageWithCGSize:CGSizeMake(1, 28) color:self.tintColor];
         [[UISegmentedControl appearance] setBackgroundImage:image

@@ -17,7 +17,7 @@
     NSDateComponents *compsOther = [calendar components:unitFlags fromDate:date];
     if(compsSelf.year == compsOther.year &&
        compsSelf.month == compsOther.month &&
-       compsSelf.day == compsOther.day){
+       compsSelf.day == compsOther.day) {
         return YES;
     }
     return NO;

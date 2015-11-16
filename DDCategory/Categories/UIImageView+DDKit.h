@@ -16,7 +16,6 @@
 @interface UIImageView (DDPlaceholder)
 
 /**
- *
  *  Set a web-cache imageView can use an scale placeholder image;
  *
  *  @param url         The web image url
