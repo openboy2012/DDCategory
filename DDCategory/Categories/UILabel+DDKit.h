@@ -11,27 +11,27 @@
 @interface UILabel (DDKit)
 
 /**
- *  calculate the text height with the systemFontSize & constrain width
+ *  Calculate the text height with the systemFontSize & constrain width
  *
- *  @param text     calculate text
- *  @param fontSize system font size
- *  @param width    constraint
+ *  @param text     The Calculate text
+ *  @param fontSize The System font size
+ *  @param width    The constraint
  *
- *  @return calculated height
+ *  @return The calculated height
  */
 + (CGFloat)dd_heightOfText:(NSString *)text
                   fontSize:(CGFloat)fontSize
            constraintWidth:(CGFloat)width;
 
 /**
- *  calculate the text height with the systemFontSize & constrain width then return a minimum height
+ *  Calculate the text height with the systemFontSize & constrain width then return a minimum height
  *
- *  @param text     calculate text
- *  @param fontSize system font size
- *  @param width    constraint
- *  @param height   minimum height
+ *  @param text     The calculate text
+ *  @param fontSize The system font size
+ *  @param width    The constraint
+ *  @param height   The minimum height
  *
- *  @return calculated height with the minimum height
+ *  @return The calculated height with the minimum height
  */
 + (CGFloat)dd_heightOfText:(NSString *)text
                   fontSize:(CGFloat)fontSize
@@ -39,14 +39,14 @@
              minimumHeight:(CGFloat)height;
 
 /**
- *  calculate the text height with the font & constrain width then return a minimum height
+ *  Calculate the text height with the font & constrain width then return a minimum height
  *
- *  @param text     calculate text
- *  @param font     font
- *  @param width    constraint
- *  @param height   minimum height
+ *  @param text     The calculate text
+ *  @param font     The font
+ *  @param width    The constraint
+ *  @param height   The minimum height
  *
- *  @return calculated height with the minimum height
+ *  @return The calculated height with the minimum height
  */
 + (CGFloat)dd_heightOfText:(NSString *)text
                       font:(UIFont *)font

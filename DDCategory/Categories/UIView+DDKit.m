@@ -7,7 +7,7 @@
 //
 
 #import "UIView+DDKit.h"
-#import <MBProgressHUD/MBProgressHUD.h>
+#import "MBProgressHUD.h"
 #import <objc/runtime.h>
 
 @implementation UIView (DDKit)
@@ -211,7 +211,7 @@ static char *hudKey;
     self.clipsToBounds = YES;
 }
 
-- (void)dd_addCornerRadius:(CGFloat)radius andLineColor:(UIColor *)lineColor{
+- (void)dd_addCornerRadius:(CGFloat)radius lineColor:(UIColor *)lineColor{
     self.layer.cornerRadius = radius;
     self.clipsToBounds = YES;
     if(lineColor){
