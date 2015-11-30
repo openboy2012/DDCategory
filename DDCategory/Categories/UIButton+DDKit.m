@@ -88,7 +88,9 @@
     if([[UIDevice currentDevice].systemVersion floatValue] >= 7.0) {
         titleSize = [self.titleLabel.text sizeWithAttributes:@{NSFontAttributeName:self.titleLabel.font}];
     } else {
+#if (defined(__IPHONE_OS_VERSION_MIN_REQUIRED) && __IPHONE_OS_VERSION_MIN_REQUIRED <= 60000)
         titleSize = [self.titleLabel.text sizeWithFont:self.titleLabel.font];
+#endif
     }
     
     // check if the size.width is more than the frame.size.width
@@ -101,8 +103,7 @@
     self.imageEdgeInsets = UIEdgeInsetsMake(- (totalHeight - imageSize.height), 0.0, 0.0, - titleSize.width - (titleSize.width/imageSize.width >= 2));
     
     // lower the text and push it left to center it
-    self.titleEdgeInsets = UIEdgeInsetsMake(
-                                            0.0, - imageSize.width, - (totalHeight - titleSize.height), 0.0);
+    self.titleEdgeInsets = UIEdgeInsetsMake(0.0, - imageSize.width, - (totalHeight - titleSize.height), 0.0);
 }
 
 - (void)dd_centerImageAndTitle {
