@@ -22,11 +22,11 @@
 + (UIImage *)dd_createImageWithCGSize:(CGSize)size andColor:(UIColor *)color __deprecated_msg("Use `dd_createImageWithCGSize:color:`");
 
 /**
- *  Create
+ *  Create a arrow image use CoreGraphics methods.
  *
- *  @param color <#color description#>
+ *  @param color The arrow color.
  *
- *  @return <#return value description#>
+ *  @return The arrow image.
  */
 + (UIImage *)dd_navigtionBarBackButtonImage:(UIColor *)color;
 
