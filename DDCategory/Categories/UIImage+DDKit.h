@@ -21,4 +21,13 @@
 + (UIImage *)dd_createImageWithCGSize:(CGSize)size color:(UIColor *)color;
 + (UIImage *)dd_createImageWithCGSize:(CGSize)size andColor:(UIColor *)color __deprecated_msg("Use `dd_createImageWithCGSize:color:`");
 
+/**
+ *  Create
+ *
+ *  @param color <#color description#>
+ *
+ *  @return <#return value description#>
+ */
++ (UIImage *)dd_navigtionBarBackButtonImage:(UIColor *)color;
+
 @end

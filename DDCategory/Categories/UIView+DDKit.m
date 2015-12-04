@@ -17,7 +17,7 @@
 @implementation UIView (DDSeparator)
 
 - (void)dd_addSeparatorWithType:(ViewSeparatorType)type {
-    [self dd_addSeparatorWithType:type withColor:nil];
+    [self dd_addSeparatorWithType:type color:nil];
 }
 
 - (void)dd_addSeparatorWithType:(ViewSeparatorType)type color:(UIColor *)color {
