@@ -45,6 +45,21 @@ typedef NS_OPTIONS(NSUInteger, ViewSeparatorType) {
 - (void)dd_addSeparatorWithType:(ViewSeparatorType)type withColor:(UIColor *)color __deprecated_msg("Use `dd_addSeparatorWithType:color:`");
 
 /**
+ *  Add the autolayout separator line on the view.
+ *
+ *  @param type The view-separator-type.
+ */
+- (void)dd_addALSeparatorWithType:(ViewSeparatorType)type;
+
+/**
+ *  Add the autolayout separator color line on the view.
+ *
+ *  @param type  The view-separator-type.
+ *  @param color The line color.
+ */
+- (void)dd_addALSeparatorWithType:(ViewSeparatorType)type color:(UIColor *)color;
+
+/**
  *  Instance a horizontal line with the width
  *
  *  @param width line-width

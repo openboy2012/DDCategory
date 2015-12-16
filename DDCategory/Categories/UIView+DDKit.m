@@ -50,6 +50,79 @@
     }
 }
 
+- (void)dd_addALSeparatorWithType:(ViewSeparatorType)type {
+    [self dd_addALSeparatorWithType:type color:nil];
+    
+}
+
+- (void)dd_addALSeparatorWithType:(ViewSeparatorType)type color:(UIColor *)color {
+    switch (type) {
+        case ViewSeparatorTypeVerticalSide:{
+            UIImageView *topLine = [[self class] dd_instanceHorizontalLine:self.frame.size.width color:color];
+            topLine.translatesAutoresizingMaskIntoConstraints = NO;
+            [self addSubview:topLine];
+            NSArray *hTopContraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[topLine]-0-|"
+                                                                              options:0
+                                                                              metrics:nil
+                                                                                views:NSDictionaryOfVariableBindings(topLine)];
+            NSArray *vTopContraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[topLine(borderWidth)]"
+                                                                              options:0
+                                                                              metrics:@{@"borderWidth":@(SeparatorWidth)}
+                                                                                views:NSDictionaryOfVariableBindings(topLine)];
+            [self addConstraints:hTopContraints];
+            [self addConstraints:vTopContraints];
+            UIImageView *bottomLine = [[self class] dd_instanceHorizontalLine:self.frame.size.width color:color];
+            bottomLine.translatesAutoresizingMaskIntoConstraints = NO;
+            [self addSubview:bottomLine];
+            NSArray *hBottomContraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[bottomLine]-0-|"
+                                                                                 options:0
+                                                                                 metrics:nil
+                                                                                   views:NSDictionaryOfVariableBindings(bottomLine)];
+            NSArray *vBottomContraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[bottomLine(borderWidth)]-0-|"
+                                                                                 options:0
+                                                                                 metrics:@{@"borderWidth":@(SeparatorWidth)}
+                                                                                   views:NSDictionaryOfVariableBindings(bottomLine)];
+            [self addConstraints:hBottomContraints];
+            [self addConstraints:vBottomContraints];
+        }
+            break;
+        case ViewSeparatorTypeBottom: {
+            UIImageView *bottomLine = [[self class] dd_instanceHorizontalLine:self.frame.size.width color:color];
+            bottomLine.translatesAutoresizingMaskIntoConstraints = NO;
+            [self addSubview:bottomLine];
+            NSArray *hBottomContraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[bottomLine]-0-|"
+                                                                                 options:0
+                                                                                 metrics:nil
+                                                                                   views:NSDictionaryOfVariableBindings(bottomLine)];
+            NSArray *vBottomContraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[bottomLine(borderWidth)]-0-|"
+                                                                                 options:0
+                                                                                 metrics:@{@"borderWidth":@(SeparatorWidth)}
+                                                                                   views:NSDictionaryOfVariableBindings(bottomLine)];
+            [self addConstraints:hBottomContraints];
+            [self addConstraints:vBottomContraints];
+        }
+            break;
+        case ViewSeparatorTypeTop:{
+            UIImageView *topLine = [[self class] dd_instanceHorizontalLine:self.frame.size.width color:color];
+            topLine.translatesAutoresizingMaskIntoConstraints = NO;
+            [self addSubview:topLine];
+            NSArray *hTopContraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[topLine]-0-|"
+                                                                              options:0
+                                                                              metrics:nil
+                                                                                views:NSDictionaryOfVariableBindings(topLine)];
+            NSArray *vTopContraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[topLine(borderWidth)]"
+                                                                              options:0
+                                                                              metrics:@{@"borderWidth":@(SeparatorWidth)}
+                                                                                views:NSDictionaryOfVariableBindings(topLine)];
+            [self addConstraints:hTopContraints];
+            [self addConstraints:vTopContraints];
+        }
+            break;
+        default:
+            break;
+    }
+}
+
 - (void)dd_addSeparatorWithType:(ViewSeparatorType)type withColor:(UIColor *)color {
     [self dd_addSeparatorWithType:type color:color];
 }
