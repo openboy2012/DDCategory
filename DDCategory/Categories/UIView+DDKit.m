@@ -22,30 +22,46 @@
 
 - (void)dd_addSeparatorWithType:(ViewSeparatorType)type color:(UIColor *)color {
     switch (type) {
-        case ViewSeparatorTypeVerticalSide:{
+        case ViewSeparatorTypeTop: {
             UIImageView *topLine = [[self class] dd_instanceHorizontalLine:self.frame.size.width color:color];
             [self addSubview:topLine];
-            topLine.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleWidth;
-            UIImageView *bottomLine = [[self class] dd_instanceHorizontalLine:self.frame.size.width color:color];
-            bottomLine.frame = CGRectMake(0.0, self.frame.size.height - SeparatorWidth, bottomLine.frame.size.width, SeparatorWidth);
-            [self addSubview:bottomLine];
-            bottomLine.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleWidth;
+            topLine.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleWidth;
         }
             break;
-        case ViewSeparatorTypeBottom:{
+        case ViewSeparatorTypeLeft: {
+            UIImageView *leftLine = [[self class] dd_instanceVerticalLine:self.frame.size.height color:color];
+            [self addSubview:leftLine];
+            leftLine.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleHeight;
+        }
+            break;
+        case ViewSeparatorTypeBottom: {
             UIImageView *bottomLine = [[self class] dd_instanceHorizontalLine:self.frame.size.width color:color];
             bottomLine.frame = CGRectMake(0.0, self.frame.size.height - SeparatorWidth, bottomLine.frame.size.width, SeparatorWidth);
             [self addSubview:bottomLine];
             bottomLine.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleWidth;
         }
             break;
-        case ViewSeparatorTypeTop:{
-            UIImageView *topLine = [[self class] dd_instanceHorizontalLine:self.frame.size.width color:color];
-            [self addSubview:topLine];
-            topLine.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleWidth;
+        case ViewSeparatorTypeRight: {
+            UIImageView *rightLine = [[self class] dd_instanceVerticalLine:self.frame.size.height color:color];
+            rightLine.frame = CGRectMake(self.frame.size.width - SeparatorWidth, 0.0, SeparatorWidth, rightLine.frame.size.height);
+            [self addSubview:rightLine];
+            rightLine.autoresizingMask = UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleHeight;
         }
             break;
-        default:
+        case ViewSeparatorTypeVerticalSide: {
+            [self dd_addSeparatorWithType:ViewSeparatorTypeTop color:color];
+            [self dd_addSeparatorWithType:ViewSeparatorTypeBottom color:color];
+        }
+            break;
+        case ViewSeparatorTypeHorizontalSide: {
+            [self dd_addSeparatorWithType:ViewSeparatorTypeLeft color:color];
+            [self dd_addSeparatorWithType:ViewSeparatorTypeRight color:color];
+        }
+            break;
+        default: {
+            [self dd_addSeparatorWithType:ViewSeparatorTypeHorizontalSide color:color];
+            [self dd_addSeparatorWithType:ViewSeparatorTypeVerticalSide color:color];
+        }
             break;
     }
 }
@@ -57,7 +73,7 @@
 
 - (void)dd_addALSeparatorWithType:(ViewSeparatorType)type color:(UIColor *)color {
     switch (type) {
-        case ViewSeparatorTypeVerticalSide:{
+        case ViewSeparatorTypeTop:{
             UIImageView *topLine = [[self class] dd_instanceHorizontalLine:self.frame.size.width color:color];
             topLine.translatesAutoresizingMaskIntoConstraints = NO;
             [self addSubview:topLine];
@@ -71,17 +87,20 @@
                                                                                 views:NSDictionaryOfVariableBindings(topLine)];
             [self addConstraints:hTopContraints];
             [self addConstraints:vTopContraints];
-            UIImageView *bottomLine = [[self class] dd_instanceHorizontalLine:self.frame.size.width color:color];
-            bottomLine.translatesAutoresizingMaskIntoConstraints = NO;
-            [self addSubview:bottomLine];
-            NSArray *hBottomContraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[bottomLine]-0-|"
-                                                                                 options:0
-                                                                                 metrics:nil
-                                                                                   views:NSDictionaryOfVariableBindings(bottomLine)];
-            NSArray *vBottomContraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[bottomLine(borderWidth)]-0-|"
+        }
+            break;
+        case ViewSeparatorTypeLeft: {
+            UIImageView *leftLine = [[self class] dd_instanceVerticalLine:self.frame.size.height color:color];
+            leftLine.translatesAutoresizingMaskIntoConstraints = NO;
+            [self addSubview:leftLine];
+            NSArray *hBottomContraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[leftLine(borderWidth)]"
                                                                                  options:0
                                                                                  metrics:@{@"borderWidth":@(SeparatorWidth)}
-                                                                                   views:NSDictionaryOfVariableBindings(bottomLine)];
+                                                                                   views:NSDictionaryOfVariableBindings(leftLine)];
+            NSArray *vBottomContraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[leftLine]-0-|"
+                                                                                 options:0
+                                                                                 metrics:nil
+                                                                                   views:NSDictionaryOfVariableBindings(leftLine)];
             [self addConstraints:hBottomContraints];
             [self addConstraints:vBottomContraints];
         }
@@ -102,24 +121,36 @@
             [self addConstraints:vBottomContraints];
         }
             break;
-        case ViewSeparatorTypeTop:{
-            UIImageView *topLine = [[self class] dd_instanceHorizontalLine:self.frame.size.width color:color];
-            topLine.translatesAutoresizingMaskIntoConstraints = NO;
-            [self addSubview:topLine];
-            NSArray *hTopContraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[topLine]-0-|"
-                                                                              options:0
-                                                                              metrics:nil
-                                                                                views:NSDictionaryOfVariableBindings(topLine)];
-            NSArray *vTopContraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[topLine(borderWidth)]"
+        case ViewSeparatorTypeRight: {
+            UIImageView *rightLine = [[self class] dd_instanceHorizontalLine:self.frame.size.width color:color];
+            rightLine.translatesAutoresizingMaskIntoConstraints = NO;
+            [self addSubview:rightLine];
+            NSArray *hTopContraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[rightLine(borderWidth)]"
                                                                               options:0
                                                                               metrics:@{@"borderWidth":@(SeparatorWidth)}
-                                                                                views:NSDictionaryOfVariableBindings(topLine)];
+                                                                                views:NSDictionaryOfVariableBindings(rightLine)];
+            NSArray *vTopContraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[rightLine]-0-|"
+                                                                              options:0
+                                                                              metrics:nil
+                                                                                views:NSDictionaryOfVariableBindings(rightLine)];
             [self addConstraints:hTopContraints];
             [self addConstraints:vTopContraints];
         }
             break;
-        default:
+        case ViewSeparatorTypeVerticalSide: {
+            [self dd_addALSeparatorWithType:ViewSeparatorTypeTop color:color];
+            [self dd_addALSeparatorWithType:ViewSeparatorTypeBottom color:color];
+        }
             break;
+        case ViewSeparatorTypeHorizontalSide: {
+            [self dd_addALSeparatorWithType:ViewSeparatorTypeLeft color:color];
+            [self dd_addALSeparatorWithType:ViewSeparatorTypeRight color:color];
+        }
+            break;
+        default: {
+            [self dd_addALSeparatorWithType:ViewSeparatorTypeHorizontalSide color:color];
+            [self dd_addALSeparatorWithType:ViewSeparatorTypeVerticalSide color:color];
+        }
     }
 }
 
