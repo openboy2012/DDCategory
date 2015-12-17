@@ -93,16 +93,16 @@
             UIImageView *leftLine = [[self class] dd_instanceVerticalLine:self.frame.size.height color:color];
             leftLine.translatesAutoresizingMaskIntoConstraints = NO;
             [self addSubview:leftLine];
-            NSArray *hBottomContraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[leftLine(borderWidth)]"
+            NSArray *hLeftContraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[leftLine(borderWidth)]"
                                                                                  options:0
                                                                                  metrics:@{@"borderWidth":@(SeparatorWidth)}
                                                                                    views:NSDictionaryOfVariableBindings(leftLine)];
-            NSArray *vBottomContraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[leftLine]-0-|"
+            NSArray *vLeftContraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[leftLine]-0-|"
                                                                                  options:0
                                                                                  metrics:nil
                                                                                    views:NSDictionaryOfVariableBindings(leftLine)];
-            [self addConstraints:hBottomContraints];
-            [self addConstraints:vBottomContraints];
+            [self addConstraints:hLeftContraints];
+            [self addConstraints:vLeftContraints];
         }
             break;
         case ViewSeparatorTypeBottom: {
@@ -125,16 +125,16 @@
             UIImageView *rightLine = [[self class] dd_instanceHorizontalLine:self.frame.size.width color:color];
             rightLine.translatesAutoresizingMaskIntoConstraints = NO;
             [self addSubview:rightLine];
-            NSArray *hTopContraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[rightLine(borderWidth)]"
+            NSArray *hRightContraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[rightLine(borderWidth)]-0-|"
                                                                               options:0
                                                                               metrics:@{@"borderWidth":@(SeparatorWidth)}
                                                                                 views:NSDictionaryOfVariableBindings(rightLine)];
-            NSArray *vTopContraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[rightLine]-0-|"
+            NSArray *vRightContraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[rightLine]-0-|"
                                                                               options:0
                                                                               metrics:nil
                                                                                 views:NSDictionaryOfVariableBindings(rightLine)];
-            [self addConstraints:hTopContraints];
-            [self addConstraints:vTopContraints];
+            [self addConstraints:hRightContraints];
+            [self addConstraints:vRightContraints];
         }
             break;
         case ViewSeparatorTypeVerticalSide: {
