@@ -11,8 +11,8 @@
 @implementation NSDate (DDKit)
 
 - (BOOL)isSameToDate:(NSDate *)date {
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSInteger unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
     NSDateComponents *compsSelf = [calendar components:unitFlags fromDate:self];
     NSDateComponents *compsOther = [calendar components:unitFlags fromDate:date];
     if(compsSelf.year == compsOther.year &&
