@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
 s.name     = 'DDCategory'
-s.version  = '0.4.2'
+s.version  = '0.4.3'
 s.license  = 'MIT'
-s.summary  = 'DDKit Private Repository'
+s.summary  = 'DDKit Private Cateogry Class Repository'
 s.homepage = 'https://github.com/openboy2012/DDCategory'
 s.author   = { 'DeJohn Dong' => 'dongjia_9251@126.com' }
 s.source   = { :git => 'https://github.com/openboy2012/DDCategory.git',:tag=>s.version.to_s}

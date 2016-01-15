@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2FA0AFE71AEB9242002D2642 /* NSArray+DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FA0AFE51AEB9242002D2642 /* NSArray+DDKit.h */; };
+		2FA0AFE71AEB9242002D2642 /* NSArray+DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FA0AFE51AEB9242002D2642 /* NSArray+DDKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2FA0AFE81AEB9242002D2642 /* NSArray+DDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA0AFE61AEB9242002D2642 /* NSArray+DDKit.m */; };
 		7A858D3E4BC54BEDD704E362 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F95AEF7A119DF799BFF1C8F6 /* libPods.a */; };
-		8E3D01FB1ABBC70C00805826 /* DDCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E3D01FA1ABBC70C00805826 /* DDCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8E3D022E1ABBC75D00805826 /* UIImage+DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E3D02181ABBC75D00805826 /* UIImage+DDKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8E3D022F1ABBC75D00805826 /* UIImage+DDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3D02191ABBC75D00805826 /* UIImage+DDKit.m */; };
 		8E3D023C1ABBC75D00805826 /* UIViewController+DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E3D02261ABBC75D00805826 /* UIViewController+DDKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -31,8 +30,8 @@
 		8E3D02591ABBCD8600805826 /* UILabel+DDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3D02571ABBCD8600805826 /* UILabel+DDKit.m */; };
 		8E3D025B1ABBE49200805826 /* DDCategory.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 8E3D025A1ABBE49200805826 /* DDCategory.podspec */; };
 		8E3D025D1ABBEA9B00805826 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 8E3D025C1ABBEA9B00805826 /* LICENSE */; };
-		8E67EAC51ABF9213005E65C8 /* DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E67EAC41ABF0E91005E65C8 /* DDKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CA85E4DB1B05B50B00B43ADA /* NSDate+DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CA85E4D91B05B50B00B43ADA /* NSDate+DDKit.h */; };
+		8E67EAC51ABF9213005E65C8 /* DDCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E67EAC41ABF0E91005E65C8 /* DDCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA85E4DB1B05B50B00B43ADA /* NSDate+DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CA85E4D91B05B50B00B43ADA /* NSDate+DDKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA85E4DC1B05B50B00B43ADA /* NSDate+DDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CA85E4DA1B05B50B00B43ADA /* NSDate+DDKit.m */; };
 /* End PBXBuildFile section */
 
@@ -62,7 +61,7 @@
 		8E3D02571ABBCD8600805826 /* UILabel+DDKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+DDKit.m"; sourceTree = "<group>"; };
 		8E3D025A1ABBE49200805826 /* DDCategory.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DDCategory.podspec; sourceTree = "<group>"; };
 		8E3D025C1ABBEA9B00805826 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		8E67EAC41ABF0E91005E65C8 /* DDKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDKit.h; sourceTree = "<group>"; };
+		8E67EAC41ABF0E91005E65C8 /* DDCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCategory.h; sourceTree = "<group>"; };
 		9AD1D4D82379D3938B61DBB3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BC2515C8597AF3DBFAEF990E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CA85E4D91B05B50B00B43ADA /* NSDate+DDKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DDKit.h"; sourceTree = "<group>"; };
@@ -131,7 +130,7 @@
 		8E3D02111ABBC75D00805826 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				8E67EAC41ABF0E91005E65C8 /* DDKit.h */,
+				8E67EAC41ABF0E91005E65C8 /* DDCategory.h */,
 				8E3D02261ABBC75D00805826 /* UIViewController+DDKit.h */,
 				8E3D02271ABBC75D00805826 /* UIViewController+DDKit.m */,
 				8E3D02181ABBC75D00805826 /* UIImage+DDKit.h */,
@@ -174,19 +173,18 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FA0AFE71AEB9242002D2642 /* NSArray+DDKit.h in Headers */,
 				8E3D02401ABBC7A400805826 /* NSString+DDKit.h in Headers */,
-				8E3D01FB1ABBC70C00805826 /* DDCategory.h in Headers */,
 				8E3D02501ABBCA0300805826 /* UISegmentedControl+DDKit.h in Headers */,
 				8E3D024C1ABBC9EE00805826 /* UIImageView+DDKit.h in Headers */,
 				8E3D02441ABBC7E900805826 /* UIView+DDKit.h in Headers */,
 				8E3D02481ABBC90D00805826 /* UIButton+DDKit.h in Headers */,
 				8E3D02581ABBCD8600805826 /* UILabel+DDKit.h in Headers */,
 				8E3D022E1ABBC75D00805826 /* UIImage+DDKit.h in Headers */,
-				CA85E4DB1B05B50B00B43ADA /* NSDate+DDKit.h in Headers */,
 				8E3D023C1ABBC75D00805826 /* UIViewController+DDKit.h in Headers */,
+				2FA0AFE71AEB9242002D2642 /* NSArray+DDKit.h in Headers */,
+				CA85E4DB1B05B50B00B43ADA /* NSDate+DDKit.h in Headers */,
 				8E3D02541ABBCA1D00805826 /* UIColor+DDKit.h in Headers */,
-				8E67EAC51ABF9213005E65C8 /* DDKit.h in Headers */,
+				8E67EAC51ABF9213005E65C8 /* DDCategory.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  DDKit.h
+//  DDCategory.h
 //  DDCategory
 //
 //  Created by DeJohn Dong on 15-3-22.
@@ -18,3 +18,4 @@
 #import "NSArray+DDKit.h"
 #import "NSDate+DDKit.h"
 #import "NSString+DDKit.h"
+#import "UITextField+DDKit.h"
