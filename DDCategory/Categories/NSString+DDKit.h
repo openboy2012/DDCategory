@@ -102,7 +102,7 @@
 
 @end
 
-@interface NSString (md5)
+@interface NSString (DDMd5)
 
 /**
  *  Get a md5 string - encrypt method
@@ -123,7 +123,7 @@
  *
  *  @return The result string
  */
-- (NSString *)dd_getSubStringBeginKey:(NSString *)bKey EndKey:(NSString *)eKey;
+- (NSString *)dd_getSubStringBeginKey:(NSString *)bKey endKey:(NSString *)eKey;
 
 @end
 

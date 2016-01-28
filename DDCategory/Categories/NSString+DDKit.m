@@ -92,7 +92,7 @@
 
 @end
 
-@implementation NSString(md5)
+@implementation NSString(DDMd5)
 
 - (NSString *)dd_md5 {
     const char *cStr = [self UTF8String];
@@ -109,9 +109,9 @@
 
 @end
 
-@implementation NSString (subString)
+@implementation NSString (DDSubString)
 
-- (NSString *)dd_getSubStringBeginKey:(NSString *)bKey EndKey:(NSString *)eKey {
+- (NSString *)dd_getSubStringBeginKey:(NSString *)bKey endKey:(NSString *)eKey {
     if(bKey && eKey){
         NSRange rangeBegin = [self rangeOfString:bKey];
         NSRange rangeEnd = [self rangeOfString:eKey];

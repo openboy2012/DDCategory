@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name     = 'DDCategory'
-s.version  = '0.5'
+s.version  = '0.5.1'
 s.license  = 'MIT'
 s.summary  = 'DDKit Private Cateogry Class Repository'
 s.homepage = 'https://github.com/openboy2012/DDCategory'
@@ -10,6 +10,6 @@ s.ios.deployment_target = '6.0'
 s.public_header_files = 'DDCategory/Categories/*.h'
 s.source_files = 'DDCategory/Categories/*.{h,m}'
 s.requires_arc = true
-s.dependency 'SDWebImage','3.7.3'
-s.dependency 'MBProgressHUD', '0.9.1'
+s.dependency 'SDWebImage','3.7.4'
+s.dependency 'MBProgressHUD', '0.9.2'
 end
