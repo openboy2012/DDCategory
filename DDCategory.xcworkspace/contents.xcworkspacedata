@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:DDCategoryDemo/DDCategoryDemo.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:DDCategory.xcodeproj">
    </FileRef>
    <FileRef
