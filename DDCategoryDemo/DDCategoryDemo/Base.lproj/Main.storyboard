@@ -134,6 +134,7 @@
                     <connections>
                         <segue destination="9De-Uq-V4L" kind="show" identifier="MRCSegue" id="Ivh-2Y-bxf"/>
                         <segue destination="LGu-vp-1c4" kind="show" identifier="ARCSegue" id="bSP-Zs-xv6"/>
+                        <segue destination="jVU-72-Yzj" kind="show" identifier="BlockSegue" id="f7K-JL-S5C"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wxy-s4-vu2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -182,8 +183,8 @@
                             <constraint firstItem="eFl-AL-4WW" firstAttribute="leading" secondItem="bqB-l9-2qA" secondAttribute="leading" id="059-kk-FkZ"/>
                             <constraint firstItem="oJp-iH-hTE" firstAttribute="centerX" secondItem="FnK-eV-ZKZ" secondAttribute="centerX" id="5A7-GA-ymr"/>
                             <constraint firstAttribute="trailing" secondItem="81y-BR-TLG" secondAttribute="trailing" constant="10" id="9Bg-Ns-wNz"/>
+                            <constraint firstItem="8Sg-zb-j5J" firstAttribute="top" secondItem="eFl-AL-4WW" secondAttribute="bottom" constant="16" id="CID-iZ-VV2"/>
                             <constraint firstItem="81y-BR-TLG" firstAttribute="top" secondItem="bqB-l9-2qA" secondAttribute="bottom" constant="10" id="CjH-66-YfT"/>
-                            <constraint firstItem="8Sg-zb-j5J" firstAttribute="top" secondItem="eFl-AL-4WW" secondAttribute="bottom" constant="16" id="RxW-84-Qgj"/>
                             <constraint firstItem="81y-BR-TLG" firstAttribute="leading" secondItem="FnK-eV-ZKZ" secondAttribute="leading" constant="10" id="S6h-a8-GSI"/>
                             <constraint firstItem="bqB-l9-2qA" firstAttribute="top" secondItem="oJp-iH-hTE" secondAttribute="bottom" constant="10" id="UhG-QW-qac"/>
                             <constraint firstAttribute="trailing" secondItem="oJp-iH-hTE" secondAttribute="trailing" constant="10" id="Zay-wq-e5r"/>
@@ -212,35 +213,87 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vgi-as-neG">
-                                <rect key="frame" x="159" y="417" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="So8-4C-V0z">
-                                <rect key="frame" x="159" y="467" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guD-84-2P5">
-                                <rect key="frame" x="73" y="427" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="__autoreleasing关键字" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrc-ac-a2R">
+                                <rect key="frame" x="10" y="365" width="300" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="W56-jB-paE"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tP7-6c-Zay">
-                                <rect key="frame" x="73" y="477" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KCN-Fg-2VC">
+                                <rect key="frame" x="135" y="396" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49" id="oZM-Uw-UqR"/>
+                                    <constraint firstAttribute="height" constant="31" id="xCW-b5-yNW"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="testAutoReleasePool" destination="9De-Uq-V4L" eventType="valueChanged" id="2Nx-wu-hXK"/>
+                                    <action selector="testAutoReleasePool" destination="LGu-vp-1c4" eventType="valueChanged" id="nhl-5g-vmQ"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@autoreleasepool" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guD-84-2P5">
+                                <rect key="frame" x="10" y="437" width="300" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="bCn-MW-pGh"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vgi-as-neG">
+                                <rect key="frame" x="136" y="468" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="1Ee-f7-Drj"/>
+                                    <constraint firstAttribute="width" constant="49" id="as1-XX-q2B"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="testAutoReleasePool" destination="LGu-vp-1c4" eventType="valueChanged" id="zWN-Fx-zzw"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KCN-Fg-2VC" firstAttribute="centerX" secondItem="okA-UY-TtI" secondAttribute="centerX" id="Hye-X4-elb"/>
+                            <constraint firstAttribute="trailing" secondItem="guD-84-2P5" secondAttribute="trailing" constant="10" id="JAu-vw-PRV"/>
+                            <constraint firstAttribute="trailing" secondItem="rrc-ac-a2R" secondAttribute="trailing" constant="10" id="Mb5-JP-ioG"/>
+                            <constraint firstItem="rrc-ac-a2R" firstAttribute="leading" secondItem="okA-UY-TtI" secondAttribute="leading" constant="10" id="PzU-Fw-xsk"/>
+                            <constraint firstItem="Vgi-as-neG" firstAttribute="centerX" secondItem="okA-UY-TtI" secondAttribute="centerX" id="UR2-fj-W5e"/>
+                            <constraint firstItem="Vgi-as-neG" firstAttribute="top" secondItem="guD-84-2P5" secondAttribute="bottom" constant="10" id="VTl-Xq-uyo"/>
+                            <constraint firstItem="guD-84-2P5" firstAttribute="leading" secondItem="okA-UY-TtI" secondAttribute="leading" constant="10" id="bMD-kz-kAc"/>
+                            <constraint firstItem="guD-84-2P5" firstAttribute="top" secondItem="KCN-Fg-2VC" secondAttribute="bottom" constant="10" id="fYC-zn-yLX"/>
+                            <constraint firstItem="KCN-Fg-2VC" firstAttribute="top" secondItem="rrc-ac-a2R" secondAttribute="bottom" constant="10" id="pmW-ve-irr"/>
+                            <constraint firstItem="KCN-Fg-2VC" firstAttribute="top" secondItem="rrc-ac-a2R" secondAttribute="bottom" constant="10" id="ro7-2u-tBA"/>
+                            <constraint firstItem="E8d-xf-aJn" firstAttribute="top" secondItem="Vgi-as-neG" secondAttribute="bottom" constant="20" id="scJ-J2-ynT"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="switchAutoRelease" destination="KCN-Fg-2VC" id="ji2-Pd-VUi"/>
+                        <outlet property="switchShowAutoReleasePool" destination="Vgi-as-neG" id="UHU-fP-4r8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I1O-UB-d4S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3049" y="373"/>
+        </scene>
+        <!--Blocks-->
+        <scene sceneID="6hC-PX-IwF">
+            <objects>
+                <viewController title="Blocks" id="jVU-72-Yzj" customClass="DDBlocksViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QAi-oD-2hr"/>
+                        <viewControllerLayoutGuide type="bottom" id="inn-Gj-z0q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QBo-dx-mWx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qGG-qR-Jvv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2216" y="869"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

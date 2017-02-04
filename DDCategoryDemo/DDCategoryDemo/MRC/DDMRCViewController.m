@@ -11,7 +11,7 @@
 
 @interface DDMRCViewController ()
 
-@property (nonatomic, assign) IBOutlet UISwitch *switchAutoRelease; //autorelease关键字开关,MRC下用assign修饰 IBOutlet
+@property (nonatomic, assign) IBOutlet UISwitch *switchAutoRelease; //autorelease关键字开关，MRC下用assign修饰 IBOutlet
 @property (nonatomic, assign) IBOutlet UISwitch *switchShowAutoReleasePool; //显式autoreleasepool开关
 
 @end

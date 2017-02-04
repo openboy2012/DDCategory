@@ -10,6 +10,6 @@
 
 @interface DDARCViewController : UIViewController
 
-@property (nonatomic, strong) UIButton *btnARC;
+@property (nonatomic, strong) UIButton *btnARC; //ARC环境下用strong保持强引用关系
 
 @end

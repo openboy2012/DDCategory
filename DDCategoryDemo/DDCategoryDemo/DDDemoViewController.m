@@ -32,6 +32,7 @@
     [_itemsArray removeAllObjects];
     [_itemsArray addObject:@"MRC"];
     [_itemsArray addObject:@"ARC"];
+    [_itemsArray addObject:@"Block"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,14 +62,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.row == 0)
-    {
+    if (indexPath.row == 0) {
         [self performSegueWithIdentifier:@"MRCSegue" sender:nil];
-    }
-    else if (indexPath.row == 1)
-    {
+    } else if (indexPath.row == 1) {
         [self performSegueWithIdentifier:@"ARCSegue" sender:nil];
+    } else if (indexPath.row == 2) {
+        [self performSegueWithIdentifier:@"BlockSegue" sender:nil];
     }
+    
 }
 
 /*

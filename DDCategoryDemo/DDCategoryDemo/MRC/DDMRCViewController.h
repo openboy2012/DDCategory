@@ -10,6 +10,6 @@
 
 @interface DDMRCViewController : UIViewController
 
-@property (nonatomic, retain) UIButton *btnMRC;
+@property (nonatomic, retain) UIButton *btnMRC; //MRC用retain修饰对象，保持内存持有
 
 @end
