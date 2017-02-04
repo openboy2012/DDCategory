@@ -15,9 +15,19 @@
 		0D7F52541E444F6F00BCBAFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D7F52531E444F6F00BCBAFB /* Assets.xcassets */; };
 		0D7F52571E444F6F00BCBAFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D7F52551E444F6F00BCBAFB /* LaunchScreen.storyboard */; };
 		0D7F52601E4451D500BCBAFB /* DDDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F525F1E4451D500BCBAFB /* DDDemoViewController.m */; };
+		0D7F526A1E445B8100BCBAFB /* DDARCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F52691E445B8100BCBAFB /* DDARCViewController.m */; };
+		0D7F526D1E445B9000BCBAFB /* DDMRCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F526C1E445B9000BCBAFB /* DDMRCViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0D7F52771E456AE800BCBAFB /* DDMutableString.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F52701E456AE800BCBAFB /* DDMutableString.m */; };
+		0D7F52781E456AE800BCBAFB /* DDObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F52721E456AE800BCBAFB /* DDObject.m */; };
+		0D7F52791E456AE800BCBAFB /* DDOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F52741E456AE800BCBAFB /* DDOperation.m */; };
+		0D7F527A1E456AE800BCBAFB /* DDString.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F52761E456AE800BCBAFB /* DDString.m */; };
+		0D7F527D1E45744500BCBAFB /* NSObject+Method_Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F527C1E45744500BCBAFB /* NSObject+Method_Swizzling.m */; };
+		8F551D6F039E146F46130B2A /* libPods-DDCategoryDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7740F227A4AEF7DD1CA3C151 /* libPods-DDCategoryDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		03EF3B16038DD07C4DB30199 /* Pods-DDCategoryDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDCategoryDemo.release.xcconfig"; path = "../Pods/Target Support Files/Pods-DDCategoryDemo/Pods-DDCategoryDemo.release.xcconfig"; sourceTree = "<group>"; };
+		067C48D90A6C7A8DA80A7599 /* Pods-DDCategoryDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDCategoryDemo.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-DDCategoryDemo/Pods-DDCategoryDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		0D7F52411E444F6F00BCBAFB /* DDCategoryDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DDCategoryDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D7F52451E444F6F00BCBAFB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0D7F52471E444F6F00BCBAFB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -32,6 +42,21 @@
 		0D7F52581E444F6F00BCBAFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D7F525E1E4451D500BCBAFB /* DDDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDemoViewController.h; sourceTree = "<group>"; };
 		0D7F525F1E4451D500BCBAFB /* DDDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDemoViewController.m; sourceTree = "<group>"; };
+		0D7F52681E445B8100BCBAFB /* DDARCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDARCViewController.h; sourceTree = "<group>"; };
+		0D7F52691E445B8100BCBAFB /* DDARCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDARCViewController.m; sourceTree = "<group>"; };
+		0D7F526B1E445B9000BCBAFB /* DDMRCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMRCViewController.h; sourceTree = "<group>"; };
+		0D7F526C1E445B9000BCBAFB /* DDMRCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMRCViewController.m; sourceTree = "<group>"; };
+		0D7F526F1E456AE800BCBAFB /* DDMutableString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMutableString.h; sourceTree = "<group>"; };
+		0D7F52701E456AE800BCBAFB /* DDMutableString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMutableString.m; sourceTree = "<group>"; };
+		0D7F52711E456AE800BCBAFB /* DDObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDObject.h; sourceTree = "<group>"; };
+		0D7F52721E456AE800BCBAFB /* DDObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDObject.m; sourceTree = "<group>"; };
+		0D7F52731E456AE800BCBAFB /* DDOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDOperation.h; sourceTree = "<group>"; };
+		0D7F52741E456AE800BCBAFB /* DDOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDOperation.m; sourceTree = "<group>"; };
+		0D7F52751E456AE800BCBAFB /* DDString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDString.h; sourceTree = "<group>"; };
+		0D7F52761E456AE800BCBAFB /* DDString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDString.m; sourceTree = "<group>"; };
+		0D7F527B1E45744500BCBAFB /* NSObject+Method_Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Method_Swizzling.h"; sourceTree = "<group>"; };
+		0D7F527C1E45744500BCBAFB /* NSObject+Method_Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Method_Swizzling.m"; sourceTree = "<group>"; };
+		7740F227A4AEF7DD1CA3C151 /* libPods-DDCategoryDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DDCategoryDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F551D6F039E146F46130B2A /* libPods-DDCategoryDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +76,8 @@
 			children = (
 				0D7F52431E444F6F00BCBAFB /* DDCategoryDemo */,
 				0D7F52421E444F6F00BCBAFB /* Products */,
+				0D7F52611E4453AE00BCBAFB /* Frameworks */,
+				18FCA0555693350B3F141AAE /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,8 +92,13 @@
 		0D7F52431E444F6F00BCBAFB /* DDCategoryDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0D7F526E1E456AE800BCBAFB /* DDObjects */,
+				0D7F52661E445B6A00BCBAFB /* ARC */,
+				0D7F52671E445B6A00BCBAFB /* MRC */,
 				0D7F52471E444F6F00BCBAFB /* AppDelegate.h */,
 				0D7F52481E444F6F00BCBAFB /* AppDelegate.m */,
+				0D7F525E1E4451D500BCBAFB /* DDDemoViewController.h */,
+				0D7F525F1E4451D500BCBAFB /* DDDemoViewController.m */,
 				0D7F524A1E444F6F00BCBAFB /* FirstViewController.h */,
 				0D7F524B1E444F6F00BCBAFB /* FirstViewController.m */,
 				0D7F524D1E444F6F00BCBAFB /* SecondViewController.h */,
@@ -75,8 +108,6 @@
 				0D7F52551E444F6F00BCBAFB /* LaunchScreen.storyboard */,
 				0D7F52581E444F6F00BCBAFB /* Info.plist */,
 				0D7F52441E444F6F00BCBAFB /* Supporting Files */,
-				0D7F525E1E4451D500BCBAFB /* DDDemoViewController.h */,
-				0D7F525F1E4451D500BCBAFB /* DDDemoViewController.m */,
 			);
 			path = DDCategoryDemo;
 			sourceTree = "<group>";
@@ -89,6 +120,58 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		0D7F52611E4453AE00BCBAFB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7740F227A4AEF7DD1CA3C151 /* libPods-DDCategoryDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0D7F52661E445B6A00BCBAFB /* ARC */ = {
+			isa = PBXGroup;
+			children = (
+				0D7F52681E445B8100BCBAFB /* DDARCViewController.h */,
+				0D7F52691E445B8100BCBAFB /* DDARCViewController.m */,
+			);
+			path = ARC;
+			sourceTree = "<group>";
+		};
+		0D7F52671E445B6A00BCBAFB /* MRC */ = {
+			isa = PBXGroup;
+			children = (
+				0D7F526B1E445B9000BCBAFB /* DDMRCViewController.h */,
+				0D7F526C1E445B9000BCBAFB /* DDMRCViewController.m */,
+			);
+			path = MRC;
+			sourceTree = "<group>";
+		};
+		0D7F526E1E456AE800BCBAFB /* DDObjects */ = {
+			isa = PBXGroup;
+			children = (
+				0D7F526F1E456AE800BCBAFB /* DDMutableString.h */,
+				0D7F52701E456AE800BCBAFB /* DDMutableString.m */,
+				0D7F52711E456AE800BCBAFB /* DDObject.h */,
+				0D7F52721E456AE800BCBAFB /* DDObject.m */,
+				0D7F52731E456AE800BCBAFB /* DDOperation.h */,
+				0D7F52741E456AE800BCBAFB /* DDOperation.m */,
+				0D7F52751E456AE800BCBAFB /* DDString.h */,
+				0D7F52761E456AE800BCBAFB /* DDString.m */,
+				0D7F527B1E45744500BCBAFB /* NSObject+Method_Swizzling.h */,
+				0D7F527C1E45744500BCBAFB /* NSObject+Method_Swizzling.m */,
+			);
+			path = DDObjects;
+			sourceTree = "<group>";
+		};
+		18FCA0555693350B3F141AAE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				067C48D90A6C7A8DA80A7599 /* Pods-DDCategoryDemo.debug.xcconfig */,
+				03EF3B16038DD07C4DB30199 /* Pods-DDCategoryDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -96,9 +179,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D7F525B1E444F6F00BCBAFB /* Build configuration list for PBXNativeTarget "DDCategoryDemo" */;
 			buildPhases = (
+				7EB632CD7C0837F7F64A3228 /* Check Pods Manifest.lock */,
 				0D7F523D1E444F6F00BCBAFB /* Sources */,
 				0D7F523E1E444F6F00BCBAFB /* Frameworks */,
 				0D7F523F1E444F6F00BCBAFB /* Resources */,
+				BE6DB9E38E2CE04DFCDAEB02 /* Embed Pods Frameworks */,
+				92909BDCAA7F05D1B235A067 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -156,16 +242,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7EB632CD7C0837F7F64A3228 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		92909BDCAA7F05D1B235A067 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-DDCategoryDemo/Pods-DDCategoryDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE6DB9E38E2CE04DFCDAEB02 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-DDCategoryDemo/Pods-DDCategoryDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0D7F523D1E444F6F00BCBAFB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D7F526D1E445B9000BCBAFB /* DDMRCViewController.m in Sources */,
+				0D7F527A1E456AE800BCBAFB /* DDString.m in Sources */,
 				0D7F524F1E444F6F00BCBAFB /* SecondViewController.m in Sources */,
 				0D7F52491E444F6F00BCBAFB /* AppDelegate.m in Sources */,
 				0D7F524C1E444F6F00BCBAFB /* FirstViewController.m in Sources */,
 				0D7F52601E4451D500BCBAFB /* DDDemoViewController.m in Sources */,
+				0D7F52771E456AE800BCBAFB /* DDMutableString.m in Sources */,
 				0D7F52461E444F6F00BCBAFB /* main.m in Sources */,
+				0D7F52791E456AE800BCBAFB /* DDOperation.m in Sources */,
+				0D7F52781E456AE800BCBAFB /* DDObject.m in Sources */,
+				0D7F527D1E45744500BCBAFB /* NSObject+Method_Swizzling.m in Sources */,
+				0D7F526A1E445B8100BCBAFB /* DDARCViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +422,7 @@
 		};
 		0D7F525C1E444F6F00BCBAFB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 067C48D90A6C7A8DA80A7599 /* Pods-DDCategoryDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F76XM9QFY9;
@@ -293,6 +435,7 @@
 		};
 		0D7F525D1E444F6F00BCBAFB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03EF3B16038DD07C4DB30199 /* Pods-DDCategoryDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F76XM9QFY9;
