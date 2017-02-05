@@ -33,6 +33,7 @@
     [_itemsArray addObject:@"MRC"];
     [_itemsArray addObject:@"ARC"];
     [_itemsArray addObject:@"Block"];
+    [_itemsArray addObject:@"Bridge&Copying"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,8 +69,9 @@
         [self performSegueWithIdentifier:@"ARCSegue" sender:nil];
     } else if (indexPath.row == 2) {
         [self performSegueWithIdentifier:@"BlockSegue" sender:nil];
+    } else if (indexPath.row == 3) {
+        [self performSegueWithIdentifier:@"BridgeSegue" sender:nil];
     }
-    
 }
 
 /*

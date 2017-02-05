@@ -14,6 +14,7 @@
 @property (nonatomic, assign) IBOutlet UISwitch *switchAutoRelease; //autorelease关键字开关，MRC下用assign修饰 IBOutlet
 @property (nonatomic, assign) IBOutlet UISwitch *switchShowAutoReleasePool; //显式autoreleasepool开关
 
+
 @end
 
 @implementation DDMRCViewController
@@ -39,6 +40,7 @@
     NSLog(@"_btnMRC.retainCount is %lu", _btnMRC.retainCount);
     
     [_btnMRC addTarget:self action:@selector(testAutoReleasePool) forControlEvents:UIControlEventTouchUpInside];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -91,5 +93,6 @@
     // Pass the selected object to the new view controller.
 }
 */
+
 
 @end

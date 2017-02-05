@@ -23,6 +23,7 @@
 		0D7F527A1E456AE800BCBAFB /* DDString.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F52761E456AE800BCBAFB /* DDString.m */; };
 		0D7F527D1E45744500BCBAFB /* NSObject+Method_Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F527C1E45744500BCBAFB /* NSObject+Method_Swizzling.m */; };
 		0D7F52841E45A5A700BCBAFB /* DDBlocksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F52831E45A5A700BCBAFB /* DDBlocksViewController.m */; };
+		0D7F52901E4746C800BCBAFB /* DDBridgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F528F1E4746C800BCBAFB /* DDBridgeViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		8F551D6F039E146F46130B2A /* libPods-DDCategoryDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7740F227A4AEF7DD1CA3C151 /* libPods-DDCategoryDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,8 @@
 		0D7F527C1E45744500BCBAFB /* NSObject+Method_Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Method_Swizzling.m"; sourceTree = "<group>"; };
 		0D7F52821E45A5A700BCBAFB /* DDBlocksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDBlocksViewController.h; path = DDCategoryDemo/BLOCKS/DDBlocksViewController.h; sourceTree = SOURCE_ROOT; };
 		0D7F52831E45A5A700BCBAFB /* DDBlocksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDBlocksViewController.m; path = DDCategoryDemo/BLOCKS/DDBlocksViewController.m; sourceTree = SOURCE_ROOT; };
+		0D7F528E1E4746C800BCBAFB /* DDBridgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDBridgeViewController.h; sourceTree = "<group>"; };
+		0D7F528F1E4746C800BCBAFB /* DDBridgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDBridgeViewController.m; sourceTree = "<group>"; };
 		7740F227A4AEF7DD1CA3C151 /* libPods-DDCategoryDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DDCategoryDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -95,6 +98,7 @@
 		0D7F52431E444F6F00BCBAFB /* DDCategoryDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0D7F528D1E4746C800BCBAFB /* Bridge&Copying */,
 				0D7F527E1E45A56300BCBAFB /* BLOCKS */,
 				0D7F526E1E456AE800BCBAFB /* DDObjects */,
 				0D7F52661E445B6A00BCBAFB /* ARC */,
@@ -175,6 +179,15 @@
 			);
 			name = BLOCKS;
 			path = MRC/BLOCKS;
+			sourceTree = "<group>";
+		};
+		0D7F528D1E4746C800BCBAFB /* Bridge&Copying */ = {
+			isa = PBXGroup;
+			children = (
+				0D7F528E1E4746C800BCBAFB /* DDBridgeViewController.h */,
+				0D7F528F1E4746C800BCBAFB /* DDBridgeViewController.m */,
+			);
+			path = "Bridge&Copying";
 			sourceTree = "<group>";
 		};
 		18FCA0555693350B3F141AAE /* Pods */ = {
@@ -315,6 +328,7 @@
 				0D7F524F1E444F6F00BCBAFB /* SecondViewController.m in Sources */,
 				0D7F52491E444F6F00BCBAFB /* AppDelegate.m in Sources */,
 				0D7F524C1E444F6F00BCBAFB /* FirstViewController.m in Sources */,
+				0D7F52901E4746C800BCBAFB /* DDBridgeViewController.m in Sources */,
 				0D7F52601E4451D500BCBAFB /* DDDemoViewController.m in Sources */,
 				0D7F52771E456AE800BCBAFB /* DDMutableString.m in Sources */,
 				0D7F52461E444F6F00BCBAFB /* main.m in Sources */,

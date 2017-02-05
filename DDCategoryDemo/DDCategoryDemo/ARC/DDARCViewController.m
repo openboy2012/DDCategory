@@ -25,6 +25,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    /* 
+     ARC环境下，Clang编译器会对_btnARC进行retain方法，所以开发者无需显示调用retain方法，而且Clang编译器已经在ARC环境下把retain方法标记为不可用
+     */
     _btnARC = [UIButton buttonWithType:UIButtonTypeCustom]; //ARC情况下不需要特别关心内存管理，开发门槛大大降低
     //_btnARC = [[UIButton alloc] init];
     [self.view addSubview:_btnARC];
@@ -92,15 +95,14 @@
 */
 
 - (void)runLoop1 {
-    DDObject *object = [[DDObject alloc] init];
+    DDObject *object = [[DDObject alloc] init]; //当前线程创建了DDObject对象
     self.arcObj = object;
 }
 
 - (void)runLoop2 {
-    sleep(5);
-    if (self.arcObj)
-    {
-        self.arcObj = nil;
+    sleep(5); //睡眠5秒，确保该线程能数据同步到arcObj;
+    if (self.arcObj) {
+        self.arcObj = nil; //当前线程做了最后一次release，当前线程会执行DDObject的dealloc方法
     }
 }
 
