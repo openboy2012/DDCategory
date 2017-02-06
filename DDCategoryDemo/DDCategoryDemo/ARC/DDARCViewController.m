@@ -18,6 +18,9 @@
 @property (nonatomic, strong) NSThread *thread2; //线程2
 @property (nonatomic, strong) DDObject *arcObj;
 
+@property (nonatomic, strong) NSString *ocStr;
+@property (nonatomic, assign) CFStringRef cfStr;
+
 @end
 
 @implementation DDARCViewController
@@ -97,6 +100,10 @@
 - (void)runLoop1 {
     DDObject *object = [[DDObject alloc] init]; //当前线程创建了DDObject对象
     self.arcObj = object;
+    
+//    CFStringRef ref = CFStringCreateCopy(kCFAllocatorDefault, 123);
+//    self.ocStr = (__bridge_transfer NSString *)ref;
+//    CFRelease(ref);
 }
 
 - (void)runLoop2 {
@@ -104,6 +111,7 @@
     if (self.arcObj) {
         self.arcObj = nil; //当前线程做了最后一次release，当前线程会执行DDObject的dealloc方法
     }
+    NSLog(@"self.ocStr = %@",self.ocStr);
 }
 
 @end

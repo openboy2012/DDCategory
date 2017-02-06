@@ -32,15 +32,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(@"_btnMRC.retainCount is %lu", _btnMRC.retainCount);
-    //_btnMRC = [UIButton buttonWithType:UIButtonTypeCustom]; //类方法创建的对象在ARC的情况下会默认加上autorelease,所以在dealloc不需要再手动释放
-    _btnMRC = [[UIButton alloc] init]; //实例方法创建的对象，需要dealloc的时候进行一次release释放
-    NSLog(@"_btnMRC.retainCount is %lu", _btnMRC.retainCount);
-    [self.view addSubview:_btnMRC]; //addSubView方法会retainCount+1
-    NSLog(@"_btnMRC.retainCount is %lu", _btnMRC.retainCount);
+//    NSLog(@"_btnMRC.retainCount is %lu", _btnMRC.retainCount);
+//    //_btnMRC = [UIButton buttonWithType:UIButtonTypeCustom]; //类方法创建的对象在ARC的情况下会默认加上autorelease,所以在dealloc不需要再手动释放
+//    _btnMRC = [[UIButton alloc] init]; //实例方法创建的对象，需要dealloc的时候进行一次release释放
+//    NSLog(@"_btnMRC.retainCount is %lu", _btnMRC.retainCount);
+//    [self.view addSubview:_btnMRC]; //addSubView方法会retainCount+1
+//    NSLog(@"_btnMRC.retainCount is %lu", _btnMRC.retainCount);
+//    
+//    [_btnMRC addTarget:self action:@selector(testAutoReleasePool) forControlEvents:UIControlEventTouchUpInside];
     
-    [_btnMRC addTarget:self action:@selector(testAutoReleasePool) forControlEvents:UIControlEventTouchUpInside];
-    
+    [self mrcGlobalBlockExample];
+    [self mrcStackBlockExample];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -93,6 +95,57 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+#pragma mark - MRC下测试block相关的retain、release、copy操作
+//全局内存Block尝试retain、copy、release等方法
+- (void)mrcGlobalBlockExample
+{
+    NSLog(@"===== MRC GlobalBlock retainCount methods begin =====");
+    void (^ddkitBlockGlobal)() = ^(){
+        int b = 18;
+        //没有引用外部变量的block是__NSGlobalBlock__
+        NSLog(@"this is global block b is %d", b);
+    };
+    ddkitBlockGlobal();
+    [ddkitBlockGlobal release]; //release操作对全局内存Block无效
+    
+    NSLog(@"ddkitBlockGlobal retainCount = %lu", [ddkitBlockGlobal retainCount]);
+    void (^ddkitBlockGlobalRetain)() = [ddkitBlockGlobal retain]; //尝试retain方法
+    NSLog(@"ddkitBlockGlobal[%@] retainCount = %lu, ddkitBlockGlobalRetain[%@] retainCount = %lu", ddkitBlockGlobal, [ddkitBlockGlobal retainCount], ddkitBlockGlobalRetain, [ddkitBlockGlobalRetain retainCount]);
+    
+    void (^ddkitBlockGlobalCopy)() = [ddkitBlockGlobal copy]; //尝试copy方法
+    NSLog(@"ddkitBlockGlobal[%@] retainCount = %lu, ddkitBlockGlobalCopy[%@] retainCount = %lu", ddkitBlockGlobal, [ddkitBlockGlobal retainCount], ddkitBlockGlobalCopy, [ddkitBlockGlobalCopy retainCount]);
+    
+    NSLog(@"===== MRC GlobalBlock retainCount methods end =====");
+
+}
+
+//栈内存Block尝试retain、copy、release等方法
+- (void)mrcStackBlockExample
+{
+    NSLog(@"===== MRC StackBlock retainCount methods begin =====");
+
+    int a = 10;
+    void (^ddkitBlockGlobal)() = ^(){
+        int b = 28 + a;
+        //引用外部变量的block是__NSStackBlock__
+        NSLog(@"this is stack block b is %d", b);
+    };
+    ddkitBlockGlobal();
+    [ddkitBlockGlobal release]; //release操作对栈内存Block无效
+    
+    NSLog(@"ddkitBlockGlobal retainCount = %lu", [ddkitBlockGlobal retainCount]);
+    void (^ddkitBlockGlobalRetain)() = [ddkitBlockGlobal retain]; //尝试retain方法
+    NSLog(@"ddkitBlockGlobal[%@] retainCount = %lu, ddkitBlockGlobalRetain[%@] retainCount = %lu", ddkitBlockGlobal, [ddkitBlockGlobal retainCount], ddkitBlockGlobalRetain, [ddkitBlockGlobalRetain retainCount]);
+    
+    void (^ddkitBlockGlobalCopy)() = [ddkitBlockGlobal copy]; //尝试copy方法
+    NSLog(@"ddkitBlockGlobal[%@] retainCount = %lu, ddkitBlockGlobalCopy[%@] retainCount = %lu", ddkitBlockGlobal, [ddkitBlockGlobal retainCount], ddkitBlockGlobalCopy, [ddkitBlockGlobalCopy retainCount]);
+    [ddkitBlockGlobalCopy release]; //release操作对堆内存Block有效，所以下一行注释掉代码出现崩溃。
+    //NSLog(@"ddkitBlockGlobalCopy = %@",ddkitBlockGlobalCopy);
+    
+    NSLog(@"===== MRC StackBlock retainCount methods end =====");
+}
 
 
 @end

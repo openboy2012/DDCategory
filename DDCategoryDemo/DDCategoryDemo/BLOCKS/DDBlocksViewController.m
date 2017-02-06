@@ -30,9 +30,14 @@ typedef void(^ CycleReferenceBlock)(void);
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    //block内存变化示例
+    //[self blockMemoryChangeExample];
+    
+    //block关键字变化引用示例
     [self blockExample];
     
-    [self cycleReferenceBlockExample];
+    //block循环引用示例
+    //[self cycleReferenceBlockExample];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,25 +55,48 @@ typedef void(^ CycleReferenceBlock)(void);
 }
 */
 
-- (IBAction)clickCrashButton:(id)sender
-{
-    self.isUseCrashCode = YES;
+- (IBAction)clickCrashButton:(id)sender {
+    self.isUseCrashCode = YES; //设置打印崩溃的代码
     [self blockExample];
 }
 
-- (void)blockExample
-{
-    void (^ddkitBlockOne)() = ^(){
-        int b = 20;
+/**
+ block内存变化示例 内存的变化顺序为{->[alloc]GlobalBlock、->[alloc]StackBlock->[copy]MallocBlock}, block最初被设定的内存类型为全局内存类型（无外部变量），当block内部出现外部变量时转换为栈内存类型，再当此栈内存block被外部持有（copy）操作时会变成堆内存类型。
+ */
+- (void)blockMemoryChangeExample {
+    
+    void (^ddkitBlockGlobal)() = ^(){
+        int b = 18;
         //没有引用外部变量的block是__NSGlobalBlock__
         NSLog(@"this is global block b is %d", b);
     };
-    NSLog(@"this block type is %@", ddkitBlockOne); //block内部没有使用任何的外部变量，所以是__NSGlobalBlock__
-    ddkitBlockOne();
+    NSLog(@"this block type is %@", ddkitBlockGlobal); //block内部没有使用任何的外部变量，所以是__NSGlobalBlock__
+    ddkitBlockGlobal();
     
-    int a = 20;
-    //此处加上__unsafe_unretained是因为在ARC环境下可以阻止Clang编译器对block进行copy操作，从而保持block的内存类型是栈类型
-    __unsafe_unretained void (^ddkitBlockTwo)() = ^(){
+    int a = 28;
+    
+    //使用__weak能阻止编译器对block进行copy操作，从而保证了block的内存类型是栈block(__NSStackBlock__)
+    __weak void (^ddkitBlockStack)() = ^(){
+        int b = a;
+        //使用外部变量的block是__NSStackBlock__
+        NSLog(@"this is stack block, b is %d", b);
+    };
+    NSLog(@"this block type is %@", ddkitBlockStack); //block内部使用了的外部变量a，所以是__NSStackBlock__
+    ddkitBlockStack();
+    
+    //block赋值操作
+    void (^blockMemoryType)(void) = ddkitBlockGlobal; //对全局内存block copy不会形成堆内存block，内存地址也没有发生改变
+    NSLog(@"copy from ddkitBlockGlobal blockMemoryType is %@, ddkitBlockGlobal is %@", blockMemoryType, ddkitBlockGlobal);
+    blockMemoryType = ddkitBlockStack; //对栈内存block copy会形成堆内存block, 会产生新的地址
+    NSLog(@"copy from ddkitBlockStack blockMemoryType is %@, ddkitBlockStack is %@", blockMemoryType, ddkitBlockStack);
+}
+
+- (void)blockExample {
+    int a = 49;
+    
+//    __weak //使用__weak也能阻止编译器对block进行copy操作，而且更加安全，这里使用__unsafe_unretained只是试验关键字的效果
+    __unsafe_unretained //此处加上__unsafe_unretained是因为在ARC环境下可以阻止Clang编译器对block进行copy操作，从而保持block的内存类型是栈类型
+    void (^ddkitBlockNoCopy)() = ^(){
         int b = a;
         /*
          因为引用了block之外的外部变量，所以是栈block
@@ -79,32 +107,25 @@ typedef void(^ CycleReferenceBlock)(void);
          */
         #warning 因为ddkitBlockTwo是局部变量，不存在循环引用的问题，可以放心地在{}引用self
         if (self.isUseCrashCode) {
-            NSLog(@"this block type is %@ b is %d", ddkitBlockTwo, b);
+            NSLog(@"this block type is %@ b is %d", ddkitBlockNoCopy, b);
         } else {
             NSLog(@"this is stack block, b is %d", b);
         }
     };
-    NSLog(@"this block type is %@", ddkitBlockTwo); //这里能正确打印block的类型，此处为__NSStackBlock__
-    ddkitBlockTwo();
+    NSLog(@"this block type is %@", ddkitBlockNoCopy); //这里能正确打印block的类型，此处为__NSStackBlock__
+    ddkitBlockNoCopy();
     
     //在ARC环境下，默认关键字是__strong，会对block进行copy操作，所以block的内存类型会变成堆类型；同理在MRC环境下需要显示调用copy方法来把GlobalBlock或者StackBlock转换成MallocBlock
-    void (^ddkitBlockThree)() = ^(){
+    void (^ddkitBlockMalloc)() = ^(){
         int b = a + a;
         //引用了外部变量，并且把这个block赋值给了ddkitBlockTwo(有copy操作)，所以是__NSMallocBlock__
-        NSLog(@"this block type is %@ b is %d", ddkitBlockThree, b); //因为ddkitBlockThree是局部变量，在ARC环境下到了{}之外就会被清理，所以会打印null空指针
+        NSLog(@"this block type is %@ b is %d", ddkitBlockMalloc, b); //因为ddkitBlockThree是局部变量，在ARC环境下到了{}之外就会被清理，所以会打印null空指针
     };
-    NSLog(@"this block type is %@", ddkitBlockThree);
-    ddkitBlockThree();
-    
-    //block赋值操作
-    void (^blockMemoryType)(void) = ddkitBlockOne;
-    NSLog(@"copy from ddkitBlockOne blockMemoryType is %@, ddkitBlockOne is %@", blockMemoryType, ddkitBlockOne);
-    blockMemoryType = ddkitBlockTwo;
-    NSLog(@"copy from ddkitBlockTwo blockMemoryType is %@, ddkitBlockTwo is %@", blockMemoryType, ddkitBlockTwo);
+    NSLog(@"this block type is %@", ddkitBlockMalloc);
+    ddkitBlockMalloc();
 }
 
-- (IBAction)cycleReferenceBlockExample
-{
+- (IBAction)cycleReferenceBlockExample {
     if (self.switchCycleReferen.on) {
         __weak __typeof(self) bSelf = self; //因为block是self的成员变量，会造成循环引用的问题，所以在block外部先__weak一次打破循环引用
         self.block = ^() {
