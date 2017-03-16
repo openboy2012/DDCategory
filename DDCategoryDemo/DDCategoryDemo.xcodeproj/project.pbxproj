@@ -10,7 +10,7 @@
 		0D7F52461E444F6F00BCBAFB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F52451E444F6F00BCBAFB /* main.m */; };
 		0D7F52491E444F6F00BCBAFB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F52481E444F6F00BCBAFB /* AppDelegate.m */; };
 		0D7F524C1E444F6F00BCBAFB /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F524B1E444F6F00BCBAFB /* FirstViewController.m */; };
-		0D7F524F1E444F6F00BCBAFB /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F524E1E444F6F00BCBAFB /* SecondViewController.m */; };
+		0D7F524F1E444F6F00BCBAFB /* SecondViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F524E1E444F6F00BCBAFB /* SecondViewController.mm */; };
 		0D7F52521E444F6F00BCBAFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D7F52501E444F6F00BCBAFB /* Main.storyboard */; };
 		0D7F52541E444F6F00BCBAFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D7F52531E444F6F00BCBAFB /* Assets.xcassets */; };
 		0D7F52571E444F6F00BCBAFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D7F52551E444F6F00BCBAFB /* LaunchScreen.storyboard */; };
@@ -30,6 +30,7 @@
 /* Begin PBXFileReference section */
 		03EF3B16038DD07C4DB30199 /* Pods-DDCategoryDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDCategoryDemo.release.xcconfig"; path = "../Pods/Target Support Files/Pods-DDCategoryDemo/Pods-DDCategoryDemo.release.xcconfig"; sourceTree = "<group>"; };
 		067C48D90A6C7A8DA80A7599 /* Pods-DDCategoryDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDCategoryDemo.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-DDCategoryDemo/Pods-DDCategoryDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		0D0FABD61E62E380006E0806 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		0D7F52411E444F6F00BCBAFB /* DDCategoryDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DDCategoryDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D7F52451E444F6F00BCBAFB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0D7F52471E444F6F00BCBAFB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -37,7 +38,7 @@
 		0D7F524A1E444F6F00BCBAFB /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		0D7F524B1E444F6F00BCBAFB /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		0D7F524D1E444F6F00BCBAFB /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		0D7F524E1E444F6F00BCBAFB /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		0D7F524E1E444F6F00BCBAFB /* SecondViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SecondViewController.mm; sourceTree = "<group>"; };
 		0D7F52511E444F6F00BCBAFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0D7F52531E444F6F00BCBAFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D7F52561E444F6F00BCBAFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -110,12 +111,13 @@
 				0D7F524A1E444F6F00BCBAFB /* FirstViewController.h */,
 				0D7F524B1E444F6F00BCBAFB /* FirstViewController.m */,
 				0D7F524D1E444F6F00BCBAFB /* SecondViewController.h */,
-				0D7F524E1E444F6F00BCBAFB /* SecondViewController.m */,
+				0D7F524E1E444F6F00BCBAFB /* SecondViewController.mm */,
 				0D7F52501E444F6F00BCBAFB /* Main.storyboard */,
 				0D7F52531E444F6F00BCBAFB /* Assets.xcassets */,
 				0D7F52551E444F6F00BCBAFB /* LaunchScreen.storyboard */,
 				0D7F52581E444F6F00BCBAFB /* Info.plist */,
 				0D7F52441E444F6F00BCBAFB /* Supporting Files */,
+				0D0FABD61E62E380006E0806 /* PrefixHeader.pch */,
 			);
 			path = DDCategoryDemo;
 			sourceTree = "<group>";
@@ -206,12 +208,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D7F525B1E444F6F00BCBAFB /* Build configuration list for PBXNativeTarget "DDCategoryDemo" */;
 			buildPhases = (
-				7EB632CD7C0837F7F64A3228 /* Check Pods Manifest.lock */,
+				7EB632CD7C0837F7F64A3228 /* [CP] Check Pods Manifest.lock */,
 				0D7F523D1E444F6F00BCBAFB /* Sources */,
 				0D7F523E1E444F6F00BCBAFB /* Frameworks */,
 				0D7F523F1E444F6F00BCBAFB /* Resources */,
-				BE6DB9E38E2CE04DFCDAEB02 /* Embed Pods Frameworks */,
-				92909BDCAA7F05D1B235A067 /* Copy Pods Resources */,
+				BE6DB9E38E2CE04DFCDAEB02 /* [CP] Embed Pods Frameworks */,
+				92909BDCAA7F05D1B235A067 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -233,8 +235,8 @@
 				TargetAttributes = {
 					0D7F52401E444F6F00BCBAFB = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = F76XM9QFY9;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = SRN4RNBX5L;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -270,29 +272,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7EB632CD7C0837F7F64A3228 /* Check Pods Manifest.lock */ = {
+		7EB632CD7C0837F7F64A3228 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		92909BDCAA7F05D1B235A067 /* Copy Pods Resources */ = {
+		92909BDCAA7F05D1B235A067 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,14 +302,14 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-DDCategoryDemo/Pods-DDCategoryDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BE6DB9E38E2CE04DFCDAEB02 /* Embed Pods Frameworks */ = {
+		BE6DB9E38E2CE04DFCDAEB02 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,7 +327,7 @@
 				0D7F526D1E445B9000BCBAFB /* DDMRCViewController.m in Sources */,
 				0D7F52841E45A5A700BCBAFB /* DDBlocksViewController.m in Sources */,
 				0D7F527A1E456AE800BCBAFB /* DDString.m in Sources */,
-				0D7F524F1E444F6F00BCBAFB /* SecondViewController.m in Sources */,
+				0D7F524F1E444F6F00BCBAFB /* SecondViewController.mm in Sources */,
 				0D7F52491E444F6F00BCBAFB /* AppDelegate.m in Sources */,
 				0D7F524C1E444F6F00BCBAFB /* FirstViewController.m in Sources */,
 				0D7F52901E4746C800BCBAFB /* DDBridgeViewController.m in Sources */,
@@ -454,11 +456,18 @@
 			baseConfigurationReference = 067C48D90A6C7A8DA80A7599 /* Pods-DDCategoryDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = F76XM9QFY9;
+				DEVELOPMENT_TEAM = SRN4RNBX5L;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = DDCategoryDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = DDCategoryDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ddkit.DDCategoryDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d19acc97-83aa-4f2a-947e-cb13de1a65b6";
+				PROVISIONING_PROFILE_SPECIFIER = testDevelopment_normal;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -467,11 +476,16 @@
 			baseConfigurationReference = 03EF3B16038DD07C4DB30199 /* Pods-DDCategoryDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = F76XM9QFY9;
+				DEVELOPMENT_TEAM = "";
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = DDCategoryDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = DDCategoryDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ddkit.DDCategoryDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

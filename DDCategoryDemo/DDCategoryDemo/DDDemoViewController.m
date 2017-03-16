@@ -70,6 +70,7 @@
     } else if (indexPath.row == 2) {
         [self performSegueWithIdentifier:@"BlockSegue" sender:nil];
     } else if (indexPath.row == 3) {
+        [self forbitInterfaceOretation];
         [self performSegueWithIdentifier:@"BridgeSegue" sender:nil];
     }
 }
@@ -116,6 +117,20 @@
     // Pass the selected object to the new view controller.
     UIViewController *vc = segue.destinationViewController;
     vc.hidesBottomBarWhenPushed = YES;
+}
+
+- (void)forbitInterfaceOretation
+{
+    if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)])
+    {
+        SEL selector = NSSelectorFromString(@"setOrientation:");
+        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
+        [invocation setSelector:selector];
+        [invocation setTarget:[UIDevice currentDevice]];
+        NSInteger value = UIInterfaceOrientationPortrait;
+        [invocation setArgument:&value atIndex:2];
+        [invocation invoke];
+    }
 }
 
 @end

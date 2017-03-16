@@ -34,18 +34,6 @@
     _btnARC = [UIButton buttonWithType:UIButtonTypeCustom]; //ARC情况下不需要特别关心内存管理，开发门槛大大降低
     //_btnARC = [[UIButton alloc] init];
     [self.view addSubview:_btnARC];
-    
-    if (!_thread1)
-    {
-        _thread1 = [[NSThread alloc] initWithTarget:self selector:@selector(runLoop1) object:nil];
-    }
-    [_thread1 start];
-    
-    if (!_thread2)
-    {
-        _thread2 = [[NSThread alloc] initWithTarget:self selector:@selector(runLoop2) object:nil];
-    }
-    [_thread2 start];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -97,21 +85,5 @@
 }
 */
 
-- (void)runLoop1 {
-    DDObject *object = [[DDObject alloc] init]; //当前线程创建了DDObject对象
-    self.arcObj = object;
-    
-//    CFStringRef ref = CFStringCreateCopy(kCFAllocatorDefault, 123);
-//    self.ocStr = (__bridge_transfer NSString *)ref;
-//    CFRelease(ref);
-}
-
-- (void)runLoop2 {
-    sleep(5); //睡眠5秒，确保该线程能数据同步到arcObj;
-    if (self.arcObj) {
-        self.arcObj = nil; //当前线程做了最后一次release，当前线程会执行DDObject的dealloc方法
-    }
-    NSLog(@"self.ocStr = %@",self.ocStr);
-}
 
 @end

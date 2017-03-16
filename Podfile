@@ -1,7 +1,7 @@
 inhibit_all_warnings!
-source 'https://github.com/CocoaPods/Old-Specs'
+source 'https://github.com/CocoaPods/Specs.git'
 
-platform:ios, '6.0'
+platform:ios, '7.0'
 
 workspace 'DDCategory'
 
@@ -20,5 +20,5 @@ target 'DDCategoryDemo' do
     
     pod 'DDCategory', :path => 'DDCategory.podspec'
     pod 'Aspects', '~> 1.4.1'
-    
+    pod 'CocoaLumberjack', '3.1.0'
 end

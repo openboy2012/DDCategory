@@ -17,4 +17,12 @@
  */
 + (instancetype)dd_loadWithNib;
 
+
+/**
+ force the interface orientation when the UIViewController's interface is not match the device orientation
+
+ @param interfaceOrientation interface orientation
+ */
+- (void)dd_forceInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
+
 @end

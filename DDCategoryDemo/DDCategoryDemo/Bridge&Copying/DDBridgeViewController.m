@@ -73,7 +73,7 @@
     NSLog(@"mDict addess is %p dict3 address is %p, dict4 address is %p", self.mDict, dict3, dict4);
     [_mDict release];
     [dict4 release]; //内容复制产生了新的指针，需要手动释放才能避免内存泄漏。
-    [_mDict release]; //因为mutable类型对象copy以后产生了新的指针，对mDict进行释放是发生崩溃
+//    [_mDict release]; //因为mutable类型对象copy以后产生了新的指针，对mDict进行释放是发生崩溃
 }
 
 @end
