@@ -14,10 +14,10 @@
  Calculate the time cost about the method executed.
 
  @param block the method execute block
- @param completion the result block
+ @param completion the result block, this reuslt
  */
 - (void)dd_benchmark:(void (^)(void))block
-          completion:(void (^)(double ms))completion;
+          completion:(void (^)(double milliseconds))completion;
 
 
 @end

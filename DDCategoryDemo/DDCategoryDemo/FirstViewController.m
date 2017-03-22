@@ -81,7 +81,7 @@
         dispatch_semaphore_wait(s, DISPATCH_TIME_FOREVER);
     });
     dispatch_group_async(dispatchGroup, dispatchQueue, ^(){
-        NSLog(@"dspatch-2");
+        NSLog(@"dispatch-2");
     });
     dispatch_group_notify(dispatchGroup, dispatch_get_main_queue(), ^(){
         NSLog(@"end");

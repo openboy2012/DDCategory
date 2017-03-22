@@ -7,16 +7,17 @@
 //
 
 #import "NSObject+DDKit.h"
+#include <sys/time.h>
 
 @implementation NSObject (DDKit)
 
 - (void)dd_benchmark:(void (^)(void))block completion:(void (^)(double))completion
 {
-    double begin, end, ms;
-    begin = CFAbsoluteTimeGetCurrent();
+    struct timeval t0, t1;
+    gettimeofday(&t0, NULL);
     block();
-    end = CFAbsoluteTimeGetCurrent();
-    ms = (end - begin) * 1000.0;
+    gettimeofday(&t1, NULL);
+    double ms = (double)(t1.tv_sec - t0.tv_sec) * 1e3 + (double)(t1.tv_usec - t0.tv_usec) * 1e-3;
     completion(ms);
 }
 
