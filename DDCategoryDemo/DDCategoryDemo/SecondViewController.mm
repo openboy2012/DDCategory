@@ -23,7 +23,6 @@ using namespace std;
     
     pthread_mutex_t mutex;
     
-    BOOL isDisappear;
 }
 
 @property (nonatomic, strong) DDObject *arcObj;
@@ -31,6 +30,8 @@ using namespace std;
 @property (nonatomic, strong) NSThread *thread2;
 @property (nonatomic, strong) NSThread *thread3;
 @property (nonatomic, strong) NSMutableDictionary *mDict;
+@property (atomic, assign) BOOL isDisappear;
+
 
 @end
 
@@ -57,7 +58,7 @@ using namespace std;
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    isDisappear = NO;
+    _isDisappear = NO;
 
     if (!_thread1)
     {
@@ -80,7 +81,7 @@ using namespace std;
 
 - (void)viewDidDisappear:(BOOL)animated
 {
-    isDisappear = YES;
+    self.isDisappear = YES;
     [_thread1 cancel];
     _thread1 = nil;
     [_thread2 cancel];
@@ -100,7 +101,7 @@ using namespace std;
 //    self.arcObj = object;
     int i = 0;
     for (; ; ) {
-        if (isDisappear) {
+        if (self.isDisappear) {
             break;
         }
         i++;
@@ -144,7 +145,7 @@ using namespace std;
         DDObject *ddObject = [[DDObject alloc] init];
         [_mDict setObject:ddObject forKey:@"mDate"];
         pthread_mutex_unlock(&mutex);
-        if (isDisappear) {
+        if (self.isDisappear) {
             break;
         }
     }
@@ -153,11 +154,11 @@ using namespace std;
 - (void)runLoop3
 {
     for (;;) {
-//        pthread_mutex_lock(&mutex);
+        pthread_mutex_lock(&mutex);
 //        NSDate *date = [_mDict objectForKey:@"mDate"];
 //        NSString *date = [_mDict objectForKey:@"mDate"];
         DDObject *date = [_mDict objectForKey:@"mDate"];
-//        pthread_mutex_unlock(&mutex);
+        pthread_mutex_unlock(&mutex);
         NSLog(@"date is %@", date);
         usleep(100);
     }

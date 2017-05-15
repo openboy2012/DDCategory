@@ -40,6 +40,19 @@ typedef void(^ CycleReferenceBlock)(void);
     //[self cycleReferenceBlockExample];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self performSelector:@selector(doDelayEvent) withObject:nil afterDelay:2.0f];
+    [self performSelector:@selector(doDelayEvent) withObject:nil afterDelay:2.0f];
+}
+
+- (void)doDelayEvent
+{
+    NSLog(@"delay event finished");
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

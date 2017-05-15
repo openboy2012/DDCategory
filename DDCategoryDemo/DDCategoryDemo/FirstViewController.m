@@ -12,10 +12,11 @@
 #import "UIViewController+DDKit.h"
 #import "NSArray+DDKit.h"
 #import "NSObject+DDKit.h"
+#import <MessageUI/MFMessageComposeViewController.h>
 
-@interface FirstViewController ()
+@interface FirstViewController ()<MFMessageComposeViewControllerDelegate>
 
-@property (nonatomic, weak) IBOutlet UIButton *buttonClicked;
+@property (nonatomic, retain) IBOutlet UIButton *buttonClicked;
 @property (nonatomic, weak) IBOutlet UIGestureRecognizer *recognizer;
 @property (nonatomic, weak) IBOutlet UILabel *lblTap;
 
@@ -71,8 +72,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 //    NSLog(@"data length is %d", [NSData data].length);
-    DDLogDebug(@"1234");
-    DDLogInfo(@"1234");    
+//    DDLogDebug(@"1234");
+//    DDLogInfo(@"1234");    
     dispatch_queue_t dispatchQueue = dispatch_queue_create("ted.queue.next", DISPATCH_QUEUE_CONCURRENT);
     dispatch_group_t dispatchGroup = dispatch_group_create();
     dispatch_group_async(dispatchGroup, dispatchQueue, ^(){
@@ -100,7 +101,7 @@
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
-    DDLogDebug(@"[UIScreen mainScreen].bounds = %@ \n self.view.bounds = %@ duration = %.2f", [NSValue valueWithCGRect:[UIScreen mainScreen].bounds], [NSValue valueWithCGRect:self.view.bounds], duration);
+//    DDLogDebug(@"[UIScreen mainScreen].bounds = %@ \n self.view.bounds = %@ duration = %.2f", [NSValue valueWithCGRect:[UIScreen mainScreen].bounds], [NSValue valueWithCGRect:self.view.bounds], duration);
 //    sleep(2);
     [UIView animateWithDuration:duration animations:^{
         //同步动画，旋转耗时会把这个睡眠时间加上
@@ -110,6 +111,7 @@
 
 - (IBAction)clicked:(id)sender {
     NSLog(@"clicked");
+    
 
 //    [CATransaction begin];
 //    
@@ -135,14 +137,38 @@
 
 - (IBAction)tap:(id)sender {
     NSLog(@"taped");
-    self.buttonClicked.enabled = !self.buttonClicked.enabled;
-    NSArray *array = @[@(UIInterfaceOrientationLandscapeLeft),@(UIInterfaceOrientationPortrait),@(UIInterfaceOrientationLandscapeRight)];
-    [self dd_benchmark:^{
-        [self dd_forceInterfaceOrientation:[[array dd_objectAtIndex:rand()%3] integerValue]];
+    
+    [self.tabBarController dismissViewControllerAnimated:YES completion:NULL];
+
+//    self.buttonClicked.enabled = !self.buttonClicked.enabled;
+//    NSArray *array = @[@(UIInterfaceOrientationLandscapeLeft),@(UIInterfaceOrientationPortrait),@(UIInterfaceOrientationLandscapeRight)];
+//    [self dd_benchmark:^{
+//        [self dd_forceInterfaceOrientation:[[array dd_objectAtIndex:rand()%3] integerValue]];
+//    }
+//            completion:^(double ms){
+//                DDLogInfo(@"旋转花费时间：%.6fms", ms);
+//            }];
+//    MFMessageComposeViewController *picker = [[MFMessageComposeViewController alloc]init];
+//    
+//    picker.messageComposeDelegate = self;
+//    
+//    //推荐的电话号码
+//    picker.recipients = @[@"1069070069"];
+//    
+//    picker.body = @"重置密码8502";
+//    
+//    [self presentViewController:picker animated:YES completion:nil];
+    
+}
+
+#pragma mark - MFMessageComposeViewControllerDelegate methods
+
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
+{
+    if (result != MessageComposeResultSent)
+    {
+        [controller dismissViewControllerAnimated:YES completion:NULL];
     }
-            completion:^(double ms){
-                DDLogInfo(@"旋转花费时间：%.6fms", ms);
-            }];
 }
 
 @end

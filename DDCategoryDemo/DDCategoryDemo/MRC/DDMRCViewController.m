@@ -43,6 +43,16 @@
     
     [self mrcGlobalBlockExample];
     [self mrcStackBlockExample];
+    
+    DDObject *objectT = [[DDObject alloc] init];
+    [objectT release];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"DDObjectNotification" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationTests:) name:@"DDNotificationTests" object:nil];
+}
+
+- (void)notificationTests:(NSNotification *)notification
+{
+//    DDLogInfo(@"notification %@", notification);
 }
 
 - (void)viewDidAppear:(BOOL)animated {

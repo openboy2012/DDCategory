@@ -20,8 +20,14 @@
     self = [super init];
     if (self) {
         NSLog(@"[%@]<%p> alloc",self.class, self);
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ddNotificationTests:) name:@"DDObjectNotification" object:nil];
     }
     return self;
+}
+
+- (void)ddNotificationTests:(NSNotification *)notification
+{
+    NSLog(@"notification is %@", notification);
 }
 
 - (instancetype)copyWithZone:(NSZone *)zone

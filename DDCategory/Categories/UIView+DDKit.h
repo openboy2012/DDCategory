@@ -199,3 +199,16 @@ typedef NS_OPTIONS(NSUInteger, ViewSeparatorType) {
 - (void)dd_addCornerRadius:(CGFloat)radius andLineColor:(UIColor *)lineColor __deprecated_msg("Use `dd_addCornerRadius:lineColor:`");
 
 @end
+
+@interface UIView (DDFrameInfo)
+
+- (CGFloat)dd_top;
+- (CGFloat)dd_left;
+- (CGFloat)dd_bottom;
+- (CGFloat)dd_right;
+- (CGFloat)dd_width;
+- (CGFloat)dd_height;
+- (CGSize)dd_size;
+- (CGPoint)dd_origin;
+
+@end

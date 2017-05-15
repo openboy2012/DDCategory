@@ -8,10 +8,12 @@
 
 #import "DDDemoViewController.h"
 #import "DDCategory.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface DDDemoViewController ()
 
 @property (nonatomic, strong, nullable) NSMutableArray<NSString *> *itemsArray;
+@property (nonatomic, weak) UIViewController *lastViewController;
 
 @end
 
@@ -34,11 +36,23 @@
     [_itemsArray addObject:@"ARC"];
     [_itemsArray addObject:@"Block"];
     [_itemsArray addObject:@"Bridge&Copying"];
+    [_itemsArray addObject:@"Video Orientation"];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"DDNotificationTests" object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (BOOL)shouldAutorotate
+{
+    return NO;
 }
 
 #pragma mark - Table view data source
@@ -70,8 +84,14 @@
     } else if (indexPath.row == 2) {
         [self performSegueWithIdentifier:@"BlockSegue" sender:nil];
     } else if (indexPath.row == 3) {
-        [self forbitInterfaceOretation];
+        self.lastViewController = nil;
         [self performSegueWithIdentifier:@"BridgeSegue" sender:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"DDNotificationTests" object:nil];
+    } else if (indexPath.row == 4) {
+        [self performSegueWithIdentifier:@"OrientationSegue" sender:nil];
+        
+//        UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        [self.navigationController.tabBarController presentViewController:board.instantiateInitialViewController animated:YES completion:NULL];
     }
 }
 
@@ -117,20 +137,7 @@
     // Pass the selected object to the new view controller.
     UIViewController *vc = segue.destinationViewController;
     vc.hidesBottomBarWhenPushed = YES;
-}
-
-- (void)forbitInterfaceOretation
-{
-    if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)])
-    {
-        SEL selector = NSSelectorFromString(@"setOrientation:");
-        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
-        [invocation setSelector:selector];
-        [invocation setTarget:[UIDevice currentDevice]];
-        NSInteger value = UIInterfaceOrientationPortrait;
-        [invocation setArgument:&value atIndex:2];
-        [invocation invoke];
-    }
+    self.lastViewController = vc;
 }
 
 @end

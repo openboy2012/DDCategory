@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import <CocoaLumberjack/CocoaLumberjack.h>
+//#import <CocoaLumberjack/CocoaLumberjack.h>
 
 #define ddLogLevel 1
 
@@ -20,8 +20,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     // Standard lumberjack initialization
-    setenv("XcodeColors", "YES", 0);
-    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+//    setenv("XcodeColors", "YES", 0);
+//    [DDLog addLogger:[DDTTYLogger sharedInstance]];
     
     [self.window makeKeyAndVisible];
     
@@ -40,12 +40,12 @@
 //    [[DDTTYLogger sharedInstance] setForegroundColor:[UIColor whiteColor] backgroundColor:nil forFlag:DDLogFlagInfo];
 //    [[DDTTYLogger sharedInstance] setForegroundColor:[UIColor grayColor] backgroundColor:nil forFlag:DDLogFlagVerbose];
     
-    DDFileLogger *fileLogger = [[DDFileLogger alloc] init]; // File Logger
-    fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
-    fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
-    [DDLog addLogger:fileLogger];
+//    DDFileLogger *fileLogger = [[DDFileLogger alloc] init]; // File Logger
+//    fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
+//    fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
+//    [DDLog addLogger:fileLogger];
     
-    DDLogDebug(@"1234");
+//    DDLogDebug(@"1234");
     
     return YES;
 }
@@ -81,6 +81,5 @@
 {
     return UIInterfaceOrientationMaskAllButUpsideDown;
 }
-
 
 @end

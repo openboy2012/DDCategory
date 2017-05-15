@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D56C9241E8D4055001D4589 /* DDOrientationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D56C9231E8D4055001D4589 /* DDOrientationViewController.m */; };
 		0D7F52461E444F6F00BCBAFB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F52451E444F6F00BCBAFB /* main.m */; };
 		0D7F52491E444F6F00BCBAFB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F52481E444F6F00BCBAFB /* AppDelegate.m */; };
 		0D7F524C1E444F6F00BCBAFB /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F524B1E444F6F00BCBAFB /* FirstViewController.m */; };
@@ -24,6 +25,7 @@
 		0D7F527D1E45744500BCBAFB /* NSObject+Method_Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F527C1E45744500BCBAFB /* NSObject+Method_Swizzling.m */; };
 		0D7F52841E45A5A700BCBAFB /* DDBlocksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F52831E45A5A700BCBAFB /* DDBlocksViewController.m */; };
 		0D7F52901E4746C800BCBAFB /* DDBridgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F528F1E4746C800BCBAFB /* DDBridgeViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0D9CA5B01EAD9B5700954F6F /* 456.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0D9CA5AF1EAD9B5700954F6F /* 456.mov */; };
 		8F551D6F039E146F46130B2A /* libPods-DDCategoryDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7740F227A4AEF7DD1CA3C151 /* libPods-DDCategoryDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +33,8 @@
 		03EF3B16038DD07C4DB30199 /* Pods-DDCategoryDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDCategoryDemo.release.xcconfig"; path = "../Pods/Target Support Files/Pods-DDCategoryDemo/Pods-DDCategoryDemo.release.xcconfig"; sourceTree = "<group>"; };
 		067C48D90A6C7A8DA80A7599 /* Pods-DDCategoryDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDCategoryDemo.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-DDCategoryDemo/Pods-DDCategoryDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		0D0FABD61E62E380006E0806 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		0D56C9221E8D4055001D4589 /* DDOrientationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDOrientationViewController.h; sourceTree = "<group>"; };
+		0D56C9231E8D4055001D4589 /* DDOrientationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDOrientationViewController.m; sourceTree = "<group>"; };
 		0D7F52411E444F6F00BCBAFB /* DDCategoryDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DDCategoryDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D7F52451E444F6F00BCBAFB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0D7F52471E444F6F00BCBAFB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -63,6 +67,7 @@
 		0D7F52831E45A5A700BCBAFB /* DDBlocksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDBlocksViewController.m; path = DDCategoryDemo/BLOCKS/DDBlocksViewController.m; sourceTree = SOURCE_ROOT; };
 		0D7F528E1E4746C800BCBAFB /* DDBridgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDBridgeViewController.h; sourceTree = "<group>"; };
 		0D7F528F1E4746C800BCBAFB /* DDBridgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDBridgeViewController.m; sourceTree = "<group>"; };
+		0D9CA5AF1EAD9B5700954F6F /* 456.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = 456.mov; sourceTree = "<group>"; };
 		7740F227A4AEF7DD1CA3C151 /* libPods-DDCategoryDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DDCategoryDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -78,6 +83,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D56C9211E8D4039001D4589 /* Orientation */ = {
+			isa = PBXGroup;
+			children = (
+				0D56C9221E8D4055001D4589 /* DDOrientationViewController.h */,
+				0D56C9231E8D4055001D4589 /* DDOrientationViewController.m */,
+			);
+			path = Orientation;
+			sourceTree = "<group>";
+		};
 		0D7F52381E444F6F00BCBAFB = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +113,8 @@
 		0D7F52431E444F6F00BCBAFB /* DDCategoryDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0D9CA5AF1EAD9B5700954F6F /* 456.mov */,
+				0D56C9211E8D4039001D4589 /* Orientation */,
 				0D7F528D1E4746C800BCBAFB /* Bridge&Copying */,
 				0D7F527E1E45A56300BCBAFB /* BLOCKS */,
 				0D7F526E1E456AE800BCBAFB /* DDObjects */,
@@ -208,12 +224,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D7F525B1E444F6F00BCBAFB /* Build configuration list for PBXNativeTarget "DDCategoryDemo" */;
 			buildPhases = (
-				7EB632CD7C0837F7F64A3228 /* [CP] Check Pods Manifest.lock */,
+				E82007DCF5F707F1B8332652 /* [CP] Check Pods Manifest.lock */,
 				0D7F523D1E444F6F00BCBAFB /* Sources */,
 				0D7F523E1E444F6F00BCBAFB /* Frameworks */,
 				0D7F523F1E444F6F00BCBAFB /* Resources */,
-				BE6DB9E38E2CE04DFCDAEB02 /* [CP] Embed Pods Frameworks */,
-				92909BDCAA7F05D1B235A067 /* [CP] Copy Pods Resources */,
+				734B6B013AD121BFD3D8DB4A /* [CP] Embed Pods Frameworks */,
+				75C98E6CCEEDA7C3DDC3A833 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -265,6 +281,7 @@
 			files = (
 				0D7F52571E444F6F00BCBAFB /* LaunchScreen.storyboard in Resources */,
 				0D7F52541E444F6F00BCBAFB /* Assets.xcassets in Resources */,
+				0D9CA5B01EAD9B5700954F6F /* 456.mov in Resources */,
 				0D7F52521E444F6F00BCBAFB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,22 +289,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7EB632CD7C0837F7F64A3228 /* [CP] Check Pods Manifest.lock */ = {
+		734B6B013AD121BFD3D8DB4A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-DDCategoryDemo/Pods-DDCategoryDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		92909BDCAA7F05D1B235A067 /* [CP] Copy Pods Resources */ = {
+		75C98E6CCEEDA7C3DDC3A833 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -302,19 +319,19 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-DDCategoryDemo/Pods-DDCategoryDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BE6DB9E38E2CE04DFCDAEB02 /* [CP] Embed Pods Frameworks */ = {
+		E82007DCF5F707F1B8332652 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-DDCategoryDemo/Pods-DDCategoryDemo-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -330,6 +347,7 @@
 				0D7F524F1E444F6F00BCBAFB /* SecondViewController.mm in Sources */,
 				0D7F52491E444F6F00BCBAFB /* AppDelegate.m in Sources */,
 				0D7F524C1E444F6F00BCBAFB /* FirstViewController.m in Sources */,
+				0D56C9241E8D4055001D4589 /* DDOrientationViewController.m in Sources */,
 				0D7F52901E4746C800BCBAFB /* DDBridgeViewController.m in Sources */,
 				0D7F52601E4451D500BCBAFB /* DDDemoViewController.m in Sources */,
 				0D7F52771E456AE800BCBAFB /* DDMutableString.m in Sources */,
@@ -403,7 +421,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -444,7 +462,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -456,13 +474,19 @@
 			baseConfigurationReference = 067C48D90A6C7A8DA80A7599 /* Pods-DDCategoryDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = SRN4RNBX5L;
+				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = DDCategoryDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = DDCategoryDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ddkit.DDCategoryDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "d19acc97-83aa-4f2a-947e-cb13de1a65b6";
@@ -476,15 +500,23 @@
 			baseConfigurationReference = 03EF3B16038DD07C4DB30199 /* Pods-DDCategoryDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = SRN4RNBX5L;
+				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = DDCategoryDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = DDCategoryDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ddkit.DDCategoryDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d19acc97-83aa-4f2a-947e-cb13de1a65b6";
+				PROVISIONING_PROFILE_SPECIFIER = testDevelopment_normal;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -499,7 +531,7 @@
 				0D7F525A1E444F6F00BCBAFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		0D7F525B1E444F6F00BCBAFB /* Build configuration list for PBXNativeTarget "DDCategoryDemo" */ = {
 			isa = XCConfigurationList;
@@ -508,7 +540,7 @@
 				0D7F525D1E444F6F00BCBAFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

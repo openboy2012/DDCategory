@@ -244,7 +244,7 @@
     [self.hud show:YES];
 }
 
-- (void)dd_removeHUD{
+- (void)dd_removeHUD {
     [self.hud hide:YES];
     self.hud = nil;
 }
@@ -337,5 +337,27 @@
 
 @end
 
+@implementation UIView (DDFrameInfo)
 
+- (CGFloat)dd_top {
+    return self.frame.origin.y;
+}
+
+- (CGFloat)dd_left {
+    return self.frame.origin.x;
+}
+
+- (CGFloat)dd_bottom {
+    return self.frame.origin.y + self.frame.size.height;
+}
+
+- (CGFloat)dd_right {
+    return self.frame.origin.x + self.frame.size.width;
+}
+
+- (CGSize)dd_size {
+    
+}
+
+@end
 

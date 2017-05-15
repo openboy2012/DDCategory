@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -33,7 +34,7 @@
                                 <rect key="frame" x="63" y="313" width="194.5" height="17"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nIx-rW-6vJ">
@@ -176,6 +177,7 @@
                         <segue destination="LGu-vp-1c4" kind="show" identifier="ARCSegue" id="bSP-Zs-xv6"/>
                         <segue destination="jVU-72-Yzj" kind="show" identifier="BlockSegue" id="f7K-JL-S5C"/>
                         <segue destination="5ak-mL-5Pn" kind="show" identifier="BridgeSegue" id="he8-MK-DZx"/>
+                        <segue destination="aKV-g8-idL" kind="show" identifier="OrientationSegue" id="4Eb-tv-eJ9"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wxy-s4-vu2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -318,6 +320,48 @@
             </objects>
             <point key="canvasLocation" x="3049" y="373"/>
         </scene>
+        <!--Orientation-->
+        <scene sceneID="Hdg-aK-iSu">
+            <objects>
+                <viewController title="Orientation" id="aKV-g8-idL" customClass="DDOrientationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bUW-eC-uYj"/>
+                        <viewControllerLayoutGuide type="bottom" id="xrS-Gb-OvR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qc9-4y-bJ2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rrT-Lw-FUG">
+                                <rect key="frame" x="0.0" y="64" width="320" height="100"/>
+                                <color key="backgroundColor" red="0.27058823529999998" green="0.46274509800000002" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rrT-Lw-FUG" secondAttribute="height" multiplier="16:9" constant="142.22222222222223" id="oHR-LR-NFj"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5hF-1t-7vD">
+                                <rect key="frame" x="112" y="172" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rrT-Lw-FUG" firstAttribute="top" secondItem="bUW-eC-uYj" secondAttribute="bottom" id="DXW-r3-csi"/>
+                            <constraint firstItem="rrT-Lw-FUG" firstAttribute="leading" secondItem="Qc9-4y-bJ2" secondAttribute="leading" id="H45-ga-MAn"/>
+                            <constraint firstAttribute="trailing" secondItem="rrT-Lw-FUG" secondAttribute="trailing" id="jOK-t8-6pW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playerView" destination="rrT-Lw-FUG" id="YFi-u0-pOh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="el1-vY-T0Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2186.25" y="1147.1830985915492"/>
+        </scene>
         <!--Blocks-->
         <scene sceneID="6hC-PX-IwF">
             <objects>
@@ -380,7 +424,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qGG-qR-Jvv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2216" y="869"/>
+            <point key="canvasLocation" x="3049" y="1137"/>
         </scene>
         <!--Bridge-->
         <scene sceneID="FwS-f2-E9c">
@@ -398,7 +442,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9T8-12-nhX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2214" y="-800"/>
+            <point key="canvasLocation" x="3049" y="-1104"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
