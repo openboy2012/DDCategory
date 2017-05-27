@@ -37,6 +37,47 @@
     [_itemsArray addObject:@"Block"];
     [_itemsArray addObject:@"Bridge&Copying"];
     [_itemsArray addObject:@"Video Orientation"];
+    
+    NSLog(@"this iPhone is jailbreak? %d", [[self class] isBreakOutPrison]);
+}
+
+// 常见越狱文件
+const char *examineBreak_Tool_pathes[] = {
+    "/Applications/Cydia.app",
+    "/Library/MobileSubstrate/MobileSubstrate.dylib",
+    "/bin/bash",
+    "/usr/sbin/sshd",
+    "/etc/apt"
+};
+char *printEnv(void)
+{
+    char *env = getenv("DYLD_INSERT_LIBRARIES");
+    return env;
+    
+}
+
++ (BOOL)isBreakOutPrison
+{
+    // 方式1.判断是否存在越狱文件
+    for (int i = 0; i < 5; i++) {
+        if ([[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithUTF8String:examineBreak_Tool_pathes[0]]])
+        {
+            return YES;
+        }
+    }
+    // 方式2.判断是否存在cydia应用
+    if([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"cydia://"]]){
+        return YES;
+    }
+    // 方式3.读取系统所有的应用名称
+    if ([[NSFileManager defaultManager] fileExistsAtPath:@"/User/Applications/"]){
+        return YES;
+    }
+    // 方式4.读取环境变量
+    if(printEnv()){
+        return YES;
+    }
+    return NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated

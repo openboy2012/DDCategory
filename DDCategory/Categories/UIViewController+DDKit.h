@@ -11,7 +11,7 @@
 @interface UIViewController (DDKit)
 
 /**
- *  Instance a viewController as use the 'nitWithNibName:bundle:' method with the same name xib file
+ *  Instance a viewController as use the 'initWithNibName:bundle:' method with the same name xib file
  *
  *  @return Initlialized viewController object
  */

@@ -48,4 +48,18 @@
     return [super hash];
 }
 
+- (NSString *)book
+{
+    return @"your book";
+}
+
+@end
+
+@implementation  DDObject (MyBook)
+
+- (NSString *)book
+{
+    return @"my book";
+}
+
 @end

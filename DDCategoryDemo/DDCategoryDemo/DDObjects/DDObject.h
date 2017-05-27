@@ -13,4 +13,12 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) NSInteger number;
 
+- (NSString *)book;
+
+@end
+
+@interface DDObject (MyBook)
+
+- (NSString *)book;
+
 @end

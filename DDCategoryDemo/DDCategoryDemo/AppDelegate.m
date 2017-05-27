@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import 
 //#import <CocoaLumberjack/CocoaLumberjack.h>
 
 #define ddLogLevel 1
@@ -79,7 +80,7 @@
 
 - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
 {
-    return UIInterfaceOrientationMaskAllButUpsideDown;
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 @end

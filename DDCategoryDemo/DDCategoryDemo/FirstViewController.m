@@ -12,6 +12,7 @@
 #import "UIViewController+DDKit.h"
 #import "NSArray+DDKit.h"
 #import "NSObject+DDKit.h"
+#import "DDObject.h"
 #import <MessageUI/MFMessageComposeViewController.h>
 
 @interface FirstViewController ()<MFMessageComposeViewControllerDelegate>
@@ -87,6 +88,9 @@
     dispatch_group_notify(dispatchGroup, dispatch_get_main_queue(), ^(){
         NSLog(@"end");
     });
+    
+    DDObject *obj = [[DDObject alloc] init];
+    NSLog(@"book is %@", [obj book]);
 }
 
 - (void)didReceiveMemoryWarning {
