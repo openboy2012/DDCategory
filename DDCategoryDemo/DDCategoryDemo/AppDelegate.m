@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import 
+#import "DDCategory.h"
 //#import <CocoaLumberjack/CocoaLumberjack.h>
 
 #define ddLogLevel 1
@@ -80,7 +80,8 @@
 
 - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
 {
-    return UIInterfaceOrientationMaskPortrait;
+    NSLog(@"orientation is %ld",[[UIViewController dd_findBestViewController:window.rootViewController] supportedInterfaceOrientations]);
+    return [[UIViewController dd_findBestViewController:window.rootViewController] supportedInterfaceOrientations];
 }
 
 @end

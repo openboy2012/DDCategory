@@ -356,7 +356,19 @@
 }
 
 - (CGSize)dd_size {
-    
+    return self.frame.size;
+}
+
+- (CGFloat)dd_width {
+    return self.frame.size.width;
+}
+
+- (CGFloat)dd_height {
+    return self.frame.size.height;
+}
+
+- (CGPoint)dd_origin {
+    return self.frame.origin;
 }
 
 @end

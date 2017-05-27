@@ -16,7 +16,7 @@
 
 - (void)dd_forceInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    NSLog(@"interfaceOrientation is %d", interfaceOrientation);
+    NSLog(@"interfaceOrientation is %ld", (long)interfaceOrientation);
 
     if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)])
     {
@@ -33,6 +33,45 @@
         [[UIDevice currentDevice] setValue:@(interfaceOrientation) forKey:@"orientation"];
 #endif
     }
+}
+
++ (UIViewController *)dd_findBestViewController:(UIViewController *)viewController
+{
+    if (viewController.presentedViewController) {
+        // Return presented view controller
+        return [[self class] dd_findBestViewController:viewController.presentedViewController];
+    } else if ([viewController isKindOfClass:[UISplitViewController class]]) {
+        // Return right hand side
+        UISplitViewController *svc = (UISplitViewController *)viewController;
+        if (svc.viewControllers.count > 0)
+            return [[self class] dd_findBestViewController:svc.viewControllers.lastObject];
+        else
+            return viewController;
+    } else if ([viewController isKindOfClass:[UINavigationController class]]) {
+        // Return top view
+        UINavigationController *svc = (UINavigationController *)viewController;
+        if (svc.viewControllers.count > 0)
+            return [[self class] dd_findBestViewController:svc.topViewController];
+        else
+            return viewController;
+    } else if ([viewController isKindOfClass:[UITabBarController class]]) {
+        // Return visible view
+        UITabBarController *svc = (UITabBarController *)viewController;
+        if (svc.viewControllers.count > 0)
+            return [[self class] dd_findBestViewController:svc.selectedViewController];
+        else
+            return viewController;
+    } else {
+        // Unknown view controller type, return last child view controller
+        return viewController;
+    }
+}
+
++ (UIViewController *)dd_currentViewController
+{
+    // Find best view controller
+    UIViewController *viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    return [[self class] dd_findBestViewController:viewController];
 }
 
 @end

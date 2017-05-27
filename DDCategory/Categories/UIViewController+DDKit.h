@@ -25,4 +25,21 @@
  */
 - (void)dd_forceInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
 
+
+/**
+ find the top viewController
+
+ @param viewController any rootViewController
+ @return the top viewController
+ */
++ (UIViewController *)dd_findBestViewController:(UIViewController *)viewController;
+
+
+/**
+ find the top viewController in current status
+
+ @return the top viewController
+ */
++ (UIViewController *)dd_currentViewController;
+
 @end

@@ -26,7 +26,7 @@
 		0D7F52841E45A5A700BCBAFB /* DDBlocksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F52831E45A5A700BCBAFB /* DDBlocksViewController.m */; };
 		0D7F52901E4746C800BCBAFB /* DDBridgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F528F1E4746C800BCBAFB /* DDBridgeViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0D9CA5B01EAD9B5700954F6F /* 456.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0D9CA5AF1EAD9B5700954F6F /* 456.mov */; };
-		8F551D6F039E146F46130B2A /* libPods-DDCategoryDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7740F227A4AEF7DD1CA3C151 /* libPods-DDCategoryDemo.a */; };
+		A679375208E8129D840C9ECF /* libPods-DDCategoryDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B67D9D816039BEC26D0F7AA5 /* libPods-DDCategoryDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,7 +68,7 @@
 		0D7F528E1E4746C800BCBAFB /* DDBridgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDBridgeViewController.h; sourceTree = "<group>"; };
 		0D7F528F1E4746C800BCBAFB /* DDBridgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDBridgeViewController.m; sourceTree = "<group>"; };
 		0D9CA5AF1EAD9B5700954F6F /* 456.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = 456.mov; sourceTree = "<group>"; };
-		7740F227A4AEF7DD1CA3C151 /* libPods-DDCategoryDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DDCategoryDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B67D9D816039BEC26D0F7AA5 /* libPods-DDCategoryDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DDCategoryDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F551D6F039E146F46130B2A /* libPods-DDCategoryDemo.a in Frameworks */,
+				A679375208E8129D840C9ECF /* libPods-DDCategoryDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,7 +149,7 @@
 		0D7F52611E4453AE00BCBAFB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7740F227A4AEF7DD1CA3C151 /* libPods-DDCategoryDemo.a */,
+				B67D9D816039BEC26D0F7AA5 /* libPods-DDCategoryDemo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -476,7 +476,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = SRN4RNBX5L;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = DDCategoryDemo/PrefixHeader.pch;
@@ -502,7 +502,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = SRN4RNBX5L;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = DDCategoryDemo/PrefixHeader.pch;

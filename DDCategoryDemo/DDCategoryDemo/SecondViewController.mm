@@ -60,23 +60,23 @@ using namespace std;
     [super viewDidAppear:animated];
     _isDisappear = NO;
 
-    if (!_thread1)
-    {
-        _thread1 = [[NSThread alloc] initWithTarget:self selector:@selector(runLoop1) object:nil];
-    }
-    
-    if (!_thread2)
-    {
-        _thread2 = [[NSThread alloc] initWithTarget:self selector:@selector(runLoop2) object:nil];
-    }
-    
-    if (!_thread3)
-    {
-        _thread3 = [[NSThread alloc] initWithTarget:self selector:@selector(runLoop3) object:nil];
-    }
-    [_thread1 start];
-    [_thread2 start];
-    [_thread3 start];
+//    if (!_thread1)
+//    {
+//        _thread1 = [[NSThread alloc] initWithTarget:self selector:@selector(runLoop1) object:nil];
+//    }
+//    
+//    if (!_thread2)
+//    {
+//        _thread2 = [[NSThread alloc] initWithTarget:self selector:@selector(runLoop2) object:nil];
+//    }
+//    
+//    if (!_thread3)
+//    {
+//        _thread3 = [[NSThread alloc] initWithTarget:self selector:@selector(runLoop3) object:nil];
+//    }
+//    [_thread1 start];
+//    [_thread2 start];
+//    [_thread3 start];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
