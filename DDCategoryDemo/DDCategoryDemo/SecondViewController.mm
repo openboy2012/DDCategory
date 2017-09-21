@@ -69,7 +69,7 @@ using namespace std;
     [super viewDidAppear:animated];
     _isDisappear = NO;
 
-    YSIndexButton *indexButton = [[YSIndexButton alloc] initWithFrame:CGRectMake((self.view.bounds.size.width - 40.0f)/2.0f, 100, 40, 40.0f)];
+    YSIndexButton *indexButton = [[YSIndexButton alloc] initWithFrame:CGRectMake((self.view.bounds.size.width - 40.0f)/2.0f, 140, 40, 40.0f)];
     [self.view addSubview:indexButton];
 //    [indexButton open];
     
