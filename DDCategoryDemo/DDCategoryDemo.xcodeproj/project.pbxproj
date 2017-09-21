@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D0BE8B01F3077C30025919E /* DDTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D0BE8AF1F3077C30025919E /* DDTabBarViewController.m */; };
+		0D0E46D61EE7F99C00A07A26 /* DDTestPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D0E46D51EE7F99C00A07A26 /* DDTestPageViewController.m */; };
 		0D56C9241E8D4055001D4589 /* DDOrientationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D56C9231E8D4055001D4589 /* DDOrientationViewController.m */; };
 		0D7F52461E444F6F00BCBAFB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F52451E444F6F00BCBAFB /* main.m */; };
 		0D7F52491E444F6F00BCBAFB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F52481E444F6F00BCBAFB /* AppDelegate.m */; };
@@ -25,13 +27,19 @@
 		0D7F527D1E45744500BCBAFB /* NSObject+Method_Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F527C1E45744500BCBAFB /* NSObject+Method_Swizzling.m */; };
 		0D7F52841E45A5A700BCBAFB /* DDBlocksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F52831E45A5A700BCBAFB /* DDBlocksViewController.m */; };
 		0D7F52901E4746C800BCBAFB /* DDBridgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F528F1E4746C800BCBAFB /* DDBridgeViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0D917E2E1EFF33F700AE70A0 /* DDSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D917E2D1EFF33F700AE70A0 /* DDSearchBar.m */; };
 		0D9CA5B01EAD9B5700954F6F /* 456.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0D9CA5AF1EAD9B5700954F6F /* 456.mov */; };
+		0DD4761D1EE555A50082A67C /* YSIndexButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4761C1EE555A50082A67C /* YSIndexButton.m */; };
 		A679375208E8129D840C9ECF /* libPods-DDCategoryDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B67D9D816039BEC26D0F7AA5 /* libPods-DDCategoryDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		03EF3B16038DD07C4DB30199 /* Pods-DDCategoryDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDCategoryDemo.release.xcconfig"; path = "../Pods/Target Support Files/Pods-DDCategoryDemo/Pods-DDCategoryDemo.release.xcconfig"; sourceTree = "<group>"; };
 		067C48D90A6C7A8DA80A7599 /* Pods-DDCategoryDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDCategoryDemo.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-DDCategoryDemo/Pods-DDCategoryDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		0D0BE8AE1F3077C30025919E /* DDTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTabBarViewController.h; sourceTree = "<group>"; };
+		0D0BE8AF1F3077C30025919E /* DDTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTabBarViewController.m; sourceTree = "<group>"; };
+		0D0E46D41EE7F99C00A07A26 /* DDTestPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTestPageViewController.h; sourceTree = "<group>"; };
+		0D0E46D51EE7F99C00A07A26 /* DDTestPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTestPageViewController.m; sourceTree = "<group>"; };
 		0D0FABD61E62E380006E0806 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		0D56C9221E8D4055001D4589 /* DDOrientationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDOrientationViewController.h; sourceTree = "<group>"; };
 		0D56C9231E8D4055001D4589 /* DDOrientationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDOrientationViewController.m; sourceTree = "<group>"; };
@@ -67,7 +75,11 @@
 		0D7F52831E45A5A700BCBAFB /* DDBlocksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDBlocksViewController.m; path = DDCategoryDemo/BLOCKS/DDBlocksViewController.m; sourceTree = SOURCE_ROOT; };
 		0D7F528E1E4746C800BCBAFB /* DDBridgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDBridgeViewController.h; sourceTree = "<group>"; };
 		0D7F528F1E4746C800BCBAFB /* DDBridgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDBridgeViewController.m; sourceTree = "<group>"; };
+		0D917E2C1EFF33F700AE70A0 /* DDSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDSearchBar.h; sourceTree = "<group>"; };
+		0D917E2D1EFF33F700AE70A0 /* DDSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDSearchBar.m; sourceTree = "<group>"; };
 		0D9CA5AF1EAD9B5700954F6F /* 456.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = 456.mov; sourceTree = "<group>"; };
+		0DD4761B1EE555A50082A67C /* YSIndexButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSIndexButton.h; sourceTree = "<group>"; };
+		0DD4761C1EE555A50082A67C /* YSIndexButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSIndexButton.m; sourceTree = "<group>"; };
 		B67D9D816039BEC26D0F7AA5 /* libPods-DDCategoryDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DDCategoryDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -83,6 +95,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D0E46D31EE7F95900A07A26 /* UIPageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0D0E46D41EE7F99C00A07A26 /* DDTestPageViewController.h */,
+				0D0E46D51EE7F99C00A07A26 /* DDTestPageViewController.m */,
+			);
+			path = UIPageViewController;
+			sourceTree = "<group>";
+		};
 		0D56C9211E8D4039001D4589 /* Orientation */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +134,7 @@
 		0D7F52431E444F6F00BCBAFB /* DDCategoryDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0D0E46D31EE7F95900A07A26 /* UIPageViewController */,
 				0D9CA5AF1EAD9B5700954F6F /* 456.mov */,
 				0D56C9211E8D4039001D4589 /* Orientation */,
 				0D7F528D1E4746C800BCBAFB /* Bridge&Copying */,
@@ -122,6 +144,8 @@
 				0D7F52671E445B6A00BCBAFB /* MRC */,
 				0D7F52471E444F6F00BCBAFB /* AppDelegate.h */,
 				0D7F52481E444F6F00BCBAFB /* AppDelegate.m */,
+				0D0BE8AE1F3077C30025919E /* DDTabBarViewController.h */,
+				0D0BE8AF1F3077C30025919E /* DDTabBarViewController.m */,
 				0D7F525E1E4451D500BCBAFB /* DDDemoViewController.h */,
 				0D7F525F1E4451D500BCBAFB /* DDDemoViewController.m */,
 				0D7F524A1E444F6F00BCBAFB /* FirstViewController.h */,
@@ -134,6 +158,10 @@
 				0D7F52581E444F6F00BCBAFB /* Info.plist */,
 				0D7F52441E444F6F00BCBAFB /* Supporting Files */,
 				0D0FABD61E62E380006E0806 /* PrefixHeader.pch */,
+				0DD4761B1EE555A50082A67C /* YSIndexButton.h */,
+				0DD4761C1EE555A50082A67C /* YSIndexButton.m */,
+				0D917E2C1EFF33F700AE70A0 /* DDSearchBar.h */,
+				0D917E2D1EFF33F700AE70A0 /* DDSearchBar.m */,
 			);
 			path = DDCategoryDemo;
 			sourceTree = "<group>";
@@ -195,8 +223,7 @@
 				0D7F52821E45A5A700BCBAFB /* DDBlocksViewController.h */,
 				0D7F52831E45A5A700BCBAFB /* DDBlocksViewController.m */,
 			);
-			name = BLOCKS;
-			path = MRC/BLOCKS;
+			path = BLOCKS;
 			sourceTree = "<group>";
 		};
 		0D7F528D1E4746C800BCBAFB /* Bridge&Copying */ = {
@@ -246,7 +273,7 @@
 		0D7F52391E444F6F00BCBAFB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = DDKit;
 				TargetAttributes = {
 					0D7F52401E444F6F00BCBAFB = {
@@ -341,6 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D0BE8B01F3077C30025919E /* DDTabBarViewController.m in Sources */,
 				0D7F526D1E445B9000BCBAFB /* DDMRCViewController.m in Sources */,
 				0D7F52841E45A5A700BCBAFB /* DDBlocksViewController.m in Sources */,
 				0D7F527A1E456AE800BCBAFB /* DDString.m in Sources */,
@@ -351,9 +379,12 @@
 				0D7F52901E4746C800BCBAFB /* DDBridgeViewController.m in Sources */,
 				0D7F52601E4451D500BCBAFB /* DDDemoViewController.m in Sources */,
 				0D7F52771E456AE800BCBAFB /* DDMutableString.m in Sources */,
+				0DD4761D1EE555A50082A67C /* YSIndexButton.m in Sources */,
 				0D7F52461E444F6F00BCBAFB /* main.m in Sources */,
 				0D7F52791E456AE800BCBAFB /* DDOperation.m in Sources */,
+				0D917E2E1EFF33F700AE70A0 /* DDSearchBar.m in Sources */,
 				0D7F52781E456AE800BCBAFB /* DDObject.m in Sources */,
+				0D0E46D61EE7F99C00A07A26 /* DDTestPageViewController.m in Sources */,
 				0D7F527D1E45744500BCBAFB /* NSObject+Method_Swizzling.m in Sources */,
 				0D7F526A1E445B8100BCBAFB /* DDARCViewController.m in Sources */,
 			);
@@ -390,7 +421,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -398,7 +431,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -437,7 +474,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -445,7 +484,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

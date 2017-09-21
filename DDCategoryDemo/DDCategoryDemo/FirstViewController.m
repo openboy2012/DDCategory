@@ -20,6 +20,7 @@
 @property (nonatomic, retain) IBOutlet UIButton *buttonClicked;
 @property (nonatomic, weak) IBOutlet UIGestureRecognizer *recognizer;
 @property (nonatomic, weak) IBOutlet UILabel *lblTap;
+@property (nonatomic, strong) NSTimer *timer;
 
 @end
 
@@ -75,23 +76,91 @@
 //    NSLog(@"data length is %d", [NSData data].length);
 //    DDLogDebug(@"1234");
 //    DDLogInfo(@"1234");    
-    dispatch_queue_t dispatchQueue = dispatch_queue_create("ted.queue.next", DISPATCH_QUEUE_CONCURRENT);
-    dispatch_group_t dispatchGroup = dispatch_group_create();
-    dispatch_group_async(dispatchGroup, dispatchQueue, ^(){
-        dispatch_semaphore_t s = dispatch_semaphore_create(0);
-        NSLog(@"dispatch-1");
-        dispatch_semaphore_wait(s, DISPATCH_TIME_FOREVER);
-    });
-    dispatch_group_async(dispatchGroup, dispatchQueue, ^(){
-        NSLog(@"dispatch-2");
-    });
-    dispatch_group_notify(dispatchGroup, dispatch_get_main_queue(), ^(){
-        NSLog(@"end");
-    });
+//    dispatch_queue_t dispatchQueue = dispatch_queue_create("ted.queue.next", DISPATCH_QUEUE_CONCURRENT);
+//    dispatch_group_t dispatchGroup = dispatch_group_create();
+//    dispatch_group_async(dispatchGroup, dispatchQueue, ^(){
+//        dispatch_semaphore_t s = dispatch_semaphore_create(0);
+//        NSLog(@"dispatch-1");
+//        dispatch_semaphore_wait(s, DISPATCH_TIME_FOREVER);
+//    });
+//    dispatch_group_async(dispatchGroup, dispatchQueue, ^(){
+//        NSLog(@"dispatch-2");
+//    });
+//    dispatch_group_notify(dispatchGroup, dispatch_get_main_queue(), ^(){
+//        NSLog(@"end");
+//    });
+    
+    CALayer *layer = [CALayer layer];
+    layer.backgroundColor = [UIColor redColor].CGColor; //圆环底色
+    layer.frame = CGRectMake(100, 100, 110, 110);
+    
+    
+    //创建一个圆环
+    UIBezierPath *bezierPath = [UIBezierPath bezierPathWithArcCenter:CGPointMake(55, 55) radius:50 startAngle:0 endAngle:M_PI*2 clockwise:YES];
+    
+    //圆环遮罩
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    shapeLayer.fillColor = [UIColor clearColor].CGColor;
+    shapeLayer.strokeColor = [UIColor redColor].CGColor;
+    shapeLayer.lineWidth = 2;
+    shapeLayer.strokeStart = 0;
+    shapeLayer.strokeEnd = 1.0;
+    shapeLayer.lineCap = @"round";
+    shapeLayer.lineDashPhase = 0.8;
+    shapeLayer.path = bezierPath.CGPath;
+    
+    //颜色渐变
+    NSMutableArray *colors = [NSMutableArray arrayWithObjects:(id)[UIColor redColor].CGColor,(id)[UIColor whiteColor].CGColor, nil];
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.shadowPath = bezierPath.CGPath;
+    gradientLayer.frame = CGRectMake(50, 50, 60, 60);
+    gradientLayer.startPoint = CGPointMake(0, 1);
+    gradientLayer.endPoint = CGPointMake(1, 0);
+    [gradientLayer setColors:[NSArray arrayWithArray:colors]];
+    [layer addSublayer:gradientLayer]; //设置颜色渐变
+    [layer setMask:shapeLayer]; //设置圆环遮罩
+    [self.view.layer addSublayer:layer];
+    
+    //动画
+//    CABasicAnimation *scaleAnimation1 = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+//    scaleAnimation1.fromValue = [NSNumber numberWithFloat:1.0];
+//    scaleAnimation1.toValue = [NSNumber numberWithFloat:1.5];
+//    scaleAnimation1.autoreverses = YES;
+//    // scaleAnimation1.fillMode = kCAFillModeForwards;
+//    scaleAnimation1.duration = 0.8;
+    
+    CABasicAnimation *rotationAnimation2 = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    rotationAnimation2.fromValue = [NSNumber numberWithFloat:0];
+    rotationAnimation2.toValue = [NSNumber numberWithFloat:6.0*M_PI];
+//    rotationAnimation2.autoreverses = YES;
+    // scaleAnimation.fillMode = kCAFillModeForwards;
+    rotationAnimation2.repeatCount = MAXFLOAT;
+//    rotationAnimation2.beginTime = 0.8; //延时执行，注释掉动画会同时进行
+    rotationAnimation2.duration = 2;
+    
+    CAAnimationGroup *groupAnnimation = [CAAnimationGroup animation];
+    groupAnnimation.duration = 4;
+//    groupAnnimation.autoreverses = YES;
+    groupAnnimation.animations = @[rotationAnimation2];
+    groupAnnimation.repeatCount = MAXFLOAT;
+//    [layer addAnimation:groupAnnimation forKey:@"groupAnnimation"];
     
     DDObject *obj = [[DDObject alloc] init];
     NSLog(@"book is %@", [obj book]);
+    CFRunLoopGetCurrent();
+    
+//    self.timer = [NSTimer scheduledTimerWithTimeInterval:3.0f target:[self class] selector:@selector(testLog) userInfo:nil repeats:YES];
+//    
+//    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"123"];
+    
+//    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+//    formatter.dateFormat = @"HH:mm:ss";
 }
+
+//+ (void)testLog
+//{
+//    NSLog(@"12345");
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -141,7 +210,7 @@
 
 - (IBAction)tap:(id)sender {
     NSLog(@"taped");
-    
+    __unused NSUInteger i = -1;
     [self.tabBarController dismissViewControllerAnimated:YES completion:NULL];
 
 //    self.buttonClicked.enabled = !self.buttonClicked.enabled;

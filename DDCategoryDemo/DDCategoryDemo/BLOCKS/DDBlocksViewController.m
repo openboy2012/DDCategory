@@ -7,15 +7,24 @@
 //
 
 #import "DDBlocksViewController.h"
+#import "Masonry.h"
+#import "DDSearchBar.h"
+#import "MJRefresh.h"
+#import "KVOController.h"
 
 typedef void(^ CycleReferenceBlock)(void);
 
-@interface DDBlocksViewController ()
+@interface DDBlocksViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, weak) IBOutlet UIButton *btnCrash; //Crash按钮
 @property (nonatomic) BOOL isUseCrashCode; //是否运行崩溃的代码
 @property (nonatomic, copy) CycleReferenceBlock block; //声明block成员变量，ARC环境下，用strong与copy关键字都一样，都会对block内存进行copy
 @property (nonatomic, weak) IBOutlet UISwitch *switchCycleReferen; //循环引用开关
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) UIButton *topBar;
+@property (nonatomic, strong) UIView *topView;
+@property (nonatomic, strong) FBKVOController *kvo;
+@property (nonatomic) BOOL isUpBegin;
 
 @end
 
@@ -28,7 +37,63 @@ typedef void(^ CycleReferenceBlock)(void);
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    self.navigationController.navigationBar.hidden = YES;
+    
+//    self.kvo = [[FBKVOController alloc] initWithObserver:self];
+//    [self.kvo observe:self keyPath:@"navigationController.navigationBar.frame" options:NSKeyValueObservingOptionNew block:^(id  _Nullable observer, id  _Nonnull object, NSDictionary<NSString *,id> * _Nonnull change) {
+//        NSLog(@"object is %@, dictionary is %@", object, change);
+//        CGRect rect = [change[@"new"] CGRectValue];
+//        if (rect.size.height > 64.0 && rect.size.height < 122.0)
+//        {
+//            self.topView.frame = CGRectMake(self.topView.frame.origin.x, (rect.size.height - 54.0f), 100, 44.0);
+//        }
+//        else if (rect.size.height == 123.0)
+//        {
+//            self.topView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.5, 0.5);
+//            [UIView animateWithDuration:0.3 animations:^{
+//                self.topView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.1, 1.1);
+//            } completion:^(BOOL finished) {
+//                self.topView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.0, 1.0);
+//            }];
+//        }
+//    }];
+    
+//    self.topBar = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [self.topBar addTarget:self action:@selector(popBack) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:self.topBar];
+//    self.topBar.frame = CGRectMake(0, 0, self.view.bounds.size.width, 64);
+//    self.topBar.backgroundColor = [UIColor greenColor];
+//
+//    self.topView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 44.0)];
+//    self.topView.backgroundColor = [UIColor redColor];
+//    self.topView.center = self.topBar.center;
+//    [self.topBar addSubview:self.topView];
+//    [self.topView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.center.mas_equalTo(self.topBar);
+//        make.width.height.mas_equalTo(@40);
+//    }];
+//    
     // Do any additional setup after loading the view.
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self.view addSubview:self.tableView];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.mas_equalTo(self.view.mas_bottom);
+//        make.left.right.bottom.mas_equalTo(self.view);
+        make.edges.mas_equalTo(self.view);
+    }];
+    
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"BlockCell"];
+    
+    DDSearchBar *searchBar = [[DDSearchBar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 50.0f)];
+    [searchBar setBackgroundImage:[UIImage imageNamed:@"battery_s_10_"]];
+    searchBar.placeholder = @"搜索";
+    searchBar.searchBarStyle = UISearchBarStyleProminent;
+    self.tableView.tableHeaderView = searchBar;
+//    UIView *testV = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 70.0)];
+//    testV.backgroundColor = [UIColor greenColor];
+//    tableV.tableHeaderView = testV;
     
     //block内存变化示例
     //[self blockMemoryChangeExample];
@@ -38,6 +103,19 @@ typedef void(^ CycleReferenceBlock)(void);
     
     //block循环引用示例
     //[self cycleReferenceBlockExample];
+    
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        sleep(1);
+        [self.tableView.mj_header endRefreshing];
+    }];
+    self.tableView.mj_footer = [MJRefreshFooter footerWithRefreshingBlock:NULL];
+    [self.tableView.mj_footer endRefreshingWithNoMoreData];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.tableView setContentOffset:CGPointMake(0, 50)];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -48,14 +126,89 @@ typedef void(^ CycleReferenceBlock)(void);
     [self performSelector:@selector(doDelayEvent) withObject:nil afterDelay:2.0f];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    self.navigationController.navigationBar.hidden = NO;
+    [super viewWillDisappear:animated];
+}
+
 - (void)doDelayEvent
 {
     NSLog(@"delay event finished");
 }
 
+- (void)popBack
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - UITableViewDelegate/UITableViewDataSource Methods
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 16;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BlockCell" forIndexPath:indexPath];
+    
+    // Configure the cell...
+    cell.textLabel.text = @"1";
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    return cell;
+}
+
+#pragma mark - UIScrollViewDelegate Methods
+
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    NSLog(@"scrollView.contentOffset.y = %f", scrollView.contentOffset.y);
+    
+    CGPoint translation = [scrollView.panGestureRecognizer translationInView:scrollView.superview];
+    if (translation.y > 0)
+    {
+        NSLog(@"translation is %@", [NSValue valueWithCGPoint:translation]);
+    }
+    else if(translation.y < 0)
+    {
+        NSLog(@"translation is %@", [NSValue valueWithCGPoint:translation]);
+    }
+
+    CGFloat height = 0;
+    height -= scrollView.contentOffset.y;
+    if (height > 64.0f)
+    {
+        [self.navigationController.navigationBar setHidden:NO];
+        height = 64.0f;
+    }
+    else if(height < 0.0f)
+    {
+        [self.navigationController.navigationBar setHidden:YES];
+        height = 0.0f;
+    }
+//    if (self.topBar.frame.size.height == 124.0 || !_isUpBegin)
+//    {
+//        return;
+//    }
+//    self.navigationController.navigationBar.frame = CGRectMake(0, 0, self.view.bounds.size.width, height);
+//    height = MAX(124, height);
+//    NSLog(@"height = %f", height);
+//    self.navigationController.navigationBar.frame = CGRectMake(0, 0, self.view.bounds.size.width, height);
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    NSLog(@"begin drag");
 }
 
 /*

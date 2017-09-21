@@ -9,8 +9,10 @@
 #import "DDDemoViewController.h"
 #import "DDCategory.h"
 #import <AVFoundation/AVFoundation.h>
+#import "DDTestPageViewController.h"
+#import "MJRefresh.h"
 
-@interface DDDemoViewController ()
+@interface DDDemoViewController ()<UISearchControllerDelegate, UISearchBarDelegate>
 
 @property (nonatomic, strong, nullable) NSMutableArray<NSString *> *itemsArray;
 @property (nonatomic, weak) UIViewController *lastViewController;
@@ -21,6 +23,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+//    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 50)];
+//    self.tableView.tableHeaderView = searchBar;
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -39,6 +44,13 @@
     [_itemsArray addObject:@"Video Orientation"];
     
     NSLog(@"this iPhone is jailbreak? %d", [[self class] isBreakOutPrison]);
+    
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        NSLog(@"刷新");
+        sleep(2);
+        [self.tableView.mj_header endRefreshing];
+    }];
+//    [self.tableView.mj_header beginRefreshing];
 }
 
 // 常见越狱文件
@@ -129,12 +141,21 @@ char *printEnv(void)
         [self performSegueWithIdentifier:@"BridgeSegue" sender:nil];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"DDNotificationTests" object:nil];
     } else if (indexPath.row == 4) {
-        [self performSegueWithIdentifier:@"OrientationSegue" sender:nil];
+//        [self performSegueWithIdentifier:@"OrientationSegue" sender:nil];
         
 //        UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 //        [self.navigationController.tabBarController presentViewController:board.instantiateInitialViewController animated:YES completion:NULL];
+        
+        DDTestPageViewController *vc = [[DDTestPageViewController alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
+
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+//{
+//    self.navigationController.navigationBar.frame = CGRectMake(0, 0, self.view.bounds.size.height, rand()%2 == 0?100.0f: 50.0f);
+//}
 
 /*
 // Override to support conditional editing of the table view.

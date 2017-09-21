@@ -21,6 +21,10 @@ target 'DDCategoryDemo' do
     
     pod 'DDCategory', :path => 'DDCategory.podspec'
     pod 'Aspects', '~> 1.4.1'
+    pod 'MJRefresh', '3.1.12'
+    pod 'Masonry', '1.0.2'
+    pod 'KVOController', '1.2.0'
+    pod 'DDCollectionViewFlowLayout', '1.0'
     #pod 'CocoaLumberjack', '3.1.0'
     #pod 'Huiyan', :path => './EZVIZPodspec/Huiyan.podspec'
     #pod 'AFNetworking', '3.0.0'

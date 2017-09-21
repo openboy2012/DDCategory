@@ -7,6 +7,7 @@
 //
 
 #import "SecondViewController.h"
+#import "YSIndexButton.h"
 #import "DDObject.h"
 #include <stdio.h>
 #include <queue>
@@ -14,7 +15,7 @@
 #include <pthread.h>
 using namespace std;
 
-@interface SecondViewController ()
+@interface SecondViewController ()<CAAnimationDelegate>
 {
     NSRecursiveLock *_rLock;
     
@@ -31,6 +32,7 @@ using namespace std;
 @property (nonatomic, strong) NSThread *thread3;
 @property (nonatomic, strong) NSMutableDictionary *mDict;
 @property (atomic, assign) BOOL isDisappear;
+@property (nonatomic, weak) IBOutlet UIImageView *animateImageView;
 
 
 @end
@@ -53,6 +55,13 @@ using namespace std;
     //pthread_mutex_init always return 0
     pthread_mutex_init(&mutex, &attr);
     pthread_mutexattr_destroy(&attr);
+    
+    NSMutableArray *images = [NSMutableArray new];
+    for (int i = 1; i< 11; i++ ) {
+        [images addObject:[UIImage imageNamed:[NSString stringWithFormat:@"battery_s_%d_", i]]];
+    }
+    self.animateImageView.animationImages = images;
+    [self.animateImageView startAnimating];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -60,6 +69,10 @@ using namespace std;
     [super viewDidAppear:animated];
     _isDisappear = NO;
 
+    YSIndexButton *indexButton = [[YSIndexButton alloc] initWithFrame:CGRectMake((self.view.bounds.size.width - 40.0f)/2.0f, 100, 40, 40.0f)];
+    [self.view addSubview:indexButton];
+//    [indexButton open];
+    
 //    if (!_thread1)
 //    {
 //        _thread1 = [[NSThread alloc] initWithTarget:self selector:@selector(runLoop1) object:nil];
