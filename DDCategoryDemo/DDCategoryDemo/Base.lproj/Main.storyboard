@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -35,25 +34,32 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06t-qe-90e">
-                                <rect key="frame" x="110" y="87" width="100" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06t-qe-90e">
+                                <rect key="frame" x="103.5" y="87" width="113" height="30"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="QKj-I8-X2l"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="113" id="zf6-Kj-qxM"/>
                                 </constraints>
-                                <state key="normal" title="短信发送demo"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="短信发送demo">
+                                    <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
-                                    <action selector="clicked:" destination="9pv-A4-QxB" eventType="touchUpInside" id="b57-g4-1DO"/>
-                                    <outletCollection property="gestureRecognizers" destination="B2v-hp-wNV" appends="YES" id="RW5-ws-r9q"/>
+                                    <action selector="codeAction:" destination="9pv-A4-QxB" eventType="touchUpInside" id="cxZ-KZ-aTE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nIx-rW-6vJ">
-                                <rect key="frame" x="97" y="145" width="127" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nIx-rW-6vJ">
+                                <rect key="frame" x="89" y="145" width="143" height="30"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ITj-9M-IVh"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="143" id="qvX-22-Yqs"/>
                                 </constraints>
-                                <state key="normal" title="CALayer动画demo"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="CALayer动画demo">
+                                    <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="caLayerAnimation:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Sr0-vi-aiP"/>
                                 </connections>
@@ -71,12 +77,12 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="UI" id="acW-dT-cKf"/>
                     <connections>
-                        <outlet property="buttonClicked" destination="nIx-rW-6vJ" id="j1i-eR-sq6"/>
+                        <outlet property="btnCALayer" destination="nIx-rW-6vJ" id="Wk6-XI-ImP"/>
+                        <outlet property="btnSMS" destination="06t-qe-90e" id="pzt-G7-8jo"/>
                         <outlet property="lblTap" destination="KQZ-1w-vlD" id="35U-aT-phF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="B2v-hp-wNV"/>
             </objects>
             <point key="canvasLocation" x="750" y="-327.46478873239437"/>
         </scene>
@@ -381,7 +387,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYZ-Nn-UsT">
-                                <rect key="frame" x="46" y="164" width="228" height="30"/>
+                                <rect key="frame" x="121" y="164" width="78" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="yOA-jh-9aa"/>
                                 </constraints>
@@ -412,12 +418,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="VYZ-Nn-UsT" secondAttribute="trailing" constant="30" id="AVB-rw-tgS"/>
                             <constraint firstItem="VYZ-Nn-UsT" firstAttribute="centerX" secondItem="QBo-dx-mWx" secondAttribute="centerX" id="GtJ-EA-qWK"/>
                             <constraint firstItem="wJZ-Tj-0Ep" firstAttribute="centerX" secondItem="QBo-dx-mWx" secondAttribute="centerX" id="XQQ-fU-gAC"/>
                             <constraint firstItem="VYZ-Nn-UsT" firstAttribute="top" secondItem="QAi-oD-2hr" secondAttribute="bottom" constant="100" id="d8a-n9-Z0A"/>
                             <constraint firstItem="sKW-cL-CNo" firstAttribute="leading" secondItem="QBo-dx-mWx" secondAttribute="leading" constant="10" id="ec8-nh-eGH"/>
-                            <constraint firstItem="VYZ-Nn-UsT" firstAttribute="leading" secondItem="QBo-dx-mWx" secondAttribute="leadingMargin" constant="30" id="lNd-em-cYO"/>
                             <constraint firstItem="sKW-cL-CNo" firstAttribute="top" secondItem="VYZ-Nn-UsT" secondAttribute="bottom" constant="30" id="mR0-0c-4a2"/>
                             <constraint firstAttribute="trailing" secondItem="sKW-cL-CNo" secondAttribute="trailing" constant="10" id="oks-im-0Th"/>
                             <constraint firstItem="wJZ-Tj-0Ep" firstAttribute="top" secondItem="sKW-cL-CNo" secondAttribute="bottom" constant="24" id="wDx-ad-P5e"/>

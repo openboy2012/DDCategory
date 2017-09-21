@@ -17,8 +17,8 @@
 
 @interface FirstViewController ()<MFMessageComposeViewControllerDelegate>
 
-@property (nonatomic, retain) IBOutlet UIButton *buttonClicked;
-@property (nonatomic, weak) IBOutlet UIGestureRecognizer *recognizer;
+@property (nonatomic, weak) IBOutlet UIButton *btnCALayer;
+@property (nonatomic, weak) IBOutlet UIButton *btnSMS;
 @property (nonatomic, weak) IBOutlet UILabel *lblTap;
 @property (nonatomic, strong) NSTimer *timer;
 
@@ -205,29 +205,19 @@
     [layer addAnimation:groupAnnimation forKey:@"groupAnnimation"];
 }
 
-- (IBAction)tap:(id)sender {
-    NSLog(@"taped");
-    [self.tabBarController dismissViewControllerAnimated:YES completion:NULL];
-
-    self.buttonClicked.enabled = !self.buttonClicked.enabled;
-    NSArray *array = @[@(UIInterfaceOrientationLandscapeLeft),@(UIInterfaceOrientationPortrait),@(UIInterfaceOrientationLandscapeRight)];
-    [self dd_benchmark:^{
-        [self dd_forceInterfaceOrientation:[[array dd_objectAtIndex:rand()%3] integerValue]];
+- (IBAction)codeAction:(id)sender
+{
+    if ([MFMessageComposeViewController canSendText])
+    {
+        MFMessageComposeViewController *picker = [[MFMessageComposeViewController alloc] init];
+        picker.messageComposeDelegate = self;
+        //推荐的电话号码
+        picker.recipients = @[@"1069070069"];
+        
+        picker.body = @"重置密码8502";
+        
+        [self presentViewController:picker animated:YES completion:nil];
     }
-            completion:^(double ms){
-//                DDLogInfo(@"旋转花费时间：%.6fms", ms);
-            }];
-    MFMessageComposeViewController *picker = [[MFMessageComposeViewController alloc]init];
-    
-    picker.messageComposeDelegate = self;
-    
-    //推荐的电话号码
-    picker.recipients = @[@"1069070069"];
-    
-    picker.body = @"重置密码8502";
-    
-    [self presentViewController:picker animated:YES completion:nil];
-    
 }
 
 #pragma mark - MFMessageComposeViewControllerDelegate methods
