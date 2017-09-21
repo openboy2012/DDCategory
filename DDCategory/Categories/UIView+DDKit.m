@@ -257,7 +257,7 @@
 
 + (void)dd_showMessage:(NSString *)message onParentView:(UIView *)parentView {
     if (!parentView) {
-        UIWindow *topWindows = [[[UIApplication sharedApplication] windows] lastObject];
+        UIWindow *topWindows = [UIApplication sharedApplication].keyWindow;
         parentView = topWindows;
     }
     MBProgressHUD *messageHud = [MBProgressHUD showHUDAddedTo:parentView animated:YES];
@@ -274,7 +274,7 @@
 
 + (void)dd_showDetailMessage:(NSString *)message onParentView:(UIView *)parentView {
     if (!parentView) {
-        UIWindow *topWindows = [[[UIApplication sharedApplication] windows] lastObject];
+        UIWindow *topWindows = [UIApplication sharedApplication].keyWindow;
         parentView = topWindows;
     }
     MBProgressHUD *messageHud = [MBProgressHUD showHUDAddedTo:parentView animated:YES];
