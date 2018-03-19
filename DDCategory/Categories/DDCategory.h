@@ -18,5 +18,7 @@
 #import "NSArray+DDKit.h"
 #import "NSDate+DDKit.h"
 #import "NSString+DDKit.h"
+#import "UIWindow+DDKit.h"
+#import "NSObject+DDKit.h"
 
 

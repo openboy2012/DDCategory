@@ -10,8 +10,7 @@
 #import <objc/runtime.h>
 #import <objc/message.h>
 #import "UIViewController+DDKit.h"
-#import "NSArray+DDKit.h"
-#import "NSObject+DDKit.h"
+#import "DDCategory.h"
 #import "DDObject.h"
 #import <MessageUI/MFMessageComposeViewController.h>
 
@@ -146,6 +145,11 @@
 //
 //    [CATransaction commit];
 //
+}
+
+- (IBAction)toastDemo:(id)sender
+{
+    [UIView dd_showMessage:@"windows test toast!!"];
 }
 
 - (IBAction)caLayerAnimation:(id)sender

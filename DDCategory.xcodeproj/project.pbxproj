@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0D6264671E7987D600348683 /* NSObject+DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D6264651E7987D600348683 /* NSObject+DDKit.h */; };
 		0D6264681E7987D600348683 /* NSObject+DDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6264661E7987D600348683 /* NSObject+DDKit.m */; };
+		0DED06661F7A6B92009936F8 /* UIWindow+DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DED06641F7A6B92009936F8 /* UIWindow+DDKit.h */; };
+		0DED06671F7A6B92009936F8 /* UIWindow+DDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DED06651F7A6B92009936F8 /* UIWindow+DDKit.m */; };
 		2FA0AFE71AEB9242002D2642 /* NSArray+DDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FA0AFE51AEB9242002D2642 /* NSArray+DDKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2FA0AFE81AEB9242002D2642 /* NSArray+DDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA0AFE61AEB9242002D2642 /* NSArray+DDKit.m */; };
 		4A551FCC00B65B25AC29279E /* libPods-DDCategory.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 437BE4CB83092A1B23135836 /* libPods-DDCategory.a */; };
@@ -40,6 +42,8 @@
 /* Begin PBXFileReference section */
 		0D6264651E7987D600348683 /* NSObject+DDKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DDKit.h"; sourceTree = "<group>"; };
 		0D6264661E7987D600348683 /* NSObject+DDKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DDKit.m"; sourceTree = "<group>"; };
+		0DED06641F7A6B92009936F8 /* UIWindow+DDKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIWindow+DDKit.h"; sourceTree = "<group>"; };
+		0DED06651F7A6B92009936F8 /* UIWindow+DDKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+DDKit.m"; sourceTree = "<group>"; };
 		2FA0AFE51AEB9242002D2642 /* NSArray+DDKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+DDKit.h"; sourceTree = "<group>"; };
 		2FA0AFE61AEB9242002D2642 /* NSArray+DDKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+DDKit.m"; sourceTree = "<group>"; };
 		437BE4CB83092A1B23135836 /* libPods-DDCategory.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DDCategory.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +164,8 @@
 				CA85E4DA1B05B50B00B43ADA /* NSDate+DDKit.m */,
 				0D6264651E7987D600348683 /* NSObject+DDKit.h */,
 				0D6264661E7987D600348683 /* NSObject+DDKit.m */,
+				0DED06641F7A6B92009936F8 /* UIWindow+DDKit.h */,
+				0DED06651F7A6B92009936F8 /* UIWindow+DDKit.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -188,6 +194,7 @@
 				8E3D022E1ABBC75D00805826 /* UIImage+DDKit.h in Headers */,
 				8E3D023C1ABBC75D00805826 /* UIViewController+DDKit.h in Headers */,
 				0D6264671E7987D600348683 /* NSObject+DDKit.h in Headers */,
+				0DED06661F7A6B92009936F8 /* UIWindow+DDKit.h in Headers */,
 				2FA0AFE71AEB9242002D2642 /* NSArray+DDKit.h in Headers */,
 				CA85E4DB1B05B50B00B43ADA /* NSDate+DDKit.h in Headers */,
 				8E3D02541ABBCA1D00805826 /* UIColor+DDKit.h in Headers */,
@@ -274,7 +281,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F5F52ABA7B563842F2AE6736 /* [CP] Copy Pods Resources */ = {
@@ -302,6 +309,7 @@
 				8E3D02491ABBC90D00805826 /* UIButton+DDKit.m in Sources */,
 				2FA0AFE81AEB9242002D2642 /* NSArray+DDKit.m in Sources */,
 				0D6264681E7987D600348683 /* NSObject+DDKit.m in Sources */,
+				0DED06671F7A6B92009936F8 /* UIWindow+DDKit.m in Sources */,
 				8E3D023D1ABBC75D00805826 /* UIViewController+DDKit.m in Sources */,
 				8E3D02451ABBC7E900805826 /* UIView+DDKit.m in Sources */,
 				8E3D02411ABBC7A400805826 /* NSString+DDKit.m in Sources */,

@@ -25,8 +25,4 @@ target 'DDCategoryDemo' do
     pod 'Masonry', '1.0.2'
     pod 'KVOController', '1.2.0'
     pod 'DDCollectionViewFlowLayout', '1.0'
-    #pod 'CocoaLumberjack', '3.1.0'
-    #pod 'Huiyan', :path => './EZVIZPodspec/Huiyan.podspec'
-    #pod 'AFNetworking', '3.0.0'
-    #pod 'Huiyan', :svn => 'https://192.0.0.241/Civil-Platform/trunk/shipin7/Mobile/iOS/HikDashcam'
 end

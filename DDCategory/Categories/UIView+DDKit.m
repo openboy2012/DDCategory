@@ -8,6 +8,7 @@
 
 #import "UIView+DDKit.h"
 #import "MBProgressHUD.h"
+#import "UIWindow+DDKit.h"
 #import <objc/runtime.h>
 
 @implementation UIView (DDKit)
@@ -257,7 +258,7 @@
 
 + (void)dd_showMessage:(NSString *)message onParentView:(UIView *)parentView {
     if (!parentView) {
-        UIWindow *topWindows = [UIApplication sharedApplication].keyWindow;
+        UIWindow *topWindows = [UIWindow dd_lastWindow];
         parentView = topWindows;
     }
     MBProgressHUD *messageHud = [MBProgressHUD showHUDAddedTo:parentView animated:YES];
@@ -274,7 +275,7 @@
 
 + (void)dd_showDetailMessage:(NSString *)message onParentView:(UIView *)parentView {
     if (!parentView) {
-        UIWindow *topWindows = [UIApplication sharedApplication].keyWindow;
+        UIWindow *topWindows = [UIWindow dd_lastWindow];
         parentView = topWindows;
     }
     MBProgressHUD *messageHud = [MBProgressHUD showHUDAddedTo:parentView animated:YES];

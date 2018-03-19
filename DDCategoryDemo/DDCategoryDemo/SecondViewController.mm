@@ -24,6 +24,9 @@ using namespace std;
     
     pthread_mutex_t mutex;
     
+    CGFloat x;
+    
+    CGFloat lastScale;
 }
 
 @property (nonatomic, strong) DDObject *arcObj;
@@ -33,6 +36,8 @@ using namespace std;
 @property (nonatomic, strong) NSMutableDictionary *mDict;
 @property (atomic, assign) BOOL isDisappear;
 @property (nonatomic, weak) IBOutlet UIImageView *animateImageView;
+@property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
+@property (nonatomic, strong) UIPinchGestureRecognizer *pinch;
 
 
 @end
@@ -62,6 +67,9 @@ using namespace std;
     }
     self.animateImageView.animationImages = images;
     [self.animateImageView startAnimating];
+    
+    [self.collectionView addGestureRecognizer:self.pinch];
+    x = 10.0f;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -177,6 +185,120 @@ using namespace std;
     }
 }
 
+- (void)dd_scale:(id)sender
+{
+    UIPinchGestureRecognizer *recognizer = sender;
+    CGFloat tempScale = recognizer.scale * lastScale;
+    
+    CGFloat max = 12;
+    CGFloat min = 1 / 24;
+    if (tempScale > max) {
+        tempScale = max;
+    }
+    
+    if (tempScale < min) {
+        tempScale = min;
+    }
+    lastScale = x = x * tempScale;
+    [self.collectionView reloadData];
+}
 
+#pragma mark <UICollectionViewDataSource>
+
+//- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+//    return 4;
+//}
+
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return 30;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"1234" forIndexPath:indexPath];
+    
+    if (indexPath.section == 2)
+    {
+        cell.backgroundColor = [UIColor whiteColor];
+        cell.contentView.layer.borderColor = [UIColor grayColor].CGColor;
+        cell.contentView.layer.borderWidth = 1.0/[UIScreen mainScreen].scale;
+        //        UITableViewCell *cell = [[UITableViewCell alloc] init];
+        //        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        //        [cell.contentView addSubview:cell.accessoryView];
+    }
+    else{
+        // Configure the cell
+        cell.backgroundColor = [UIColor colorWithRed:rand()%255/255.0 green:rand()%255/255.0 blue:rand()%255/255.0 alpha:1.0];
+    }
+    return cell;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)layout numberOfColumnsInSection:(NSInteger)section
+{
+    if (section == 2)
+    {
+        return 1;
+    }
+    return 3;
+}
+
+#pragma mark <UICollectionViewDelegate>
+
+/*
+ // Uncomment this method to specify if the specified item should be highlighted during tracking
+ - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+ return YES;
+ }
+ */
+
+/*
+ // Uncomment this method to specify if the specified item should be selected
+ - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+ return YES;
+ }
+ */
+
+/*
+ // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
+ - (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
+ return NO;
+ }
+ 
+ - (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
+ return NO;
+ }
+ 
+ - (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
+ 
+ }
+ */
+
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    return 2;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    return 2;
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    return UIEdgeInsetsMake(2, 2, 2, 2);
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return CGSizeMake(x, x * 9/16.0);
+}
+
+#pragma mark - GET/SET Methods
+
+- (UIPinchGestureRecognizer *)pinch
+{
+    if (!_pinch)
+    {
+        _pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(dd_scale:)];
+    }
+    return _pinch;
+}
 
 @end

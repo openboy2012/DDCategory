@@ -27,20 +27,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    AVPlayerItem *playItem = [[AVPlayerItem alloc] initWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"456" ofType:@"mov"]]];
-    self.player = [AVPlayer playerWithPlayerItem:playItem];
-    AVPlayerLayer *playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
-    
-    playerLayer.frame = self.playerView.bounds;
-    
-    [self.playerView.layer addSublayer:playerLayer];
-    [self.player play];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(doTest:) name:@"DDNotificationTests" object:nil];
     
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(doTest:) name:UIKeyboardWillShowNotification object:nil];
     
     [self addObserver:self forKeyPath:@"player" options:NSKeyValueObservingOptionNew context:nil];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    AVPlayerItem *playItem = [[AVPlayerItem alloc] initWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"456" ofType:@"mov"]]];
+    self.player = [AVPlayer playerWithPlayerItem:playItem];
+    AVPlayerLayer *playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
+    
+    playerLayer.frame = self.playerView.bounds;
+    playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+    
+    [self.playerView.layer addSublayer:playerLayer];
+    self.player.actionAtItemEnd = AVPlayerActionAtItemEndPause;
+    [self.player play];
 }
 
 - (void)didReceiveMemoryWarning {

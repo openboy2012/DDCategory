@@ -141,14 +141,14 @@ char *printEnv(void)
         [self performSegueWithIdentifier:@"BridgeSegue" sender:nil];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"DDNotificationTests" object:nil];
     } else if (indexPath.row == 4) {
-//        [self performSegueWithIdentifier:@"OrientationSegue" sender:nil];
+        [self performSegueWithIdentifier:@"OrientationSegue" sender:nil];
         
 //        UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 //        [self.navigationController.tabBarController presentViewController:board.instantiateInitialViewController animated:YES completion:NULL];
         
-        DDTestPageViewController *vc = [[DDTestPageViewController alloc] init];
-        vc.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:vc animated:YES];
+//        DDTestPageViewController *vc = [[DDTestPageViewController alloc] init];
+//        vc.hidesBottomBarWhenPushed = YES;
+//        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 
