@@ -12,11 +12,15 @@
 
 + (UIWindow *)dd_lastWindow
 {
-    NSArray *windows = [UIApplication sharedApplication].windows;
-    for (UIWindow *window in [windows reverseObjectEnumerator]) {
-        if ([window isKindOfClass:[UIWindow class]] &&
-            CGRectEqualToRect(window.bounds, [UIScreen mainScreen].bounds))
-            return window;
+    //fixed the bug on iOS 11.0，can't show the view on the return window
+    if ([[UIDevice currentDevice].systemVersion floatValue] != 11.0)
+    {
+        NSArray *windows = [UIApplication sharedApplication].windows;
+        for (UIWindow *window in [windows reverseObjectEnumerator]) {
+            if ([window isKindOfClass:[UIWindow class]] &&
+                CGRectEqualToRect(window.bounds, [UIScreen mainScreen].bounds))
+                return window;
+        }
     }
     
     return [UIApplication sharedApplication].keyWindow;

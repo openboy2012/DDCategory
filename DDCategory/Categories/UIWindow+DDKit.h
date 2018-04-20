@@ -10,6 +10,11 @@
 
 @interface UIWindow (DDKit)
 
+/**
+ Get the available window.
+
+ @return the key window
+ */
 + (UIWindow *)dd_lastWindow;
 
 @end
